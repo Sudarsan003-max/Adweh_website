@@ -16,33 +16,33 @@ const plans: Plan[] = [
     tag: "01 · AI Search",
     name: "AIEO",
     desc: "Artificial Intelligence Engine Optimization — maximizing direct citations, recommendations, and visibility across leading AI models like ChatGPT, Claude, and Perplexity.",
-    idealFor: "Practices wanting to capture patients searching through AI assistants.",
+    idealFor: "Enterprises wanting to capture high-value clients searching through AI assistants.",
     features: [
       { title: "AI Answer Engine Citations", items: ["Optimized inclusion across ChatGPT, Claude, and Perplexity", "Knowledge-base authority and entity indexing"] },
-      { title: "Conversational Query Targeting", items: ["Targeting prompt-driven patient inquiries", "Semantic authority mapping for clinical specialties"] },
+      { title: "Conversational Query Targeting", items: ["Targeting prompt-driven buyer and client inquiries", "Semantic authority mapping across industry domains"] },
       { title: "Brand Sentiment & Mention Audits", items: ["Continuous tracking of AI model response sentiment", "Disinformation mitigation and reputation anchoring"] },
     ],
   },
   {
     tag: "02 · Generative Discovery",
     name: "GEO",
-    desc: "Generative Engine Optimization — structuring clinical content, schemas, and medical citations to improve visibility in Google AI Overviews, Gemini, and Microsoft Copilot summaries.",
-    idealFor: "Practices aiming to capture top positions in generative AI overview snippets.",
+    desc: "Generative Engine Optimization — structuring enterprise content, entity schemas, and authoritative citations to improve visibility in Google AI Overviews, Gemini, and Microsoft Copilot summaries.",
+    idealFor: "Leading brands aiming to capture top positions in generative AI overview snippets.",
     highlight: true,
     features: [
       { title: "Google AI Overviews Optimization", items: ["Optimization for inclusion in Google AI snapshot answers", "Passage-level semantic structuring & fact indexing"] },
-      { title: "Multi-Model Citation Architecture", items: ["High-trust external citations and clinical attribution graphs", "Schema.org MedicalWebPage and Physician structured data"] },
-      { title: "Generative Query Modeling", items: ["Targeting conversational, synthesized patient prompts", "Competitive AI share-of-voice benchmarking"] },
+      { title: "Multi-Model Citation Architecture", items: ["High-trust external citations and entity attribution graphs", "Schema.org Organization, Product, and Service structured data"] },
+      { title: "Generative Query Modeling", items: ["Targeting conversational, synthesized decision-maker prompts", "Competitive AI share-of-voice benchmarking"] },
     ],
   },
   {
     tag: "03 · Organic Search",
     name: "SEO",
-    desc: "Search Engine Optimization — high-intent search visibility, technical architecture, and local Google Maps optimization to capture qualified patient demand around the clock.",
-    idealFor: "Medical practices building lasting organic search presence and patient volume.",
+    desc: "Search Engine Optimization — high-intent search visibility, technical architecture, and localized search optimization to capture qualified customer demand around the clock.",
+    idealFor: "Businesses and regional powerhouses building lasting organic search presence and client pipeline.",
     features: [
-      { title: "High-Intent Keyword Optimization", items: ["Rankings for treatment-specific, local search terms", "Patient-focused topical content hubs and medical copy"] },
-      { title: "Local SEO & Google Maps Optimization", items: ["Google Business Profile optimization and review management", "Local citation building across healthcare directories"] },
+      { title: "High-Intent Keyword Optimization", items: ["Rankings for high-value commercial and service-specific terms", "Customer-focused topical content hubs and conversion copy"] },
+      { title: "Local SEO & Google Maps Optimization", items: ["Google Business Profile optimization and review management", "Local citation building across top-tier business directories"] },
       { title: "Technical SEO & Site Architecture", items: ["Core Web Vitals acceleration and mobile performance", "Crawl budget optimization and clean semantic hierarchy"] },
     ],
   },
@@ -50,9 +50,9 @@ const plans: Plan[] = [
     tag: "04 · Engineering",
     name: "Website Development",
     desc: "High-performance digital infrastructure engineered with cybersecurity rigor, vulnerability testing, and seamless optimization for search and generative engines.",
-    idealFor: "Healthcare providers requiring secure, high-converting, and modern web platforms.",
+    idealFor: "Enterprises, hotels, developers, and brands requiring secure, high-converting web platforms.",
     features: [
-      { title: "Cybersecurity-Focused Development", items: ["Build websites using security-conscious development practices", "Data encryption in transit, strict headers & HIPAA standards"] },
+      { title: "Cybersecurity-Focused Development", items: ["Build websites using security-conscious development practices", "Data encryption in transit, strict security headers & SOC-2/GDPR/HIPAA compliance"] },
       { title: "Secure Website Building & Testing", items: ["Develop and test websites to identify vulnerabilities and improve security", "Security vulnerability testing and secure form endpoint hardening"] },
       { title: "SEO, AIEO & GEO Optimization", items: ["Build websites optimized for search engines, AI-powered search, and generative engine discovery", "Lightning-fast Core Web Vitals with semantic HTML architecture"] },
     ],
@@ -70,13 +70,13 @@ export default function Solutions() {
         <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-ink">
-              One full‑stack <span className="font-serif-i">prescription</span>
+              One full‑stack <span className="font-serif-i">system</span>
               <br />
-              for healthcare growth.
+              for enterprise growth.
             </h2>
           </div>
           <p className="lg:col-span-5 text-[14px] sm:text-[15px] leading-relaxed text-ink/70 max-w-md lg:ml-auto">
-            Four specialized capabilities engineered to position healthcare practices at the forefront of search, artificial intelligence, and digital security.
+            Four specialized capabilities engineered to position market leaders at the forefront of search, artificial intelligence, and digital security.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ export default function Solutions() {
         </div>
 
         <div className="mt-8 sm:mt-10 text-center text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.2em] text-ink/50">
-          ✦ All systems are HIPAA‑compliant by design · Custom healthcare deployments available ✦
+          ✦ Security & regulatory compliance by design · Custom multi-industry enterprise deployments ✦
         </div>
       </div>
     </section>

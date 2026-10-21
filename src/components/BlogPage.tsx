@@ -11,75 +11,75 @@ interface ArticleItem {
 const ALL_ARTICLES: ArticleItem[] = [
   {
     category: "AIEO",
-    title: "AIEO for Healthcare: Getting Recommended by ChatGPT & Perplexity",
-    excerpt: "Learn how healthcare clinics optimize entities, knowledge graphs, and clinical citations to earn direct recommendations in conversational AI models.",
+    title: "AIEO for Modern Business: Getting Recommended by ChatGPT & Perplexity",
+    excerpt: "Learn how market-leading enterprises optimize entities, knowledge graphs, and brand citations to earn direct recommendations in conversational AI models.",
     url: "https://adweh.com/aieo-healthcare-chatgpt-perplexity/",
   },
   {
     category: "GEO",
     title: "Generative Engine Optimization: Optimizing for Google AI Overviews",
-    excerpt: "The complete guide to GEO for clinics — structuring medical answers, passage schemas, and factual attribution for Gemini snapshots.",
-    url: "https://adweh.com/geo-google-ai-overviews-clinics/",
+    excerpt: "The complete guide to GEO for enterprises — structuring factual answers, passage schemas, and entity attribution for Gemini snapshots.",
+    url: "https://adweh.com/geo-google-ai-overviews-enterprises/",
   },
   {
     category: "SEO",
-    title: "Local SEO for Clinics: Improving Google Maps Visibility",
-    excerpt: "How to optimize your medical practice for Google Maps local search and generate consistent organic patient inquiries.",
-    url: "https://adweh.com/local-seo-for-clinics-india/",
+    title: "Local SEO & Multi-Location Search: Dominating Google Maps Visibility",
+    excerpt: "How real estate developers, hotels, and multi-location businesses optimize Google Maps local search to generate consistent organic inbound inquiries.",
+    url: "https://adweh.com/local-seo-multi-location-enterprises/",
   },
   {
     category: "Website Development",
-    title: "Cybersecurity-Focused Development for Healthcare Platforms",
-    excerpt: "Building clinical websites using security-conscious development practices, strict headers, data encryption, and HIPAA compliance.",
-    url: "https://adweh.com/cybersecurity-focused-website-development-healthcare/",
+    title: "Cybersecurity-Focused Development for High-Value Web Platforms",
+    excerpt: "Building resilient enterprise websites using security-conscious development practices, strict headers, data encryption, and compliance standards.",
+    url: "https://adweh.com/cybersecurity-focused-website-development-enterprises/",
   },
   {
     category: "Website Development",
     title: "Secure Website Building and Vulnerability Testing",
-    excerpt: "How to develop and test medical websites to identify vulnerabilities, harden lead intake endpoints, and improve patient data security.",
+    excerpt: "How to develop and test enterprise websites to identify vulnerabilities, harden lead intake endpoints, and ensure airtight customer data security.",
     url: "https://adweh.com/secure-website-building-testing-vulnerabilities/",
   },
   {
     category: "Website Development",
     title: "Building Websites Optimized for SEO, AIEO, and GEO",
-    excerpt: "Engineering healthcare digital infrastructure from the ground up for search engines, AI-powered search, and generative engine discovery.",
+    excerpt: "Engineering high-performance digital infrastructure from the ground up for search engines, AI-powered search, and generative engine discovery.",
     url: "https://adweh.com/websites-optimized-seo-aieo-geo/",
   },
   {
     category: "AIEO",
-    title: "Conversational Query Targeting in Medical AI Engines",
-    excerpt: "How patients search using natural language prompts and how clinics optimize semantic authority to capture conversational intent.",
+    title: "Conversational Query Targeting in Enterprise AI Engines",
+    excerpt: "How high-intent buyers search using natural language prompts and how companies optimize semantic authority to capture conversational intent.",
     url: "https://adweh.com/conversational-query-targeting-aieo/",
   },
   {
     category: "GEO",
-    title: "Medical Knowledge Graphs & Citation Authority for GEO",
-    excerpt: "How to build and connect authoritative medical citations and schema structures that generative search engines trust.",
-    url: "https://adweh.com/medical-knowledge-graphs-citations-geo/",
+    title: "Enterprise Knowledge Graphs & Citation Authority for GEO",
+    excerpt: "How to build and connect authoritative ecosystem citations and schema structures that generative search engines trust.",
+    url: "https://adweh.com/enterprise-knowledge-graphs-citations-geo/",
   },
   {
     category: "SEO",
-    title: "High-Intent Keyword Architecture for Medical Practices",
-    excerpt: "Targeting high-converting, local healthcare search terms that drive scheduled clinical consultations.",
+    title: "High-Intent Keyword Architecture for Commercial Enterprises",
+    excerpt: "Targeting high-converting, commercial search terms that drive qualified inquiries across real estate, hospitality, healthcare, and manufacturing.",
     url: "https://adweh.com/high-intent-keyword-architecture-seo/",
   },
   {
     category: "SEO",
-    title: "Online Reputation & Review Signals for Local Search Visibility",
-    excerpt: "How to build and protect a strong Google review profile to maximize organic click-through and local search authority.",
-    url: "https://adweh.com/online-reputation-management-doctors-india/",
+    title: "Online Reputation & Review Signals for Regional Search Dominance",
+    excerpt: "How to build and protect a formidable review profile to maximize organic click-through, buyer confidence, and local search authority.",
+    url: "https://adweh.com/online-reputation-management-enterprises-india/",
   },
   {
     category: "AIEO",
     title: "Brand Sentiment & Entity Anchoring Across AI Assistants",
-    excerpt: "Auditing and reinforcing positive clinical recommendations across major conversational AI models and LLM engines.",
+    excerpt: "Auditing and reinforcing positive company recommendations across major conversational AI models and LLM engines.",
     url: "https://adweh.com/brand-sentiment-entity-anchoring-aieo/",
   },
   {
     category: "GEO",
-    title: "Search Engines vs Generative Engines: The Future of Patient Search",
-    excerpt: "A complete analysis of how generative AI summaries are reshaping medical patient discovery and clinic choice.",
-    url: "https://adweh.com/search-engines-vs-generative-engines-healthcare/",
+    title: "Search Engines vs Generative Engines: The Future of Customer Discovery",
+    excerpt: "A complete analysis of how generative AI summaries are reshaping buyer decision-making and cross-industry brand discovery.",
+    url: "https://adweh.com/search-engines-vs-generative-engines-enterprises/",
   },
 ];
 
@@ -87,21 +87,21 @@ const CHANNELS = [
   {
     num: "01",
     title: "AIEO (AI Engine Optimization)",
-    desc: "Earn direct clinic citations and entity recommendations across ChatGPT, Claude, and Perplexity when prospective patients ask AI assistants for care.",
+    desc: "Earn direct brand citations and entity recommendations across ChatGPT, Claude, and Perplexity when prospective clients ask AI assistants for recommendations.",
     badge: "AI CITATIONS",
     metric: "Top AI Citations",
   },
   {
     num: "02",
     title: "GEO (Generative Engine Optimization)",
-    desc: "Structure medical citations, clinical facts, and knowledge graphs for featured synthesis inside Google AI Overviews and Gemini search snapshots.",
+    desc: "Structure authoritative citations, enterprise facts, and knowledge graphs for featured synthesis inside Google AI Overviews and Gemini search snapshots.",
     badge: "GENERATIVE SEARCH",
     metric: "AI Overviews Ready",
   },
   {
     num: "03",
     title: "SEO (Search Engine Optimization)",
-    desc: "Optimize Google Maps local presence and high-intent clinical search keywords to capture qualified patient inquiries.",
+    desc: "Optimize Google Maps presence and high-intent commercial search keywords to capture qualified customer inquiries.",
     badge: "ORGANIC POWER",
     metric: "Local Search",
   },
@@ -110,7 +110,7 @@ const CHANNELS = [
     title: "Website Development",
     desc: "Cybersecurity-focused development, secure website building and vulnerability testing, fully optimized for search engines, AIEO, and generative discovery.",
     badge: "SECURE WEB",
-    metric: "HIPAA Hardened",
+    metric: "SOC-2 & GDPR Ready",
   },
 ];
 
@@ -160,10 +160,10 @@ export default function BlogPage() {
         <div className="max-w-3xl">
           <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd] mb-3">[ ADWEH Intelligence · 2026 ]</div>
           <h1 className="font-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-bone">
-            Insights & Guides for <span className="font-serif-i text-[#0000cd]">Healthcare Growth</span>
+            Insights & Guides for <span className="font-serif-i text-[#0000cd]">Enterprise Growth</span>
           </h1>
           <p className="mt-3.5 sm:mt-5 text-[14px] sm:text-[16px] leading-relaxed text-bone/70">
-            Actionable playbooks, strategic frameworks, and technical teardowns on AIEO, GEO, SEO, and cybersecurity-focused website development for ambitious clinics and healthcare leaders.
+            Actionable playbooks, strategic frameworks, and technical teardowns on AIEO, GEO, SEO, and cybersecurity-focused website development for ambitious leaders across real estate, hospitality, healthcare, manufacturing, and commerce.
           </p>
         </div>
 
@@ -175,15 +175,15 @@ export default function BlogPage() {
             
             <div className="group relative rounded-2xl sm:rounded-[28px] bg-white/[0.02] border border-white/10 p-5 sm:p-7 hover:bg-white/[0.04] hover:border-white/15 transition-all duration-300">
               <span className="inline-flex items-center gap-2 rounded-full bg-[#0000cd]/20 border border-[#0000cd]/30 px-3 py-1 text-[9.5px] font-mono text-white uppercase tracking-[0.1em]">
-                PATIENT ACQUISITION · CASE STUDY
+                CLIENT ACQUISITION · CASE STUDY
               </span>
               
               <h2 className="mt-4 sm:mt-5 font-display text-2xl sm:text-3xl lg:text-4xl leading-[1.15] tracking-tight text-bone">
-                How Aesthetic Clinics in India Are Getting <span className="font-serif-i text-[#0000cd]">3x More Patients</span> Using AIEO, GEO, SEO & Secure Web
+                How Industry Leaders Are Getting <span className="font-serif-i text-[#0000cd]">3x More Qualified Inquiries</span> Using AIEO, GEO, SEO & Secure Web
               </h2>
               
               <p className="mt-3 text-[13.5px] sm:text-[14px] leading-relaxed text-bone/70">
-                Picture this: two clinics in the same city, offering the same treatments. One is fully booked three weeks in advance; the other struggles to fill slots. The difference is online visibility across search and generative AI engines.
+                Picture this: two market competitors in the same sector, offering similar services. One has a consistent pipeline of high-ticket enterprise inquiries; the other struggles for leads. The difference is authoritative discovery across search and generative AI engines.
               </p>
               
               <div className="mt-6 pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
@@ -196,7 +196,7 @@ export default function BlogPage() {
                 </button>
 
                 <a
-                  href="https://adweh.com/digital-marketing-aesthetic-clinics-india/"
+                  href="https://adweh.com/digital-growth-enterprise-client-acquisition/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-[#0000cd] text-ink pl-4 pr-1.5 py-1.5 text-[12px] font-semibold hover:bg-bone transition group/btn"
@@ -247,7 +247,7 @@ export default function BlogPage() {
             <div className="mt-4 sm:mt-5 rounded-2xl border border-[#0000cd]/15 bg-[#0000cd]/[0.02] p-4 sm:p-5">
               <div className="text-[9.5px] font-mono uppercase tracking-[0.2em] text-[#0000cd]">[ Growth Engine Verdict ]</div>
               <p className="mt-2 text-[12.5px] sm:text-[13px] leading-relaxed text-bone/80">
-                Clinics that lead in 2026 treat AIEO, GEO, SEO, and cybersecurity-focused website development as core patient acquisition infrastructure. Combining AI citations with local search dominance and secure platforms creates a compounding 24/7 patient acquisition engine.
+                Enterprises that lead in 2026 treat AIEO, GEO, SEO, and cybersecurity-focused website development as core customer acquisition infrastructure. Combining AI citations with local search dominance and secure platforms creates a compounding 24/7 client acquisition engine.
               </p>
             </div>
           </div>
@@ -324,7 +324,7 @@ export default function BlogPage() {
           <div>
             <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd] mb-1">[ Take The Next Step ]</div>
             <h3 className="font-display text-2xl sm:text-3xl text-bone tracking-tight">
-              Ready to transform your clinic's patient acquisition?
+              Ready to transform your customer acquisition?
             </h3>
             <p className="mt-2 text-[13.5px] text-bone/60 max-w-lg">
               Get an end-to-end digital audit evaluating your AIEO, GEO, SEO, and website security posture.
@@ -368,44 +368,44 @@ export default function BlogPage() {
                 </span>
                 
                 <h2 className="font-display text-2xl sm:text-4xl leading-tight text-bone tracking-tight mt-2">
-                  How Aesthetic Clinics in India Get <span className="font-serif-i text-[#0000cd]">3x Patients</span>
+                  How Industry Leaders Scale <span className="font-serif-i text-[#0000cd]">Client Acquisition</span>
                 </h2>
 
                 <p>
-                  Picture this: two aesthetic clinics in the same city, offering the same treatments at similar prices. One is fully booked three weeks in advance. The other is struggling to fill appointment slots.
+                  Picture this: two market competitors in the same sector, offering similar services at similar price points. One is booked weeks in advance with high-ticket clients. The other is struggling to fill its sales pipeline.
                 </p>
 
                 <p>
-                  What is the difference? The first clinic shows up when patients search on Google and ask conversational AI engines like ChatGPT. The second one does not.
+                  What is the difference? The first company dominates high-intent search on Google and gets directly recommended by conversational AI engines like ChatGPT. The second one remains invisible.
                 </p>
 
                 <div className="border-l-2 border-[#0000cd] pl-4 py-1.5 my-4 italic text-bone/95 text-[14px]">
-                  "In 2026, digital discovery is no longer optional for clinics in India. It is the single biggest lever for predictable patient acquisition."
+                  "In 2026, multi-model digital discovery is no longer optional. It is the single biggest lever for predictable enterprise client acquisition."
                 </div>
 
                 <h3 className="font-display text-xl text-bone mt-6 font-semibold">
-                  The 4 Core Services That Drive Clinic Growth
+                  The 4 Core Capabilities That Drive Enterprise Growth
                 </h3>
                 
                 <div className="space-y-3 mt-3">
                   <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5">
                     <h4 className="font-display font-medium text-bone text-[14px]">1. AIEO (AI Engine Optimization)</h4>
                     <p className="mt-1 text-[12.5px] opacity-80">
-                      When prospective patients ask conversational assistants like ChatGPT, Claude, or Perplexity for "the best aesthetic doctor near me", AIEO ensures your clinic is indexed and cited as an authoritative medical entity.
+                      When prospective buyers ask conversational assistants like ChatGPT, Claude, or Perplexity for the top providers in their sector, AIEO ensures your brand is indexed and cited as an authoritative entity.
                     </p>
                   </div>
 
                   <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5">
                     <h4 className="font-display font-medium text-bone text-[14px]">2. GEO (Generative Engine Optimization)</h4>
                     <p className="mt-1 text-[12.5px] opacity-80">
-                      Google AI Overviews and Gemini generate synthesized answers at the top of search queries. GEO structures your clinical citations, schemas, and facts so generative engines feature your practice directly inside the answer snippet.
+                      Google AI Overviews and Gemini generate synthesized answers at the top of search queries. GEO structures your entity citations, schemas, and facts so generative engines feature your brand directly inside the answer snippet.
                     </p>
                   </div>
 
                   <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5">
                     <h4 className="font-display font-medium text-bone text-[14px]">3. SEO (Search Engine Optimization)</h4>
                     <p className="mt-1 text-[12.5px] opacity-80">
-                      High-intent keyword optimization paired with Google Business Profile local presence in Google Maps. Organic search brings trusted, consistent patient enquiries month after month without recurring ad spend.
+                      High-intent keyword optimization paired with Google Business Profile regional presence in Google Maps. Organic search brings trusted, consistent inbound enquiries month after month without recurring ad spend.
                     </p>
                   </div>
 

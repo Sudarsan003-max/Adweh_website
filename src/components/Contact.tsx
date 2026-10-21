@@ -54,13 +54,12 @@ export default function Contact() {
             <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[88px] leading-[0.9] tracking-[-0.04em]">
               Let's <span className="font-serif-i">make</span>
               <br />
-              your practice
+              your business
               <br />
               <span className="text-[#0000cd]">inevitable.</span>
             </h2>
             <p className="mt-4 sm:mt-8 max-w-md text-[14px] sm:text-[15px] leading-relaxed opacity-70">
-              Join the growing number of healthcare providers who have revolutionized their
-              patient acquisition with ADWEH's Growth packages.
+              Join the growing number of market leaders across real estate, hospitality, healthcare, manufacturing, and commerce who have revolutionized their customer acquisition with ADWEH.
             </p>
 
             <div className="mt-6 sm:mt-10 space-y-1 border-t border-white/10">
@@ -113,19 +112,19 @@ export default function Contact() {
                   <h3 className="mt-6 font-display text-3xl tracking-[-0.03em]">Request received.</h3>
                   <p className="mt-3 opacity-70 text-[14px] max-w-sm mx-auto">
                     Thanks {form.name || "there"} — our growth strategist will reach out within 24 hours
-                    with a tailored audit for {form.practice || "your practice"}.
+                    with a tailored audit for {form.practice || "your company"}.
                   </p>
                 </div>
               ) : (
                 <>
                   <h3 className="mt-5 font-display text-2xl sm:text-4xl tracking-[-0.04em]">
-                    Tell us about <span className="font-serif-i">your practice.</span>
+                    Tell us about <span className="font-serif-i">your enterprise.</span>
                   </h3>
 
                   <div className="mt-6 sm:mt-7 grid sm:grid-cols-2 gap-4 sm:gap-5">
-                    <Field label="Your name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} placeholder="Dr. Jane Doe" />
-                    <Field label="Work email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} placeholder="jane@clinic.com" />
-                    <Field label="Practice / brand" value={form.practice} onChange={(v) => setForm({ ...form, practice: v })} placeholder="Bright Family Clinic" />
+                    <Field label="Your name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} placeholder="Jane Doe" />
+                    <Field label="Work email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} placeholder="jane@company.com" />
+                    <Field label="Company / brand" value={form.practice} onChange={(v) => setForm({ ...form, practice: v })} placeholder="Apex Group / Grand Hotel" />
                     <div>
                       <label className="text-[10px] font-mono tracking-[0.22em] uppercase opacity-60">Service Needed</label>
                       <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-1.5 rounded-2xl sm:rounded-full bg-ink/5 p-1.5">
@@ -180,7 +179,7 @@ export default function Contact() {
                   </button>
 
                   <p className="mt-4 text-[10px] font-mono tracking-[0.2em] uppercase text-center opacity-50">
-                    🔒 HIPAA‑aware · We never share your info · No spam
+                    🔒 Enterprise data privacy · We never share your info · Strict NDA
                   </p>
                 </>
               )}

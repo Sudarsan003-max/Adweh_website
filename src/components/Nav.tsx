@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from "./logo.png";
 import logoWordmark from "./logo-wordmark.png";
 import { navigateTo } from "../utils/navigation";
 
@@ -67,14 +66,11 @@ export default function Nav() {
               onClick={(e) => handleNavClick(e, "/")}
               className="flex items-center gap-3 group pl-2 cursor-pointer"
             >
-              <span className="relative grid place-items-center h-9 w-9 rounded-full bg-[#0000cd] shadow-md shadow-[#0000cd]/30 group-hover:scale-105 transition-transform">
-                <img src={logo} className="h-[18px] w-auto object-contain" alt="ADWEH Logo" />
-              </span>
-              <div className="leading-none flex flex-col justify-center">
+              <div className="leading-none flex flex-col justify-center py-1">
                 <div className="flex items-center gap-2">
-                  <img src={logoWordmark} className="h-[16px] sm:h-[18px] w-auto object-contain brightness-105" alt="ADWEH" />
+                  <img src={logoWordmark} className="h-[18px] sm:h-[20px] w-auto object-contain brightness-110" alt="ADWEH" />
                 </div>
-                <div className="text-[9px] font-mono tracking-[0.22em] uppercase text-bone/50 mt-1" style={{ color: "rgba(245,241,234,.5)" }}>Digital Growth</div>
+                <div className="text-[9px] font-mono tracking-[0.25em] uppercase text-bone/50 mt-1" style={{ color: "rgba(245,241,234,.5)" }}>Growth Partner</div>
               </div>
             </a>
 

@@ -82,7 +82,7 @@ export default function Hero() {
               [ Manifesto / 01 ]
             </div>
             <p className="text-[15px] sm:text-[20px] leading-[1.45] sm:leading-[1.5] text-ink/85 max-w-lg">
-              A specialized digital growth studio combining AIEO, GEO, SEO, and security-first website development to strengthen brand visibility, build trust, and drive sustainable online growth.
+              A specialized digital growth studio combining AIEO, GEO, SEO, and security-first website development to capture high-intent demand and scale category leaders across real estate, hospitality, healthcare, manufacturing, and modern commerce.
             </p>
 
             <div className="mt-5 sm:mt-8 flex flex-wrap items-center gap-2.5 sm:gap-3">

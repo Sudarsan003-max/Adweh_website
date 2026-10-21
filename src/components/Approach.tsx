@@ -5,7 +5,7 @@ const pillars = [
     n: "01", 
     title: "Amplify", 
     t: "your brand", 
-    text: "Build authority and visibility across channels patients actually use to find care.",
+    text: "Build authority and visibility across the channels buyers, clients, and decision-makers use to discover solutions.",
     metric: "Leads: +428%",
     label: "Reach Extension",
     badge: "AIEO & Search Reach",
@@ -15,7 +15,7 @@ const pillars = [
     n: "02", 
     title: "Engage", 
     t: "your audience", 
-    text: "Conversations and content that turn passive interest into booked appointments.",
+    text: "Conversations and conversion flows that turn passive interest into qualified business inquiries.",
     metric: "Conversions: 4.8x",
     label: "Audience Activity",
     badge: "Secure Lead Capture",
@@ -25,7 +25,7 @@ const pillars = [
     n: "03", 
     title: "Educate", 
     t: "& empower", 
-    text: "Trust‑building, compliance‑aware content that informs patients and earns referrals.",
+    text: "Trust‑building, regulatory‑compliant content that informs decision-makers and accelerates conversion cycles.",
     metric: "Referrals: +160%",
     label: "Trust Score",
     badge: "GEO Authority",
@@ -35,7 +35,7 @@ const pillars = [
     n: "04", 
     title: "Deliver", 
     t: "tangible ROI", 
-    text: "Performance measured in patients, revenue and lifetime value — not vanity metrics.",
+    text: "Performance measured in qualified pipeline, enterprise revenue, and customer lifetime value — not vanity metrics.",
     metric: "ROI Yield: 12.4x",
     label: "Net Performance",
     badge: "Performance Measurement",
@@ -93,9 +93,7 @@ export default function Approach() {
               </h2>
             </div>
             <p className="lg:col-span-5 text-[13px] sm:text-[14px] leading-relaxed text-[#f5f1ea]/70 text-left max-w-md lg:ml-auto">
-              Healthcare is rapidly digitizing, with rising expectations for seamless, retail‑like experiences.
-              Patients prefer online‑first care — success now depends on trust, data‑driven execution,
-              and full‑funnel ROI delivery.
+              Every major sector is undergoing rapid digital transformation. From real estate and luxury hospitality to healthcare and industrial manufacturing, high-value clients demand seamless, modern digital experiences. Success depends on trust, AI-era discovery, and full-funnel ROI delivery.
             </p>
           </div>
         </div>
@@ -229,7 +227,7 @@ export default function Approach() {
                 {/* Footer status mock inside the screen */}
                 <div className="flex items-center justify-between border-t border-white/10 pt-[1.5cqi] text-[max(6px,0.85cqi)] font-mono text-white/30 tracking-widest uppercase">
                   <span>SECURE WEB INFRASTRUCTURE</span>
-                  <span>HIPAA-CONSCIOUS WEB SECURITY</span>
+                  <span>ENTERPRISE-GRADE WEB SECURITY</span>
                 </div>
 
               </div>

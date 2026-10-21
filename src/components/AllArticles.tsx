@@ -9,75 +9,75 @@ export default function AllArticles() {
   const articles = [
     {
       category: "AIEO",
-      title: "AIEO for Healthcare: Getting Recommended by ChatGPT & Perplexity",
-      excerpt: "Learn how healthcare clinics optimize entities, knowledge graphs, and clinical citations to earn direct recommendations in conversational AI models.",
+      title: "AIEO for Modern Business: Getting Recommended by ChatGPT & Perplexity",
+      excerpt: "Learn how market-leading enterprises optimize entities, knowledge graphs, and brand citations to earn direct recommendations in conversational AI models.",
       url: "https://adweh.com/aieo-healthcare-chatgpt-perplexity/",
     },
     {
       category: "GEO",
       title: "Generative Engine Optimization: Optimizing for Google AI Overviews",
-      excerpt: "The complete guide to GEO for clinics — structuring medical answers, passage schemas, and factual attribution for Gemini snapshots.",
-      url: "https://adweh.com/geo-google-ai-overviews-clinics/",
+      excerpt: "The complete guide to GEO for enterprises — structuring factual answers, passage schemas, and entity attribution for Gemini snapshots.",
+      url: "https://adweh.com/geo-google-ai-overviews-enterprises/",
     },
     {
       category: "SEO",
-      title: "Local SEO for Clinics: Improving Google Maps Visibility",
-      excerpt: "How to optimize your medical practice for Google Maps local search and generate consistent organic patient inquiries.",
-      url: "https://adweh.com/local-seo-for-clinics-india/",
+      title: "Local SEO & Multi-Location Search: Dominating Google Maps Visibility",
+      excerpt: "How real estate developers, hotels, and multi-location businesses optimize Google Maps local search to generate consistent organic inbound inquiries.",
+      url: "https://adweh.com/local-seo-multi-location-enterprises/",
     },
     {
       category: "Website Development",
-      title: "Cybersecurity-Focused Development for Healthcare Platforms",
-      excerpt: "Building clinical websites using security-conscious development practices, strict headers, data encryption, and HIPAA compliance.",
-      url: "https://adweh.com/cybersecurity-focused-website-development-healthcare/",
+      title: "Cybersecurity-Focused Development for High-Value Web Platforms",
+      excerpt: "Building resilient enterprise websites using security-conscious development practices, strict headers, data encryption, and compliance standards.",
+      url: "https://adweh.com/cybersecurity-focused-website-development-enterprises/",
     },
     {
       category: "Website Development",
       title: "Secure Website Building and Vulnerability Testing",
-      excerpt: "How to develop and test medical websites to identify vulnerabilities, harden lead intake endpoints, and improve patient data security.",
+      excerpt: "How to develop and test enterprise websites to identify vulnerabilities, harden lead intake endpoints, and ensure airtight customer data security.",
       url: "https://adweh.com/secure-website-building-testing-vulnerabilities/",
     },
     {
       category: "Website Development",
       title: "Building Websites Optimized for SEO, AIEO, and GEO",
-      excerpt: "Engineering healthcare digital infrastructure from the ground up for search engines, AI-powered search, and generative engine discovery.",
+      excerpt: "Engineering high-performance digital infrastructure from the ground up for search engines, AI-powered search, and generative engine discovery.",
       url: "https://adweh.com/websites-optimized-seo-aieo-geo/",
     },
     {
       category: "AIEO",
-      title: "Conversational Query Targeting in Medical AI Engines",
-      excerpt: "How patients search using natural language prompts and how clinics optimize semantic authority to capture conversational intent.",
+      title: "Conversational Query Targeting in Enterprise AI Engines",
+      excerpt: "How high-intent buyers search using natural language prompts and how companies optimize semantic authority to capture conversational intent.",
       url: "https://adweh.com/conversational-query-targeting-aieo/",
     },
     {
       category: "GEO",
-      title: "Medical Knowledge Graphs & Citation Authority for GEO",
-      excerpt: "How to build and connect authoritative medical citations and schema structures that generative search engines trust.",
-      url: "https://adweh.com/medical-knowledge-graphs-citations-geo/",
+      title: "Enterprise Knowledge Graphs & Citation Authority for GEO",
+      excerpt: "How to build and connect authoritative ecosystem citations and schema structures that generative search engines trust.",
+      url: "https://adweh.com/enterprise-knowledge-graphs-citations-geo/",
     },
     {
       category: "SEO",
-      title: "High-Intent Keyword Architecture for Medical Practices",
-      excerpt: "Targeting high-converting, local healthcare search terms that drive scheduled clinical consultations.",
+      title: "High-Intent Keyword Architecture for Commercial Enterprises",
+      excerpt: "Targeting high-converting, commercial search terms that drive qualified inquiries across real estate, hospitality, healthcare, and manufacturing.",
       url: "https://adweh.com/high-intent-keyword-architecture-seo/",
     },
     {
       category: "SEO",
-      title: "Online Reputation & Review Signals for Local Search Visibility",
-      excerpt: "How to build and protect a strong Google review profile to maximize organic click-through and local search authority.",
-      url: "https://adweh.com/online-reputation-management-doctors-india/",
+      title: "Online Reputation & Review Signals for Regional Search Dominance",
+      excerpt: "How to build and protect a formidable review profile to maximize organic click-through, buyer confidence, and local search authority.",
+      url: "https://adweh.com/online-reputation-management-enterprises-india/",
     },
     {
       category: "AIEO",
       title: "Brand Sentiment & Entity Anchoring Across AI Assistants",
-      excerpt: "Auditing and reinforcing positive clinical recommendations across major conversational AI models and LLM engines.",
+      excerpt: "Auditing and reinforcing positive company recommendations across major conversational AI models and LLM engines.",
       url: "https://adweh.com/brand-sentiment-entity-anchoring-aieo/",
     },
     {
       category: "GEO",
-      title: "Search Engines vs Generative Engines: The Future of Patient Search",
-      excerpt: "A complete analysis of how generative AI summaries are reshaping medical patient discovery and clinic choice.",
-      url: "https://adweh.com/search-engines-vs-generative-engines-healthcare/",
+      title: "Search Engines vs Generative Engines: The Future of Customer Discovery",
+      excerpt: "A complete analysis of how generative AI summaries are reshaping buyer decision-making and cross-industry brand discovery.",
+      url: "https://adweh.com/search-engines-vs-generative-engines-enterprises/",
     },
   ];
 
@@ -114,7 +114,7 @@ export default function AllArticles() {
             All Articles & Guides
           </h1>
           <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-bone/60">
-            Explore guides, case studies, and growth insights across AIEO, GEO, SEO, and website development for healthcare and aesthetic clinics.
+            Explore guides, case studies, and growth insights across AIEO, GEO, SEO, and website development for market leaders across real estate, hospitality, healthcare, manufacturing, and commerce.
           </p>
         </div>
 

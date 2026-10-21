@@ -3,27 +3,27 @@ import { SectionHead } from "./About";
 
 const items = [
   {
-    quote: "ADWEH completely transformed our patient acquisition. We went from 45 leads per month to 238 leads per month in just 6 months. Our ROI has been incredible.",
-    name: "Dr. Sarah Johnson",
-    role: "Founder · Bright Family Clinic",
-    initials: "SJ",
-    tag: "238 leads / mo",
+    quote: "ADWEH completely transformed our inbound client acquisition. We went from 45 qualified property inquiries per month to 238 per month in just 6 months. Our sales velocity has been incredible.",
+    name: "Marcus Vance",
+    role: "Managing Director · Apex Realty Group",
+    initials: "MV",
+    tag: "238 inquiries / mo",
     metric: "+428%",
   },
   {
-    quote: "Finally, a marketing agency that understands healthcare. They handle all our compliance requirements while delivering exceptional results. Highly recommended.",
-    name: "Michael Chen",
-    role: "CEO · Metro Health Group",
-    initials: "MC",
-    tag: "HIPAA Compliant",
-    metric: "100%",
+    quote: "Finally, a digital growth partner that understands high-value guest acquisition and compliance. They handle all our direct booking funnels while delivering exceptional ROI.",
+    name: "Elena Rostova",
+    role: "VP of Digital · Grand Horizon Hotels & Resorts",
+    initials: "ER",
+    tag: "Direct Bookings",
+    metric: "4.8x",
   },
   {
-    quote: "The team at ADWEH is professional, knowledgeable, and results‑driven. They've helped us become the #1 ranked practice in our area.",
-    name: "Dr. Amelia Rivera",
-    role: "Owner · Rivera Dental Studio",
-    initials: "AR",
-    tag: "Local Rank",
+    quote: "The team at ADWEH is professional, deeply technical, and results‑driven. They've established our multi-location brand as the #1 authority in organic search and AI answers.",
+    name: "David Sterling",
+    role: "COO · Rivera Group & Healthcare Partners",
+    initials: "DS",
+    tag: "Market Rank",
     metric: "#1",
   },
 ];
@@ -57,14 +57,14 @@ export default function Testimonials() {
         <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-ink">
-              Words from <span className="font-serif-i">healthcare</span>
+              Words from <span className="font-serif-i">industry</span>
               <br />
               leaders we serve.
             </h2>
           </div>
           <p className="lg:col-span-5 text-[14px] sm:text-[15px] leading-relaxed text-ink/70 max-w-md lg:ml-auto">
-            Real outcomes from real practices. Our partnerships average 4.98 / 5 stars across
-            130+ verified healthcare clients.
+            Real outcomes across real businesses. Our partnerships average 4.98 / 5 stars across
+            130+ verified enterprise and multi-industry clients.
           </p>
         </div>
 

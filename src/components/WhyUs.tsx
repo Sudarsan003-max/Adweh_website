@@ -17,20 +17,20 @@ const reasons = [
     icon: "↑",
     title: "Proven Track Record",
     items: [
-      "130+ medical practices and clinics scaled across India",
+      "130+ enterprises and high-growth brands scaled across India",
       "$400K+ in measurable revenue generated for clients",
-      "Average 428% growth in qualified organic patient inquiries",
+      "Average 428% growth in qualified organic inbound inquiries",
       "Strengthening Google Maps presence and AI engine citations",
     ],
   },
   {
     n: "03",
     icon: "⛨",
-    title: "Security-Conscious Web & HIPAA Awareness",
+    title: "Security-Conscious Web & Compliance Rigor",
     items: [
       "Cybersecurity-focused development practices across every build",
       "Secure website building, automated testing & vulnerability remediation",
-      "Security-conscious forms, SSL/TLS encryption, and HIPAA-compliant data practices",
+      "Security-conscious forms, SSL/TLS encryption, and enterprise-compliant data standards",
     ],
   },
   {

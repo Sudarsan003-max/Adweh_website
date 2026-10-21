@@ -7,13 +7,13 @@ export default function Founder() {
   const [activeTab, setActiveTab] = useState("overview");
 
   const results = [
-    "Engineered high-converting search and social ad campaigns, consistently driving 50+ qualified patient acquisitions monthly for premier cosmetic clinics.",
-    "Designed and deployed custom WhatsApp API integrations and CRM automation, accelerating patient response times to under 5 minutes.",
-    "Architected comprehensive patient-lifecycle tracking systems, mapping key treatment conversions and optimizing clinic sales pipeline velocity.",
-    "Efficiently directed and optimized over ₹5 Lakhs in monthly digital media budgets across search, social, and professional networks.",
-    "Developed targeted outbound marketing strategies, maintaining a consistent 30%+ email open rate and 8%+ engagement rate.",
-    "Audited and optimized clinic front-desk operations, elevating patient booking conversion rates by 40% through targeted sales training.",
-    "Delivered strategic growth consulting and operational audits for 10+ leading aesthetic practices nationwide, increasing clinic profitability."
+    "Engineered high-converting search, AI, and social acquisition engines, consistently driving 50+ high-ticket enterprise client acquisitions monthly across real estate, hospitality, and healthcare.",
+    "Designed and deployed custom API integrations and CRM workflow automations, accelerating inbound lead response times to under 5 minutes.",
+    "Architected comprehensive customer-lifecycle tracking systems, mapping key pipeline conversions and optimizing enterprise sales velocity.",
+    "Efficiently directed and optimized high-yield monthly digital media and organic search infrastructure across search, generative AI, and professional networks.",
+    "Developed targeted outbound marketing and account-based strategies, maintaining a consistent 30%+ open rate and 8%+ engagement rate.",
+    "Audited and optimized sales operations and intake workflows, elevating discovery-to-contract conversion rates by 40% through structured execution.",
+    "Delivered strategic growth consulting and operational audits for 130+ leading brands across real estate, hospitality, healthcare, and manufacturing nationwide."
   ];
 
   // Likes interactive state for the 3 LinkedIn posts
@@ -90,7 +90,7 @@ export default function Founder() {
             </h1>
             
             <p className="mt-3 text-[14px] font-medium leading-relaxed text-ink/80 max-w-2xl font-display flex flex-wrap items-center gap-x-1">
-              Founder <a href="https://www.instagram.com/adweh/" target="_blank" rel="noopener noreferrer" className="text-[#ff5d3b] hover:text-[#ff5d3b]/80 transition duration-300 font-bold underline-draw">@adweh</a> – The no 1 growth partner for healthcare | AIEO, GEO, SEO & Secure Website Development
+              Founder <a href="https://www.instagram.com/adweh/" target="_blank" rel="noopener noreferrer" className="text-[#ff5d3b] hover:text-[#ff5d3b]/80 transition duration-300 font-bold underline-draw">@adweh</a> – Growth Partner for High-Value Enterprises | AIEO, GEO, SEO & Secure Website Development
             </p>
 
             {/* Minimal, Professional Monospace Tags */}
@@ -185,13 +185,13 @@ export default function Founder() {
                 </h3>
                 <div className="text-[14.5px] leading-relaxed text-ink/85 space-y-6 font-sans">
                   <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-coral first-letter:leading-none">
-                    Isaac Vivian is the Founder of ADWEH, a specialized growth advisory and technology partner for aesthetic and cosmetic healthcare clinics. Under his leadership, ADWEH builds comprehensive digital discovery infrastructures that integrate AIEO, GEO, SEO, and cybersecurity-focused website development to deliver scalable, predictable patient growth.
+                    Isaac Vivian is the Founder of ADWEH, a specialized growth advisory and technology partner for ambitious enterprises across real estate, hospitality, healthcare, manufacturing, and modern commerce. Under his leadership, ADWEH builds comprehensive digital discovery infrastructures that integrate AIEO, GEO, SEO, and cybersecurity-focused website development to deliver scalable, predictable customer acquisition.
                   </p>
                   <p>
-                    With an entrepreneurial career shaped by a deep focus on conversion design, digital systems, and consumer psychology, Isaac recognized early that lead volume is irrelevant without robust operational follow-through. His business philosophy centers on execution endurance, building scalable systems that allow healthcare practices to convert marketing spend into measurable clinical bookings.
+                    With an entrepreneurial career shaped by a deep focus on conversion design, digital systems, and buyer psychology, Isaac recognized early that lead volume is irrelevant without robust operational follow-through. His business philosophy centers on execution endurance, building scalable systems that allow market leaders to convert digital visibility into measurable revenue and high-value contracts.
                   </p>
                   <p>
-                    Beyond digital patient acquisition, Isaac is actively engaged in researching the convergence of artificial intelligence, automated clinical workflows, and advanced healthcare infrastructure—areas influenced by his ongoing mentorship with industry leaders, including Mr. Lakshmi Narayanan (Emeritus Vice Chairman of Cognizant).
+                    Beyond client acquisition systems, Isaac is actively engaged in researching the convergence of artificial intelligence, automated enterprise workflows, and digital infrastructure—areas influenced by his ongoing mentorship with industry leaders, including Mr. Lakshmi Narayanan (Emeritus Vice Chairman of Cognizant).
                   </p>
                 </div>
               </div>
@@ -236,19 +236,19 @@ export default function Founder() {
                 <h3 className="font-display text-lg font-bold text-ink border-b border-ink/5 pb-3">The Systems View</h3>
                 <div className="mt-4 text-[13.5px] leading-relaxed text-ink/80 space-y-4 font-sans">
                   <p>
-                    Many premium aesthetic clinics deploy significant marketing budgets yet struggle to maintain high booking rates.
-                    <strong> The bottleneck is rarely the clinical expertise; it is the acquisition infrastructure.</strong>
+                    Many high-value enterprises across real estate, hospitality, healthcare, and manufacturing deploy significant budgets yet struggle to maintain consistent conversion velocity.
+                    <strong> The bottleneck is rarely the product or service expertise; it is the acquisition infrastructure.</strong>
                   </p>
                   <p>
-                    ADWEH resolves this by deploying end-to-end patient acquisition engines designed to streamline every phase of the patient lifecycle:
+                    ADWEH resolves this by deploying end-to-end customer acquisition engines designed to streamline every phase of the buyer lifecycle:
                   </p>
                   
                   {/* Clean Monospace Step Cards */}
                   <div className="space-y-3 mt-4">
                     {[
-                      { num: "01", title: "AIEO (AI Engine Optimization)", desc: "Optimizing direct clinic citations and entity recommendations across ChatGPT, Claude, and Perplexity." },
-                      { num: "02", title: "GEO (Generative Engine Optimization)", desc: "Structuring medical content and schema graphs for inclusion in Google AI Overviews and Gemini generative summaries." },
-                      { num: "03", title: "SEO (Search Engine Optimization)", desc: "Targeting local search and Google Maps visibility with high-intent clinical keyword optimization." },
+                      { num: "01", title: "AIEO (AI Engine Optimization)", desc: "Optimizing direct brand citations and entity recommendations across ChatGPT, Claude, and Perplexity." },
+                      { num: "02", title: "GEO (Generative Engine Optimization)", desc: "Structuring enterprise content and schema graphs for inclusion in Google AI Overviews and Gemini generative summaries." },
+                      { num: "03", title: "SEO (Search Engine Optimization)", desc: "Targeting high-intent organic search and regional maps visibility with commercial keyword optimization." },
                       { num: "04", title: "Cybersecurity Web Development", desc: "Building and testing secure websites optimized for search engines, AI-powered search, and generative discovery." }
                     ].map((item, index) => (
                       <div key={index} className="rounded-xl border border-ink/5 bg-paper/30 p-4 hover:border-ink/15 transition-all duration-300 group">
@@ -309,7 +309,7 @@ export default function Founder() {
                       <span className="rounded-full bg-ink/5 px-3 py-1 font-mono text-[9px] text-ink/60 font-semibold">May 2023 – Present</span>
                     </div>
                     <p className="mt-3.5 text-[13.5px] leading-relaxed text-ink/75">
-                      Scaling patient acquisition across aesthetic and cosmetic clinics through integrated AIEO, GEO, SEO, and cybersecurity-focused website development.
+                      Scaling customer acquisition across real estate, hospitality, healthcare, manufacturing, and commerce through integrated AIEO, GEO, SEO, and cybersecurity-focused website development.
                     </p>
                   </div>
                 </div>

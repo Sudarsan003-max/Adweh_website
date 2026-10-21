@@ -10,33 +10,33 @@ interface RouteMeta {
 
 const ROUTE_META: Record<RouteType, RouteMeta> = {
   home: {
-    title: "ADWEH — Healthcare's #1 Growth Partner",
-    description: "Healthcare growth partner scaling medical practices with HIPAA-aware AIEO, GEO, SEO, and cybersecurity-focused website development.",
+    title: "ADWEH — Enterprise Growth Partner",
+    description: "Specialized digital growth studio combining AIEO, GEO, SEO, and cybersecurity-focused website development to scale category leaders across real estate, hospitality, healthcare, manufacturing, and commerce.",
     canonical: "https://adweh.com/",
   },
   contact: {
-    title: "Contact ADWEH — Healthcare Growth Advisory & Audits",
-    description: "Connect with ADWEH to schedule your healthcare growth consultation across AIEO, GEO, SEO, and cybersecurity-focused website development.",
+    title: "Contact ADWEH — Enterprise Growth Advisory & Audits",
+    description: "Connect with ADWEH to schedule your growth consultation across AIEO, GEO, SEO, and cybersecurity-focused website development.",
     canonical: "https://adweh.com/contact",
   },
   founder: {
     title: "Isaac Vivian — Founder, ADWEH",
-    description: "Isaac Vivian is the Founder of ADWEH, engineering comprehensive patient discovery engines across AIEO, GEO, SEO, and cybersecurity-focused website development.",
+    description: "Isaac Vivian is the Founder of ADWEH, engineering comprehensive customer discovery and acquisition engines across AIEO, GEO, SEO, and cybersecurity-focused website development.",
     canonical: "https://adweh.com/founder",
   },
   blog: {
     title: "Insights & Guides — ADWEH Digital Growth Studio",
-    description: "Explore clinical growth guides, AIEO, GEO, SEO, and cybersecurity-focused website development insights by ADWEH.",
+    description: "Explore actionable growth guides, AIEO, GEO, SEO, and cybersecurity-focused website development insights by ADWEH.",
     canonical: "https://adweh.com/blog",
   },
   articles: {
     title: "All Articles & Guides — ADWEH Insights",
-    description: "Explore guides, case studies, and growth insights across AIEO, GEO, SEO, and website development for healthcare and aesthetic clinics.",
+    description: "Explore guides, case studies, and growth insights across AIEO, GEO, SEO, and website development for ambitious market leaders.",
     canonical: "https://adweh.com/articles",
   },
   mainframe: {
     title: "Mainframe Labs — ADWEH",
-    description: "Interactive healthcare technology and service inquiry portal by ADWEH.",
+    description: "Interactive enterprise technology and service inquiry portal by ADWEH.",
     canonical: "https://adweh.com/mainframe",
   },
 };

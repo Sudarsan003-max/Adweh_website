@@ -10,8 +10,8 @@ const problems = [
       "Zero citation authority across ChatGPT, Claude, and Perplexity (AIEO)",
       "Omission from Google AI Overviews and Gemini generative summaries (GEO)",
       "Poor local SEO and low visibility in local Google Maps search",
-      "Lack of structured clinical schemas and knowledge graph authority",
-      "Low visibility for high-intent, prompt-driven patient inquiries",
+      "Lack of structured enterprise schemas and knowledge graph authority",
+      "Low visibility for high-intent, prompt-driven customer and buyer inquiries",
     ],
   },
   {
@@ -22,7 +22,7 @@ const problems = [
       "Untested platforms with security vulnerabilities & unhardened endpoints",
       "Websites not optimized for search engines, AIEO, or generative discovery",
       "Poor Core Web Vitals, slow load speeds, and broken mobile conversion",
-      "Unsecured forms risking patient records and HIPAA non-compliance",
+      "Unsecured forms risking customer data, privacy leaks, and regulatory compliance",
     ],
   },
   {
@@ -31,8 +31,8 @@ const problems = [
     items: [
       "No strategic roadmap for the shift from blue links to AI answers",
       "Disjointed vendors with no unified search or generative tracking",
-      "Inconsistent clinical citations across medical directories",
-      "Vulnerable digital assets hindering clinic reputation and trust",
+      "Inconsistent brand citations across digital registries and ecosystem directories",
+      "Vulnerable digital assets hindering brand reputation and executive trust",
       "Falling behind competitors who optimize for AI and generative engines",
     ],
   },
@@ -47,20 +47,20 @@ export default function Problems() {
         backgroundSize: "32px 32px"
       }} />
       <div className="relative mx-auto max-w-[1400px] px-5">
-        <SectionHead n="004" label="The diagnosis" light />
+        <SectionHead n="004" label="The challenge" light />
 
         <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10">
           <div className="lg:col-span-7">
             <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em]">
-              The growth <span className="font-serif-i">symptoms</span>
+              The growth <span className="font-serif-i">bottlenecks</span>
               <br />
-              we treat <span className="text-[#ff5d3b]">every day.</span>
+              we eliminate <span className="text-[#ff5d3b]">every day.</span>
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pt-4">
             <p className="text-[14px] sm:text-[15px] leading-relaxed text-bone/65" style={{ color: "rgba(245,241,234,.65)" }}>
-              Most healthcare organizations struggle with the same three critical barriers.
-              We've identified them, systematized the solution, and solved them for 130+ healthcare brands.
+              Most growing enterprises struggle with the same three critical barriers.
+              We've identified them, systematized the solution, and solved them for 130+ market leaders.
             </p>
           </div>
         </div>
@@ -77,8 +77,8 @@ export default function Problems() {
           <div className="flex items-start gap-3.5 sm:gap-4">
             <span className="grid place-items-center h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-ink text-[#0000cd] text-base sm:text-xl shrink-0" style={{ background: "#0a0a0a" }}>✓</span>
             <div>
-              <div className="font-display text-lg sm:text-3xl tracking-[-0.03em]">Solved for 130+ healthcare brands.</div>
-              <div className="text-[11.5px] sm:text-[13px] opacity-70 mt-0.5 sm:mt-1">From single‑doctor practices to multi‑location specialty groups.</div>
+              <div className="font-display text-lg sm:text-3xl tracking-[-0.03em]">Solved for 130+ enterprise brands.</div>
+              <div className="text-[11.5px] sm:text-[13px] opacity-70 mt-0.5 sm:mt-1">From mid-market disruptors to multinational leaders across industries.</div>
             </div>
           </div>
           <a
@@ -90,7 +90,7 @@ export default function Problems() {
             className="group inline-flex items-center gap-2 rounded-full bg-ink text-bone pl-4 sm:pl-5 pr-1.5 sm:pr-2 py-1.5 sm:py-2 text-[12.5px] sm:text-[13px] font-medium cursor-pointer active:scale-[0.98] transition-transform w-full sm:w-auto justify-between sm:justify-start"
             style={{ background: "#0a0a0a", color: "#f5f1ea" }}
           >
-            <span>See the prescription</span>
+            <span>Explore the solutions</span>
             <span className="grid place-items-center h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-[#0000cd] text-ink transition-transform group-hover:rotate-45 shrink-0">
               <svg viewBox="0 0 24 24" className="h-3 sm:h-3.5 w-3 sm:w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7 17 17 7M9 7h8v8" />
@@ -123,7 +123,7 @@ function ProblemRow({ p }: { p: { n: string; title: string; items: string[] } })
         </h3>
         {/* Mobile tap preview hint */}
         <div className="md:hidden mt-1.5 text-[10px] font-mono text-bone/40">
-          {openMobile ? "Tap to close symptoms ▲" : `[ +${p.items.length} symptoms · Tap to view ▼ ]`}
+          {openMobile ? "Tap to close bottlenecks ▲" : `[ +${p.items.length} bottlenecks · Tap to view ▼ ]`}
         </div>
       </div>
       {/* arrow (top right on mobile, end on desktop) */}

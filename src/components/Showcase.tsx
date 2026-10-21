@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { SectionHead } from "./About";
-import logo from "./logo.png";
 
 type TabType = "DAILY" | "WEEKLY" | "MONTHLY" | "ALL";
 
@@ -156,13 +155,13 @@ export default function Showcase() {
         <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-white">
-              Visualizing your <span className="font-serif-i italic text-[#0000cd]">patient</span>
+              Visualizing your <span className="font-serif-i italic text-[#0000cd]">pipeline</span>
               <br />
-              acquisition pipeline.
+              and customer growth.
             </h2>
           </div>
           <p className="lg:col-span-5 text-[14px] sm:text-[15px] leading-relaxed text-bone/60 max-w-md lg:ml-auto">
-            A secure, HIPAA‑compliant dashboard system engineered to track lead velocity, patient lifetime value, and marketing ROI in real‑time.
+            A secure, enterprise‑grade dashboard system engineered to track lead velocity, customer lifetime value, and marketing ROI in real‑time.
           </p>
         </div>
 
@@ -186,7 +185,7 @@ export default function Showcase() {
             <div className="w-3 bg-gradient-to-t from-[#0000cd] to-transparent rounded-full" style={{ height: "70%" }} />
           </div>
 
-          {/* Card 2: Total Patient Value Chart (3D Angled Left) */}
+          {/* Card 2: Total Client Value Chart (3D Angled Left) */}
           <div 
             onMouseMove={(e) => handleMouseMove(e, 2)}
             onMouseEnter={() => setHoveredCard(2)}
@@ -382,8 +381,7 @@ export default function Showcase() {
                     isLightScene ? "border-black/5" : "border-white/5"
                   }`}>
                     <div className="flex items-center gap-1.5">
-                      <img src={logo} className="h-4 w-auto object-contain" alt="ADWEH Logo" />
-                      <span className={`text-[11px] font-display font-medium tracking-tight transition-colors duration-500 ${
+                      <span className={`text-[12px] font-display font-bold tracking-wider transition-colors duration-500 ${
                         isLightScene ? "text-[#0a0a0a]/95" : "text-white/95"
                       }`}>ADWEH</span>
                     </div>
@@ -401,16 +399,16 @@ export default function Showcase() {
                     }`}
                   >
                     {/* Animated 3D Glass Badge */}
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-white/12 to-white/0 border border-white/15 shadow-[0_15px_30px_rgba(0, 0, 205,0.25)] flex items-center justify-center animate-pulse relative group">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-white/12 to-white/0 border border-white/15 shadow-[0_15px_30px_rgba(0,0,205,0.25)] flex items-center justify-center animate-pulse relative group">
                       <div className="absolute inset-0 bg-gradient-to-tr from-[#0000cd]/20 to-transparent rounded-2xl opacity-50 blur-xs" />
-                      <img src={logo} className="h-9 w-auto object-contain z-10 spin-slow" alt="ADWEH Logo" />
+                      <span className="text-white font-display font-extrabold text-xl tracking-tight z-10">AW</span>
                     </div>
                     <div className="space-y-3">
                       <h4 className="text-[19px] font-display font-semibold leading-[1.2] tracking-tight text-white/95">
-                        Pioneering AIEO, GEO, SEO & Secure Web for Healthcare
+                        Pioneering AIEO, GEO, SEO & Secure Web Infrastructure
                       </h4>
-                      <p className="text-[10.5px] text-white/60 leading-relaxed max-w-[200px] mx-auto">
-                        We help clinics scale with AI citations, generative discovery, search, and secure website development.
+                      <p className="text-[10.5px] text-white/60 leading-relaxed max-w-[220px] mx-auto">
+                        Scaling leading businesses across real estate, hospitality, healthcare, manufacturing & commerce.
                       </p>
                     </div>
                   </div>
@@ -461,7 +459,7 @@ export default function Showcase() {
                     </div>
                   </div>
 
-                  {/* SCENE 2: HIPAA Patient Funnel (Dark Theme) */}
+                  {/* SCENE 2: Enterprise Conversion Funnel (Dark Theme) */}
                   <div 
                     className={`absolute inset-x-6 top-24 bottom-20 flex flex-col justify-center items-center text-center space-y-3.5 transition-all duration-700 ease-in-out ${
                       scene === 2 ? "opacity-100 translate-x-0 scale-100 pointer-events-auto" : "opacity-0 translate-x-4 scale-95 pointer-events-none"
@@ -470,9 +468,9 @@ export default function Showcase() {
                     <div className="space-y-1">
                       <div className="text-[9px] font-mono uppercase tracking-[0.2em] text-[#0000cd] font-bold">Acquisition Pipeline</div>
                       <h4 className="text-[19px] font-display font-semibold leading-tight text-white/95">
-                        HIPAA Patient Funnel
+                        Enterprise Conversion Funnel
                       </h4>
-                      <p className="text-[10px] text-white/50">End-to-end PHI‑protected conversion flow</p>
+                      <p className="text-[10px] text-white/50">End-to-end secure, high-intent client conversion flow</p>
                     </div>
 
                     {/* Funnel Stage Horizontal Bars */}
@@ -515,8 +513,8 @@ export default function Showcase() {
                       {/* Funnel Stage 4 */}
                       <div className="space-y-1 relative z-10">
                         <div className="flex justify-between text-[8px] font-mono text-white/50">
-                          <span className="flex items-center gap-1">4. BOOKED CONSULTATIONS <span className="text-[7.5px] opacity-75">🔒</span></span>
-                          <span className="text-[#0000cd] font-semibold">238 Patients</span>
+                          <span className="flex items-center gap-1">4. QUALIFIED INQUIRIES <span className="text-[7.5px] opacity-75">🔒</span></span>
+                          <span className="text-[#0000cd] font-semibold">238 Clients</span>
                         </div>
                         <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
                           <div className="h-full bg-gradient-to-r from-[#0000cd] to-[#4169e1] rounded-full shadow-[0_0_8px_rgba(0, 0, 205,0.6)]" style={{ width: "25%" }} />
@@ -553,8 +551,8 @@ export default function Showcase() {
                             SJ
                           </div>
                           <div>
-                            <div className="text-[9px] font-bold text-white">Dr. Sarah Johnson, MD</div>
-                            <div className="text-[8px] text-white/50">Metro Health Partners</div>
+                            <div className="text-[9px] font-bold text-white">Sarah Jenkins</div>
+                            <div className="text-[8px] text-white/50">Apex Enterprise Partners</div>
                           </div>
                         </div>
                         <div className="text-[9px] font-mono bg-[#0000cd]/10 text-[#0000cd] px-1.5 py-0.5 rounded font-bold">
@@ -733,7 +731,7 @@ export default function Showcase() {
         </div>
 
         <div className="mt-8 sm:mt-16 text-center text-[10.5px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-bone/40">
-          ✦ Real‑Time compliance monitoring & HIPAA‑compliant patient funnels ✦
+          ✦ Real‑Time compliance monitoring & enterprise conversion funnels ✦
         </div>
       </div>
     </section>

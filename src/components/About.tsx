@@ -39,8 +39,8 @@ export default function About() {
             </h2>
             <p className="mt-4 sm:mt-8 max-w-lg text-[14px] sm:text-[16px] leading-relaxed text-ink/70">
               ADWEH is a specialized growth partner delivering advanced AIEO, GEO, SEO,
-              and cybersecurity-focused website development for healthcare providers — engineering high-performing,
-              compliant patient discovery engines.
+              and cybersecurity-focused website development for ambitious enterprises — engineering high-performing,
+              compliant customer acquisition engines across diverse industries.
             </p>
 
             {/* Bento metrics */}
@@ -71,7 +71,7 @@ export default function About() {
                   </div>
                 </div>
                 <p className="mt-3 sm:mt-4 text-[11px] leading-relaxed text-ink/75">
-                  Isaac Vivian is the Founder of ADWEH, scaling aesthetic and cosmetic clinics across India with complete, high-converting patient acquisition engines.
+                  Isaac Vivian is the Founder of ADWEH, engineering comprehensive client acquisition engines across real estate, hospitality, healthcare, manufacturing, and modern commerce.
                 </p>
                 <div className="mt-2.5 sm:mt-3 flex items-center justify-between text-[8px] font-mono tracking-[0.2em] uppercase opacity-45 border-t border-ink/5 pt-2">
                   <span>Profile</span>
@@ -83,11 +83,11 @@ export default function About() {
             <div className="mt-6 sm:mt-10 grid sm:grid-cols-2 gap-3 sm:gap-4">
               <MissionCard
                 k="Our mission"
-                text="To empower healthcare organizations with integrated, compliant solutions across AIEO, GEO, SEO, and cybersecurity-focused website development — combining scalable systems and outcome-focused execution."
+                text="To empower leading organizations across diverse industries with integrated, compliant solutions across AIEO, GEO, SEO, and cybersecurity-focused website development — combining scalable systems and outcome-focused execution."
               />
               <MissionCard
                 k="Our vision"
-                text="To be the leading global partner for healthcare organizations seeking market leadership through AI-powered discovery, generative search optimization, and secure digital platforms."
+                text="To be the leading global partner for market-leading enterprises seeking category dominance through AI-powered discovery, generative search optimization, and secure digital platforms."
               />
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function About() {
                 <div className="rounded-[20px] bg-[#141414] p-6 text-bone" style={{ color: "#f5f1ea" }}>
                   <div className="flex items-start justify-between">
                     <div>
-                      <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-white">Patient Acquisition Engine</div>
+                      <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-white">Client Acquisition Engine</div>
                       <div className="mt-1.5 font-display text-2xl tracking-tight">Pulse.Live<span className="text-white">.</span></div>
                     </div>
                     <div className="relative h-14 w-14">

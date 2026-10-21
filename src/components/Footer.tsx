@@ -1,7 +1,6 @@
 import { GradientBars } from "./ui/gradient-bars-background";
 import Footer3DBackground from "./ui/footer-3d-background";
 import ParticleText from "./ui/particle-text";
-import logo from "./logo.png";
 import logoWordmark from "./logo-wordmark.png";
 import { navigateTo } from "../utils/navigation";
 
@@ -21,17 +20,14 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 -mt-8 sm:-mt-12">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Left Column: Studio profile */}
-          <div className="relative w-full md:max-w-[300px] flex-shrink-0">
+          <div className="relative w-full md:max-w-[320px] flex-shrink-0">
             <div className="flex items-center gap-2.5 mb-3.5">
-              <span className="relative grid place-items-center h-8 w-8 rounded-full bg-[#0000cd] shadow-md shadow-[#0000cd]/30">
-                <img src={logo} className="h-4 w-auto object-contain" alt="ADWEH Logo" />
-              </span>
-              <img src={logoWordmark} className="h-[15px] w-auto object-contain brightness-105" alt="ADWEH" />
+              <img src={logoWordmark} className="h-[20px] w-auto object-contain brightness-110" alt="ADWEH" />
             </div>
             <div className="relative z-10 text-[10px] font-mono uppercase tracking-[0.22em] opacity-85">[ Studio · 010 ]</div>
-            <p className="relative z-10 mt-4 text-[15px] leading-relaxed opacity-95">
-              Healthcare's #1 growth partner. We engineer AIEO, GEO, SEO, and
-              cybersecurity-focused web infrastructure that scales clinics into category leaders.
+            <p className="relative z-10 mt-4 text-[14.5px] leading-relaxed opacity-95">
+              The #1 growth partner for modern businesses. We engineer AIEO, GEO, SEO, and
+              cybersecurity-focused web infrastructure that scales companies across real estate, hospitality, healthcare, manufacturing, and commerce into category leaders.
             </p>
 
             <div className="relative z-10 mt-6 flex items-center gap-2">
@@ -81,11 +77,11 @@ export default function Footer() {
 
             <div className="col-span-2">
               <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-85">Newsletter</div>
-              <p className="mt-3 text-[13px] opacity-90">Monthly insights on healthcare growth, compliance & conversion.</p>
+              <p className="mt-3 text-[13px] opacity-90">Monthly insights on modern business growth, AI search & conversion.</p>
               <form onSubmit={(e) => e.preventDefault()} className="mt-4 flex items-center rounded-full border border-white/15 p-1 bg-black/40 backdrop-blur-sm">
                 <input
                   type="email"
-                  placeholder="you@clinic.com"
+                  placeholder="you@company.com"
                   className="flex-1 min-w-0 bg-transparent px-4 py-2 text-[16px] sm:text-[13px] placeholder:opacity-40 focus:outline-none"
                 />
                 <button className="rounded-full bg-[#0000cd] text-ink px-4 py-2 text-[12px] font-semibold hover:bg-white transition shrink-0 cursor-pointer">

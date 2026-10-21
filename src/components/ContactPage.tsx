@@ -77,12 +77,12 @@ export default function ContactPage() {
               <h1 className="font-display text-[36px] sm:text-[64px] lg:text-[76px] leading-[0.92] tracking-[-0.04em] text-white">
                 Let's <span className="font-serif-i italic">elevate</span>
                 <br />
-                your healthcare
+                your enterprise
                 <br />
-                <span className="text-[#0000cd]">practice.</span>
+                <span className="text-[#0000cd]">growth.</span>
               </h1>
               <p className="mt-6 text-[15.5px] leading-relaxed text-bone/70 max-w-lg">
-                Connect with ADWEH to deploy specialized growth infrastructure across AIEO, GEO, SEO, and cybersecurity-focused website development.
+                Connect with ADWEH to deploy specialized growth infrastructure across AIEO, GEO, SEO, and cybersecurity-focused website development for leading enterprises.
               </p>
             </div>
 
@@ -169,7 +169,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="mt-6 font-display text-3xl tracking-tight">Request received.</h3>
                   <p className="mt-3 opacity-70 text-[14.5px] max-w-sm mx-auto leading-relaxed">
-                    Thank you {form.name || "Doctor"} — our growth strategist will review your practice information and respond within 24 hours.
+                    Thank you {form.name || "there"} — our growth strategist will review your business information and respond within 24 hours.
                   </p>
                   <button
                     onClick={() => setSent(false)}
@@ -181,7 +181,7 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="mt-6 space-y-5">
                   <h3 className="font-display text-2xl sm:text-3xl tracking-tight">
-                    Tell us about <span className="font-serif-i italic">your practice.</span>
+                    Tell us about <span className="font-serif-i italic">your business.</span>
                   </h3>
 
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -192,7 +192,7 @@ export default function ContactPage() {
                         type="text"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        placeholder="Dr. Sarah Johnson"
+                        placeholder="Sarah Johnson"
                         className="mt-2 w-full rounded-full bg-ink/5 border border-ink/10 px-4 py-3 text-[16px] sm:text-[14px] placeholder:opacity-40 focus:outline-none focus:border-ink/40 focus:bg-bone transition"
                         style={{ background: "rgba(10,10,10,.04)" }}
                       />
@@ -205,7 +205,7 @@ export default function ContactPage() {
                         type="email"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        placeholder="sarah@clinic.com"
+                        placeholder="sarah@company.com"
                         className="mt-2 w-full rounded-full bg-ink/5 border border-ink/10 px-4 py-3 text-[16px] sm:text-[14px] placeholder:opacity-40 focus:outline-none focus:border-ink/40 focus:bg-bone transition"
                         style={{ background: "rgba(10,10,10,.04)" }}
                       />
@@ -213,13 +213,13 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="text-[10px] font-mono tracking-[0.22em] uppercase opacity-60 block">Practice / Brand Name</label>
+                    <label className="text-[10px] font-mono tracking-[0.22em] uppercase opacity-60 block">Company / Brand Name</label>
                     <input
                       required
                       type="text"
                       value={form.practice}
                       onChange={(e) => setForm({ ...form, practice: e.target.value })}
-                      placeholder="Metro Health Aesthetic Clinic"
+                      placeholder="Apex Real Estate / Grand Hotel"
                       className="mt-2 w-full rounded-full bg-ink/5 border border-ink/10 px-4 py-3 text-[16px] sm:text-[14px] placeholder:opacity-40 focus:outline-none focus:border-ink/40 focus:bg-bone transition"
                       style={{ background: "rgba(10,10,10,.04)" }}
                     />
@@ -257,7 +257,7 @@ export default function ContactPage() {
                       value={form.notes}
                       onChange={(e) => setForm({ ...form, notes: e.target.value })}
                       rows={4}
-                      placeholder="Current patient volume, AI/search presence, security or website goals…"
+                      placeholder="Current client volume, AI/search presence, security or website goals…"
                       className="mt-2 w-full rounded-2xl bg-ink/5 border border-ink/10 px-4 py-3 text-[16px] sm:text-[14px] placeholder:opacity-40 focus:outline-none focus:border-ink/40 focus:bg-bone transition"
                       style={{ background: "rgba(10,10,10,.04)" }}
                     />
@@ -278,7 +278,7 @@ export default function ContactPage() {
                   </button>
 
                   <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-center opacity-50 pt-2">
-                    🔒 HIPAA‑Aware · PHI Confidentiality · No Spam
+                    🔒 Enterprise Data Privacy · Strict Confidentiality · No Spam
                   </p>
                 </form>
               )}

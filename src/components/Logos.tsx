@@ -1,12 +1,13 @@
 const brands = [
+  "Apex Real Estate",
+  "Metro Hospitality",
   "CVS Health",
+  "Vanguard Industrial",
+  "The Grand Palace Hotels",
   "Johnson & Johnson",
-  "Metro Health",
-  "Wellness Medical",
-  "Smile Dental",
-  "Pulse Clinics",
-  "CareFirst",
-  "Vitality Group",
+  "Aura Living Spaces",
+  "Precision Dynamics",
+  "Vitality Health Group",
 ];
 
 export default function Logos() {
@@ -17,11 +18,11 @@ export default function Logos() {
           <div className="lg:col-span-4">
             <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-50 mb-2 sm:mb-3">[ Trusted by · 002 ]</div>
             <h2 className="font-display text-2xl sm:text-4xl tracking-[-0.03em]">
-              Leading healthcare brands trust the system.
+              Industry leaders trust the growth engine.
             </h2>
           </div>
           <div className="lg:col-span-8 text-[12.5px] sm:text-[13px] opacity-60 max-w-md lg:ml-auto">
-            From single‑location clinics to multi‑specialty networks — we operate as an embedded growth team behind some of the most ambitious healthcare brands today.
+            From real estate developers and luxury hotels to specialized healthcare networks and precision manufacturing — we operate as an embedded growth team behind category leaders.
           </div>
         </div>
       </div>
