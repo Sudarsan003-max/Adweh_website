@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SectionHead } from "./About";
 import { navigateTo } from "../utils/navigation";
 
@@ -103,8 +104,14 @@ export default function Problems() {
 }
 
 function ProblemRow({ p }: { p: { n: string; title: string; items: string[] } }) {
+  const [openMobile, setOpenMobile] = useState(p.n === "01");
+
   return (
-    <div className="group relative border-b border-white/10 py-5 sm:py-8 md:py-10 grid grid-cols-12 gap-2 sm:gap-6 hover:bg-white/[0.02] transition cursor-pointer" data-cursor="hover">
+    <div
+      onClick={() => setOpenMobile(!openMobile)}
+      className="group relative border-b border-white/10 py-5 sm:py-8 md:py-10 grid grid-cols-12 gap-2 sm:gap-6 hover:bg-white/[0.02] transition cursor-pointer"
+      data-cursor="hover"
+    >
       {/* number */}
       <div className="col-span-2 md:col-span-1">
         <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] opacity-50">[ {p.n} ]</div>
@@ -114,18 +121,24 @@ function ProblemRow({ p }: { p: { n: string; title: string; items: string[] } })
         <h3 className="font-display text-xl sm:text-2xl md:text-3xl tracking-[-0.02em] leading-tight transition group-hover:text-[#0000cd]">
           {p.title}
         </h3>
+        {/* Mobile tap preview hint */}
+        <div className="md:hidden mt-1.5 text-[10px] font-mono text-bone/40">
+          {openMobile ? "Tap to close symptoms ▲" : `[ +${p.items.length} symptoms · Tap to view ▼ ]`}
+        </div>
       </div>
       {/* arrow (top right on mobile, end on desktop) */}
       <div className="col-span-2 md:col-span-1 md:order-last flex justify-end items-start">
-        <span className="grid place-items-center h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-white/15 text-[#0000cd] transition group-hover:bg-[#0000cd] group-hover:text-ink group-hover:rotate-45">
+        <span className={`grid place-items-center h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-white/15 text-[#0000cd] transition duration-300 group-hover:bg-[#0000cd] group-hover:text-ink ${
+          openMobile ? "rotate-90 md:rotate-0 md:group-hover:rotate-45" : "group-hover:rotate-45"
+        }`}>
           <svg viewBox="0 0 24 24" className="h-3 sm:h-3.5 w-3 sm:w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 17 17 7M9 7h8v8" />
           </svg>
         </span>
       </div>
-      {/* items */}
-      <div className="col-span-12 md:col-span-5 mt-1 sm:mt-0">
-        <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1 sm:gap-y-1.5 pl-6 sm:pl-0">
+      {/* items: toggleable on mobile (< md), always visible on desktop (md:) */}
+      <div className={`col-span-12 md:col-span-5 mt-2 md:mt-0 ${openMobile ? "block" : "hidden md:block"}`}>
+        <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1 sm:gap-y-1.5 pl-6 sm:pl-0 pt-2 sm:pt-0 border-t border-white/5 sm:border-0">
           {p.items.map((it) => (
             <li key={it} className="flex items-start gap-2 text-[12.5px] sm:text-[13px] text-bone/65" style={{ color: "rgba(245,241,234,.65)" }}>
               <span className="mt-1.5 h-1 w-1 rounded-full bg-[#ff5d3b] flex-none" />

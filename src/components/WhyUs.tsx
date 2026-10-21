@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import { SectionHead } from "./About";
 
 const reasons = [
@@ -45,6 +46,26 @@ const reasons = [
 ];
 
 export default function WhyUs() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const left = scrollRef.current.scrollLeft;
+    const cardWidth = scrollRef.current.offsetWidth * 0.82;
+    const idx = Math.round(left / (cardWidth || 1));
+    setActiveIdx(Math.min(reasons.length - 1, Math.max(0, idx)));
+  };
+
+  const scrollToIdx = (idx: number) => {
+    if (!scrollRef.current) return;
+    const cards = scrollRef.current.children;
+    if (cards[idx]) {
+      (cards[idx] as HTMLElement).scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+    setActiveIdx(idx);
+  };
+
   return (
     <section id="why" className="relative py-10 sm:py-24 bg-bone-2/40 overflow-hidden" style={{ background: "#ebe5da" }}>
       <div className="mx-auto max-w-[1400px] px-5">
@@ -64,7 +85,56 @@ export default function WhyUs() {
           </p>
         </div>
 
-        <div className="mt-8 sm:mt-16 grid md:grid-cols-2 gap-px bg-ink/10 rounded-2xl sm:rounded-3xl overflow-hidden border border-ink/10">
+        {/* Mobile Horizontal Snap Carousel (< md) */}
+        <div className="md:hidden mt-6">
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-3 -mx-5 px-5 scrollbar-hide"
+          >
+            {reasons.map((r) => (
+              <div
+                key={r.title}
+                className="w-[85vw] max-w-[320px] shrink-0 snap-center rounded-2xl bg-[#f5f1ea] border border-ink/10 p-5 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-start justify-between">
+                    <span className="grid place-items-center h-10 w-10 rounded-full bg-[#0a0a0a] text-[#f5f1ea] text-lg">
+                      {r.icon}
+                    </span>
+                    <span className="font-mono text-[9.5px] tracking-[0.2em] opacity-50">[ {r.n} / 04 ]</span>
+                  </div>
+                  <h3 className="mt-4 font-display text-xl tracking-tight leading-snug">{r.title}</h3>
+                  <ul className="mt-3 space-y-2">
+                    {r.items.map((it) => (
+                      <li key={it} className="flex items-start gap-2 text-[12px] opacity-75 leading-relaxed">
+                        <span className="mt-1.5 h-1 w-2 bg-current opacity-60 flex-none" />
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex items-center justify-center gap-1.5 mt-2">
+            {reasons.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollToIdx(i)}
+                aria-label={`Go to reason ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeIdx === i ? "w-6 bg-[#0000cd]" : "w-1.5 bg-ink/20"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Grid (md and up) */}
+        <div className="hidden md:grid md:grid-cols-2 gap-px bg-ink/10 rounded-2xl sm:rounded-3xl overflow-hidden border border-ink/10 mt-8 sm:mt-16">
           {reasons.map((r, i) => (
             <div
               key={r.title}

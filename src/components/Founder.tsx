@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { navigateTo } from "../utils/navigation";
 import isaacPortrait from "./isaac_portrait.png";
-import isaacBeach from "./isaac_beach.jpg";
-import isaacMeeting from "./isaac_meeting.png";
-import isaacMinister from "./isaac_minister.jpg";
+import isaacAvatar from "./isaac_avatar.png";
 
 export default function Founder() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -65,9 +63,9 @@ export default function Founder() {
             <div className="absolute -inset-1.5 rounded-[42px_18px_42px_18px] border border-white/10 bg-white/[0.02] backdrop-blur-sm pointer-events-none" />
             
             {/* Main image container with custom squircle shape */}
-            <div className="h-48 w-48 rounded-[40px_16px_40px_16px] overflow-hidden border border-white/20 bg-[#141414] shadow-2xl relative transition-all duration-700 hover:scale-[1.03]">
-              <img src={isaacPortrait} alt="Isaac Vivian Portrait" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+            <div className="h-48 w-48 sm:h-52 sm:w-52 rounded-[40px_16px_40px_16px] overflow-hidden border border-white/20 bg-[#141414] shadow-2xl relative transition-all duration-700 hover:scale-[1.03]">
+              <img src={isaacAvatar} alt="Isaac Vivian Portrait" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-40 pointer-events-none" />
             </div>
             
             {/* Technical crop corner brackets */}
@@ -195,6 +193,29 @@ export default function Founder() {
                   <p>
                     Beyond digital patient acquisition, Isaac is actively engaged in researching the convergence of artificial intelligence, automated clinical workflows, and advanced healthcare infrastructure—areas influenced by his ongoing mentorship with industry leaders, including Mr. Lakshmi Narayanan (Emeritus Vice Chairman of Cognizant).
                   </p>
+                </div>
+              </div>
+
+              {/* Executive Office Showcase */}
+              <div className="rounded-3xl border border-ink/10 bg-[#0a0a0a] overflow-hidden shadow-md relative group">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
+                  <img
+                    src={isaacPortrait}
+                    alt="Isaac Vivian — Founder, ADWEH"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 flex items-end justify-between gap-4">
+                    <div>
+                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-coral font-bold block mb-1">Executive Studio</span>
+                      <p className="text-bone/90 text-xs sm:text-[13.5px] font-medium font-sans">
+                        Isaac Vivian — Founder & Growth Strategist, ADWEH
+                      </p>
+                    </div>
+                    <span className="shrink-0 font-mono text-[9px] uppercase tracking-[0.2em] px-3 py-1 rounded-full border border-white/15 bg-white/5 text-white/70 backdrop-blur-sm hidden sm:inline-block">
+                      Chennai, India
+                    </span>
+                  </div>
                 </div>
               </div>
 

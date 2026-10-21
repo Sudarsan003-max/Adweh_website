@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import isaacPortrait from "./isaac_portrait.png";
+import isaacHeadshot from "./isaac_headshot.png";
 import { navigateTo } from "../utils/navigation";
 
 const bars = [
@@ -12,6 +13,7 @@ const bars = [
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const [animate, setAnimate] = useState(false);
+  const [showMobilePulse, setShowMobilePulse] = useState(false);
   useEffect(() => {
     const io = new IntersectionObserver(([e]) => e.isIntersecting && setAnimate(true), { threshold: 0.25 });
     if (ref.current) io.observe(ref.current);
@@ -65,7 +67,7 @@ export default function About() {
                   </div>
                   {/* Real Portrait Avatar */}
                   <div className="relative h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-full overflow-hidden border border-ink/15 shadow-sm">
-                    <img src={isaacPortrait} alt="Isaac Vivian Portrait" className="w-full h-full object-cover" />
+                    <img src={isaacHeadshot} alt="Isaac Vivian Portrait" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <p className="mt-3 sm:mt-4 text-[11px] leading-relaxed text-ink/75">
@@ -91,8 +93,26 @@ export default function About() {
           </div>
 
           {/* Right: Pulse.Live dashboard */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32 mt-8 lg:mt-0">
-            <div className="relative">
+          <div className="lg:col-span-5 lg:sticky lg:top-32 mt-6 lg:mt-0">
+            {/* Mobile Simulator Preview & Toggle (< lg) */}
+            <div className="lg:hidden mb-4 rounded-2xl border border-ink/10 bg-[#ebe5da]/40 p-3.5 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5d3b] animate-ping" />
+                <div>
+                  <div className="text-[11px] font-mono uppercase tracking-wider font-bold text-ink">Pulse.Live Simulator</div>
+                  <div className="text-[10px] text-ink/60 font-mono">+428% Avg Inquiries · 24h</div>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowMobilePulse(!showMobilePulse)}
+                className="px-3.5 py-1.5 rounded-full bg-ink text-bone text-[11px] font-mono uppercase tracking-wider font-semibold cursor-pointer active:scale-95 transition"
+                style={{ background: "#0a0a0a", color: "#f5f1ea" }}
+              >
+                {showMobilePulse ? "Hide Simulator ▲" : "Launch Simulator ▼"}
+              </button>
+            </div>
+
+            <div className={`${showMobilePulse ? "block" : "hidden"} lg:block relative`}>
               {/* Stickers */}
               <div className="absolute -top-5 -left-2 sm:-left-6 z-10 sticker-pop">
                 <div className="bg-[#ff5d3b] text-bone text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1.5 rounded-full -rotate-[8deg]" style={{ color: "#f5f1ea" }}>

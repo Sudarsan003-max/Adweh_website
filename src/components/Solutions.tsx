@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SectionHead } from "./About";
 import { navigateTo } from "../utils/navigation";
 
@@ -59,6 +60,8 @@ const plans: Plan[] = [
 ];
 
 export default function Solutions() {
+  const [activeMobileTab, setActiveMobileTab] = useState(1); // Default to highlighted GEO
+
   return (
     <section id="services" className="relative py-10 sm:py-24 bg-paper overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-5">
@@ -77,7 +80,62 @@ export default function Solutions() {
           </p>
         </div>
 
-        <div className="mt-8 sm:mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {/* Mobile Tab Switcher & Single Active Card (< md) */}
+        <div className="md:hidden mt-6">
+          <div className="flex items-center justify-between gap-1 p-1 rounded-2xl bg-ink/5 border border-ink/10">
+            {plans.map((p, idx) => (
+              <button
+                key={p.name}
+                onClick={() => setActiveMobileTab(idx)}
+                className={`flex-1 py-2 px-1 text-[11px] font-mono font-bold tracking-wider rounded-xl transition-all duration-300 text-center whitespace-nowrap cursor-pointer ${
+                  activeMobileTab === idx
+                    ? "bg-ink text-bone shadow-sm"
+                    : "text-ink/60 hover:text-ink"
+                }`}
+                style={activeMobileTab === idx ? { background: "#0a0a0a", color: "#f5f1ea" } : {}}
+              >
+                {p.name.split(" ")[0]}
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-4">
+            <PlanCard plan={plans[activeMobileTab]} />
+          </div>
+
+          {/* Mobile pagination dots and prev/next */}
+          <div className="mt-4 flex items-center justify-between px-2">
+            <button
+              disabled={activeMobileTab === 0}
+              onClick={() => setActiveMobileTab((prev) => Math.max(0, prev - 1))}
+              className="py-1.5 px-3 text-[11px] font-mono uppercase tracking-wider text-ink/70 disabled:opacity-20 flex items-center gap-1 cursor-pointer rounded-lg bg-ink/5"
+            >
+              ← Prev
+            </button>
+            <div className="flex items-center gap-1.5">
+              {plans.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveMobileTab(idx)}
+                  aria-label={`Go to ${plans[idx].name}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    activeMobileTab === idx ? "w-6 bg-[#0000cd]" : "w-1.5 bg-ink/20"
+                  }`}
+                />
+              ))}
+            </div>
+            <button
+              disabled={activeMobileTab === plans.length - 1}
+              onClick={() => setActiveMobileTab((prev) => Math.min(plans.length - 1, prev + 1))}
+              className="py-1.5 px-3 text-[11px] font-mono uppercase tracking-wider text-ink/70 disabled:opacity-20 flex items-center gap-1 cursor-pointer rounded-lg bg-ink/5"
+            >
+              Next →
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop Grid (md and up) */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mt-8 sm:mt-14">
           {plans.map((p) => (
             <PlanCard key={p.name} plan={p} />
           ))}
