@@ -119,9 +119,9 @@ export default function ContactPage() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
                 <div className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Specialization</div>
                 <div className="mt-2 text-[14px] font-medium text-white">
-                  100% Healthcare
+                  100% Growth Focused
                 </div>
-                <div className="mt-1 text-[11px] font-mono text-bone/50">130+ Medical Brands Scaled</div>
+                <div className="mt-1 text-[11px] font-mono text-bone/50">130+ Brands Scaled</div>
               </div>
             </div>
 

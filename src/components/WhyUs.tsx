@@ -4,10 +4,10 @@ const reasons = [
   {
     n: "01",
     icon: "✦",
-    title: "100% Healthcare Focused",
+    title: "100% Growth Focused",
     items: [
-      "Specialized exclusively in healthcare AIEO, GEO, and SEO",
-      "Deep insight into patient search intent and medical entity authority",
+      "Specialized exclusively in AIEO, GEO, SEO, and website development",
+      "Deep insight into high-intent search behavior and digital entity authority",
       "Pioneering AI assistant visibility and generative search discovery",
     ],
   },
@@ -59,8 +59,8 @@ export default function WhyUs() {
             </h2>
           </div>
           <p className="lg:col-span-5 text-[15px] leading-relaxed text-ink/70 max-w-md lg:ml-auto">
-            We exclusively serve healthcare organizations — bringing deep industry expertise,
-            regulatory compliance mastery, and proven systems that deliver measurable results.
+            We partner with ambitious organizations — bringing deep technical expertise,
+            advanced AI and search systems, and proven execution that delivers measurable results.
           </p>
         </div>
 

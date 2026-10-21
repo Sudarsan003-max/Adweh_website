@@ -43,8 +43,8 @@ export default function About() {
 
             {/* Bento metrics */}
             <div ref={ref} className="mt-10 grid grid-cols-2 md:grid-cols-6 gap-3">
-              <BentoCard span="col-span-2 md:col-span-3" big="130+" k="Healthcare brands scaled" tone="dark" />
-              <BentoCard span="col-span-2 md:col-span-3" big="100%" k="Healthcare focused" tone="lime" />
+              <BentoCard span="col-span-2 md:col-span-3" big="130+" k="Brands scaled" tone="dark" />
+              <BentoCard span="col-span-2 md:col-span-3" big="100%" k="Growth focused" tone="lime" />
               <BentoCard span="col-span-1 md:col-span-2" big="25+" k="In‑house specialists" />
               <BentoCard span="col-span-1 md:col-span-2" big="12" k="Proprietary systems" />
               <BentoCard span="col-span-1 md:col-span-2" big="5+" k="Years experience" />
