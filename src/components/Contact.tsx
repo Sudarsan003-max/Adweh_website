@@ -42,39 +42,39 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 bg-ink overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
+    <section id="contact" className="relative py-10 sm:py-24 bg-ink overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
       <div className="absolute -top-20 -right-20 h-[420px] w-[420px] blob bg-[#0000cd] opacity-90" />
       <div className="absolute bottom-10 -left-20 h-[260px] w-[260px] rounded-full bg-[#0000cd]/40 blur-[80px]" />
 
       <div className="relative mx-auto max-w-[1400px] px-5">
-        <SectionHead n="009" label="Initiate contact" light />
+        <SectionHead n="010" label="Initiate contact" light />
 
-        <div className="mt-8 sm:mt-12 grid lg:grid-cols-12 gap-8 sm:gap-12 items-start">
+        <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-12 items-start">
           <div className="lg:col-span-6">
-            <h2 className="font-display text-[36px] sm:text-[64px] lg:text-[88px] leading-[0.9] tracking-[-0.04em]">
+            <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[88px] leading-[0.9] tracking-[-0.04em]">
               Let's <span className="font-serif-i">make</span>
               <br />
               your practice
               <br />
               <span className="text-[#0000cd]">inevitable.</span>
             </h2>
-            <p className="mt-6 sm:mt-8 max-w-md text-[15px] leading-relaxed opacity-70">
+            <p className="mt-4 sm:mt-8 max-w-md text-[14px] sm:text-[15px] leading-relaxed opacity-70">
               Join the growing number of healthcare providers who have revolutionized their
               patient acquisition with ADWEH's Growth packages.
             </p>
 
-            <div className="mt-10 space-y-1 border-t border-white/10">
+            <div className="mt-6 sm:mt-10 space-y-1 border-t border-white/10">
               {[
                 { k: "Free Strategy Call", v: "30‑min deep dive into growth bottlenecks" },
                 { k: "Custom Growth Audit", v: "Full report on AIEO, GEO, SEO & web security" },
                 { k: "No Lock‑in", v: "Transparent pricing · month‑to‑month engagement" },
               ].map((b) => (
-                <div key={b.k} className="group flex items-center justify-between py-5 border-b border-white/10 cursor-pointer" data-cursor="hover">
-                  <div className="flex items-center gap-4">
-                    <span className="grid place-items-center h-9 w-9 rounded-full bg-[#0000cd] text-ink text-[12px] font-bold">✓</span>
+                <div key={b.k} className="group flex items-center justify-between py-3.5 sm:py-5 border-b border-white/10 cursor-pointer" data-cursor="hover">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <span className="grid place-items-center h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-[#0000cd] text-ink text-[11px] sm:text-[12px] font-bold">✓</span>
                     <div>
-                      <div className="text-[15px] font-medium">{b.k}</div>
-                      <div className="text-[12px] opacity-55">{b.v}</div>
+                      <div className="text-[14px] sm:text-[15px] font-medium">{b.k}</div>
+                      <div className="text-[11.5px] sm:text-[12px] opacity-55">{b.v}</div>
                     </div>
                   </div>
                   <span className="opacity-30 group-hover:opacity-100 group-hover:text-[#0000cd] transition">↗</span>
@@ -82,14 +82,14 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl border border-white/10 p-4">
-                <div className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Email</div>
-                <div className="mt-1 text-[13px]">admin@adweh.com</div>
+            <div className="mt-6 sm:mt-10 grid grid-cols-2 gap-2.5 sm:gap-3">
+              <div className="rounded-2xl border border-white/10 p-3.5 sm:p-4">
+                <div className="text-[9.5px] sm:text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Email</div>
+                <div className="mt-1 text-[12.5px] sm:text-[13px]">admin@adweh.com</div>
               </div>
-              <div className="rounded-2xl border border-white/10 p-4">
-                <div className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Locations</div>
-                <div className="mt-1 text-[13px]">CHENNAI</div>
+              <div className="rounded-2xl border border-white/10 p-3.5 sm:p-4">
+                <div className="text-[9.5px] sm:text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Locations</div>
+                <div className="mt-1 text-[12.5px] sm:text-[13px]">CHENNAI</div>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Contact() {
           <div className="lg:col-span-6">
             <form
               onSubmit={handleSubmit}
-              className="relative rounded-2xl sm:rounded-[28px] bg-bone text-ink p-5 sm:p-9 shadow-2xl"
+              className="relative rounded-2xl sm:rounded-[28px] bg-bone text-ink p-4 sm:p-9 shadow-2xl"
               style={{ background: "#f5f1ea" }}
             >
               <div className="flex items-center justify-between">

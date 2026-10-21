@@ -62,7 +62,7 @@ export default function Footer() {
                 <li><a href="/#work" onClick={(e) => { e.preventDefault(); navigateTo("/#work"); }} className="underline-draw cursor-pointer">About</a></li>
                 <li><a href="/#why" onClick={(e) => { e.preventDefault(); navigateTo("/#why"); }} className="underline-draw cursor-pointer">Why us</a></li>
                 <li><a href="/#results" onClick={(e) => { e.preventDefault(); navigateTo("/#results"); }} className="underline-draw cursor-pointer">Results</a></li>
-                <li><a href="/#blog" onClick={(e) => { e.preventDefault(); navigateTo("/#blog"); }} className="underline-draw cursor-pointer">Blog</a></li>
+                <li><a href="/blog" onClick={(e) => { e.preventDefault(); navigateTo("/blog"); }} className="underline-draw cursor-pointer">Blog</a></li>
                 <li><a href="/founder" onClick={(e) => { e.preventDefault(); navigateTo("/founder"); }} className="underline-draw cursor-pointer">Founder</a></li>
                 <li><a href="/mainframe" onClick={(e) => { e.preventDefault(); navigateTo("/mainframe"); }} className="underline-draw cursor-pointer">Mainframe</a></li>
                 <li><a href="/contact" onClick={(e) => { e.preventDefault(); navigateTo("/contact"); }} className="underline-draw cursor-pointer">Contact</a></li>
@@ -102,42 +102,42 @@ export default function Footer() {
         </div>
 
         {/* Office Contact Info */}
-        <div className="mt-8 pt-10 border-t border-white/10 grid sm:grid-cols-3 gap-6">
-          <div className="rounded-2xl border border-white/[0.08] bg-[#0e0e12]/80 backdrop-blur-md p-6 hover:border-[#5c85ff]/30 hover:bg-[#0e0e12]/95 hover:shadow-[0_15px_30px_-10px_rgba(92,133,255,0.15)] transition-all duration-300 group/card relative overflow-hidden">
+        <div className="mt-8 pt-6 sm:pt-10 border-t border-white/10 grid sm:grid-cols-3 gap-3.5 sm:gap-6">
+          <div className="rounded-2xl border border-white/[0.08] bg-[#0e0e12]/80 backdrop-blur-md p-4 sm:p-6 hover:border-[#5c85ff]/30 hover:bg-[#0e0e12]/95 hover:shadow-[0_15px_30px_-10px_rgba(92,133,255,0.15)] transition-all duration-300 group/card relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#5c85ff]/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
             <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#5c85ff] flex items-center gap-1.5">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#ff5d3b] animate-pulse" />
               [ Head Office ]
             </div>
-            <p className="mt-3.5 text-[14px] leading-relaxed text-bone/80">
+            <p className="mt-3 text-[13.5px] sm:text-[14px] leading-relaxed text-bone/80">
               2/17B Palyathan Street, Alandur<br />
               <span className="text-white font-medium">Chennai – 600 016</span>
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/[0.08] bg-[#0e0e12]/80 backdrop-blur-md p-6 hover:border-[#5c85ff]/30 hover:bg-[#0e0e12]/95 hover:shadow-[0_15px_30px_-10px_rgba(92,133,255,0.15)] transition-all duration-300 group/card relative overflow-hidden">
+          <div className="rounded-2xl border border-white/[0.08] bg-[#0e0e12]/80 backdrop-blur-md p-4 sm:p-6 hover:border-[#5c85ff]/30 hover:bg-[#0e0e12]/95 hover:shadow-[0_15px_30px_-10px_rgba(92,133,255,0.15)] transition-all duration-300 group/card relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#5c85ff]/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
             <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#5c85ff] flex items-center gap-1.5">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#5c85ff] animate-pulse" />
               [ Working Hours ]
             </div>
-            <p className="mt-3.5 text-[14px] leading-relaxed text-bone/80">
+            <p className="mt-3 text-[13.5px] sm:text-[14px] leading-relaxed text-bone/80">
               Monday – Friday<br />
               <span className="text-white font-medium">07:00 AM – 09:00 PM</span>
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/[0.08] bg-[#0e0e12]/80 backdrop-blur-md p-6 hover:border-green-500/30 hover:bg-[#0e0e12]/95 hover:shadow-[0_15px_30px_-10px_rgba(34,197,94,0.15)] transition-all duration-300 group/card relative overflow-hidden">
+          <div className="rounded-2xl border border-white/[0.08] bg-[#0e0e12]/80 backdrop-blur-md p-4 sm:p-6 hover:border-green-500/30 hover:bg-[#0e0e12]/95 hover:shadow-[0_15px_30px_-10px_rgba(34,197,94,0.15)] transition-all duration-300 group/card relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-green-500/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
             <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#5c85ff] flex items-center gap-1.5">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               [ Call Us ]
             </div>
-            <div className="mt-3.5">
-              <a href="tel:+918667031931" className="text-2xl font-display font-semibold text-white hover:text-green-400 transition-colors duration-300 block tracking-tight">
+            <div className="mt-3">
+              <a href="tel:+918667031931" className="text-xl sm:text-2xl font-display font-semibold text-white hover:text-green-400 transition-colors duration-300 block tracking-tight">
                 +91 86670 31931
               </a>
-              <div className="mt-1 text-[11px] text-white/40 font-mono">Mon–Fri · IST (Online Now)</div>
+              <div className="mt-1 text-[10.5px] sm:text-[11px] text-white/40 font-mono">Mon–Fri · IST (Online Now)</div>
             </div>
           </div>
         </div>

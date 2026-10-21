@@ -145,7 +145,7 @@ export default function Showcase() {
   const ry = (tilt?.id === 3 && tilt) ? -tilt.y * 35 : 0;
 
   return (
-    <section className="relative py-28 bg-[#020202] text-bone overflow-hidden" style={{ background: "#050505", color: "#f5f1ea" }}>
+    <section className="relative py-10 sm:py-24 bg-[#020202] text-bone overflow-hidden" style={{ background: "#050505", color: "#f5f1ea" }}>
       {/* Background glowing gradients */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0000cd]/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-20 -left-40 w-96 h-96 bg-[#4169e1]/5 rounded-full blur-[100px] pointer-events-none" />
@@ -153,22 +153,22 @@ export default function Showcase() {
       <div className="mx-auto max-w-[1400px] px-5">
         <SectionHead n="007" label="System Showcase" light />
 
-        <div className="mt-12 grid lg:grid-cols-12 gap-10 items-end">
+        <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-white">
+            <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-white">
               Visualizing your <span className="font-serif-i italic text-[#0000cd]">patient</span>
               <br />
               acquisition pipeline.
             </h2>
           </div>
-          <p className="lg:col-span-5 text-[15px] leading-relaxed text-bone/60 max-w-md lg:ml-auto">
+          <p className="lg:col-span-5 text-[14px] sm:text-[15px] leading-relaxed text-bone/60 max-w-md lg:ml-auto">
             A secure, HIPAA‑compliant dashboard system engineered to track lead velocity, patient lifetime value, and marketing ROI in real‑time.
           </p>
         </div>
 
         {/* Widescreen Behance-style Layout with 3D Perspective Container */}
         <div 
-          className="mt-12 sm:mt-20 relative flex items-center justify-start md:justify-center gap-4 sm:gap-6 py-8 sm:py-16 overflow-x-auto lg:overflow-visible scrollbar-hide max-w-full px-4 md:px-0"
+          className="mt-6 sm:mt-16 relative flex items-center justify-start md:justify-center gap-3 sm:gap-6 py-4 sm:py-16 overflow-x-auto lg:overflow-visible scrollbar-hide max-w-full px-2 sm:px-4 md:px-0"
           style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
         >
           
@@ -248,7 +248,7 @@ export default function Showcase() {
             onMouseMove={(e) => handleMouseMove(e, 3)}
             onMouseEnter={() => setHoveredCard(3)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className="relative w-[310px] max-w-[calc(100vw-40px)] h-[620px] shrink-0 z-20 select-none"
+            className="relative w-[280px] xs:w-[310px] max-w-[calc(100vw-36px)] h-[560px] xs:h-[620px] shrink-0 z-20 select-none"
             style={getCardStyle(3)}
           >
             {/* Volume & Power Buttons (3D Protrusions) */}
@@ -732,7 +732,7 @@ export default function Showcase() {
 
         </div>
 
-        <div className="mt-16 text-center text-[11px] font-mono uppercase tracking-[0.25em] text-bone/40">
+        <div className="mt-8 sm:mt-16 text-center text-[10.5px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-bone/40">
           ✦ Real‑Time compliance monitoring & HIPAA‑compliant patient funnels ✦
         </div>
       </div>

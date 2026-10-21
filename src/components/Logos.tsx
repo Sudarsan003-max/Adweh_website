@@ -11,38 +11,38 @@ const brands = [
 
 export default function Logos() {
   return (
-    <section className="relative bg-ink py-20 overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
+    <section className="relative bg-ink py-10 sm:py-20 overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
       <div className="mx-auto max-w-[1400px] px-5">
-        <div className="grid lg:grid-cols-12 gap-6 items-end">
+        <div className="grid lg:grid-cols-12 gap-4 sm:gap-6 items-end">
           <div className="lg:col-span-4">
-            <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-50 mb-3">[ Trusted by · 002 ]</div>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-[-0.03em]">
+            <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-50 mb-2 sm:mb-3">[ Trusted by · 002 ]</div>
+            <h2 className="font-display text-2xl sm:text-4xl tracking-[-0.03em]">
               Leading healthcare brands trust the system.
             </h2>
           </div>
-          <div className="lg:col-span-8 text-[13px] opacity-60 max-w-md lg:ml-auto">
+          <div className="lg:col-span-8 text-[12.5px] sm:text-[13px] opacity-60 max-w-md lg:ml-auto">
             From single‑location clinics to multi‑specialty networks — we operate as an embedded growth team behind some of the most ambitious healthcare brands today.
           </div>
         </div>
       </div>
 
-      <div className="mt-14 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
-        <div className="marquee-track inline-flex gap-16 whitespace-nowrap pr-16">
+      <div className="mt-6 sm:mt-14 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+        <div className="marquee-track inline-flex gap-8 sm:gap-16 whitespace-nowrap pr-8 sm:pr-16">
           {[...brands, ...brands, ...brands].map((b, i) => (
-            <span key={i} className="inline-flex items-center gap-5">
-              <span className="font-display text-[40px] sm:text-[56px] tracking-[-0.03em] text-bone" style={{ color: "#f5f1ea" }}>{b}</span>
-              <span className="h-2 w-2 rounded-full bg-[#0000cd]" />
+            <span key={i} className="inline-flex items-center gap-3 sm:gap-5">
+              <span className="font-display text-[28px] sm:text-[56px] tracking-[-0.03em] text-bone" style={{ color: "#f5f1ea" }}>{b}</span>
+              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#0000cd]" />
             </span>
           ))}
         </div>
       </div>
 
-      <div className="mt-6 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
-        <div className="marquee-track-rev inline-flex gap-16 whitespace-nowrap pr-16">
+      <div className="mt-4 sm:mt-6 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+        <div className="marquee-track-rev inline-flex gap-8 sm:gap-16 whitespace-nowrap pr-8 sm:pr-16">
           {[...brands, ...brands, ...brands].map((b, i) => (
-            <span key={i} className="inline-flex items-center gap-5">
-              <span className="font-display text-[40px] sm:text-[56px] tracking-[-0.03em] text-outline-bone">{b}</span>
-              <span className="text-[#0000cd] text-2xl">✦</span>
+            <span key={i} className="inline-flex items-center gap-3 sm:gap-5">
+              <span className="font-display text-[28px] sm:text-[56px] tracking-[-0.03em] text-outline-bone">{b}</span>
+              <span className="text-[#0000cd] text-lg sm:text-2xl">✦</span>
             </span>
           ))}
         </div>

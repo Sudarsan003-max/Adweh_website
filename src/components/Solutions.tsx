@@ -60,30 +60,30 @@ const plans: Plan[] = [
 
 export default function Solutions() {
   return (
-    <section id="services" className="relative py-20 sm:py-28 bg-paper overflow-hidden">
+    <section id="services" className="relative py-10 sm:py-24 bg-paper overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-5">
         <SectionHead n="006" label="The system" />
 
-        <div className="mt-8 sm:mt-12 grid lg:grid-cols-12 gap-8 sm:gap-10 items-end">
+        <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-ink">
+            <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-ink">
               One full‑stack <span className="font-serif-i">prescription</span>
               <br />
               for healthcare growth.
             </h2>
           </div>
-          <p className="lg:col-span-5 text-[15px] leading-relaxed text-ink/70 max-w-md lg:ml-auto">
+          <p className="lg:col-span-5 text-[14px] sm:text-[15px] leading-relaxed text-ink/70 max-w-md lg:ml-auto">
             Four specialized capabilities engineered to position healthcare practices at the forefront of search, artificial intelligence, and digital security.
           </p>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-8 sm:mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {plans.map((p) => (
             <PlanCard key={p.name} plan={p} />
           ))}
         </div>
 
-        <div className="mt-10 text-center text-[12px] font-mono uppercase tracking-[0.22em] text-ink/50">
+        <div className="mt-8 sm:mt-10 text-center text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.2em] text-ink/50">
           ✦ All systems are HIPAA‑compliant by design · Custom healthcare deployments available ✦
         </div>
       </div>
@@ -95,45 +95,45 @@ function PlanCard({ plan }: { plan: Plan }) {
   const h = plan.highlight;
   return (
     <div
-      className={`group relative rounded-2xl sm:rounded-[28px] p-6 sm:p-8 lift overflow-hidden ${
+      className={`group relative rounded-2xl sm:rounded-[28px] p-5 sm:p-7 lift overflow-hidden flex flex-col justify-between ${
         h ? "bg-ink text-bone" : "bg-bone-2/40 text-ink border border-ink/10"
       }`}
       style={h ? { background: "#0a0a0a", color: "#f5f1ea" } : { background: "rgba(235,229,218,.5)" }}
     >
-      {h && (
-        <>
-          <div className="absolute -top-32 -right-20 h-64 w-64 rounded-full bg-[#0000cd]/15 blur-3xl" />
-          <div className="absolute top-4 right-4 text-[10px] font-mono uppercase tracking-[0.22em] bg-[#0000cd] text-ink px-2.5 py-1 rounded-full">★ Pick</div>
-        </>
-      )}
+      <div>
+        {h && (
+          <>
+            <div className="absolute -top-32 -right-20 h-64 w-64 rounded-full bg-[#0000cd]/15 blur-3xl" />
+            <div className="absolute top-4 right-4 text-[9.5px] sm:text-[10px] font-mono uppercase tracking-[0.2em] bg-[#0000cd] text-ink px-2.5 py-1 rounded-full font-semibold">★ Pick</div>
+          </>
+        )}
 
-      <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-60">[ {plan.tag} ]</div>
-      <h3 className="mt-5 font-display text-4xl tracking-[-0.04em] leading-none">
-        {plan.name.replace("Growth‑", "Growth ")}<span className={h ? "text-[#0000cd]" : "text-ink"}>.</span>
-      </h3>
-      <p className={`mt-3 text-[13.5px] leading-relaxed ${h ? "opacity-70" : "text-ink/65"}`}>{plan.desc}</p>
+        <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-60">[ {plan.tag} ]</div>
+        <h3 className="mt-3.5 sm:mt-5 font-display text-2xl sm:text-4xl tracking-[-0.04em] leading-none">
+          {plan.name.replace("Growth‑", "Growth ")}<span className={h ? "text-[#0000cd]" : "text-ink"}>.</span>
+        </h3>
+        <p className={`mt-2.5 sm:mt-3 text-[13px] sm:text-[13.5px] leading-relaxed ${h ? "opacity-70" : "text-ink/65"}`}>{plan.desc}</p>
 
-      <div className={`mt-5 rounded-2xl p-4 ${h ? "bg-white/5 border border-white/10" : "bg-bone border border-ink/10"}`} style={!h ? { background: "#f5f1ea" } : {}}>
-        <div className={`text-[10px] font-mono uppercase tracking-[0.2em] ${h ? "text-[#0000cd]" : "text-ink/55"}`}>Ideal for</div>
-        <div className={`mt-1 text-[13px] ${h ? "" : "text-ink/85"}`}>{plan.idealFor}</div>
-      </div>
+        <div className={`mt-4 sm:mt-5 rounded-2xl p-3.5 sm:p-4 ${h ? "bg-white/5 border border-white/10" : "bg-bone border border-ink/10"}`} style={!h ? { background: "#f5f1ea" } : {}}>
+          <div className={`text-[9.5px] sm:text-[10px] font-mono uppercase tracking-[0.2em] ${h ? "text-[#0000cd]" : "text-ink/55"}`}>Ideal for</div>
+          <div className={`mt-1 text-[12.5px] sm:text-[13px] ${h ? "" : "text-ink/85"}`}>{plan.idealFor}</div>
+        </div>
 
-
-
-      <div className="mt-5 space-y-4">
-        {plan.features.map((f) => (
-          <div key={f.title} className={`pb-4 border-b ${h ? "border-white/10" : "border-ink/10"} last:border-0 last:pb-0`}>
-            <div className="flex items-center gap-2">
-              <span className={`grid place-items-center h-5 w-5 rounded-md text-[11px] font-bold ${h ? "bg-[#0000cd] text-ink" : "bg-ink text-bone"}`} style={!h ? { background: "#0a0a0a", color: "#f5f1ea" } : {}}>✓</span>
-              <div className="text-[13px] font-semibold">{f.title}</div>
+        <div className="mt-4 sm:mt-5 space-y-3 sm:space-y-4">
+          {plan.features.map((f) => (
+            <div key={f.title} className={`pb-3 sm:pb-4 border-b ${h ? "border-white/10" : "border-ink/10"} last:border-0 last:pb-0`}>
+              <div className="flex items-center gap-2">
+                <span className={`grid place-items-center h-4.5 w-4.5 sm:h-5 sm:w-5 rounded-md text-[10px] sm:text-[11px] font-bold shrink-0 ${h ? "bg-[#0000cd] text-ink" : "bg-ink text-bone"}`} style={!h ? { background: "#0a0a0a", color: "#f5f1ea" } : {}}>✓</span>
+                <div className="text-[12.5px] sm:text-[13px] font-semibold">{f.title}</div>
+              </div>
+              <ul className={`mt-1.5 ml-6 sm:ml-7 space-y-0.5 list-disc list-outside ${h ? "marker:text-white/30" : "marker:text-ink/30"}`}>
+                {f.items.map((it) => (
+                  <li key={it} className={`text-[11.5px] sm:text-[12px] leading-relaxed ${h ? "opacity-65" : "text-ink/65"}`}>{it}</li>
+                ))}
+              </ul>
             </div>
-            <ul className={`mt-1.5 ml-7 space-y-0.5 list-disc list-outside ${h ? "marker:text-white/30" : "marker:text-ink/30"}`}>
-              {f.items.map((it) => (
-                <li key={it} className={`text-[12px] leading-relaxed ${h ? "opacity-65" : "text-ink/65"}`}>{it}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <a
@@ -142,14 +142,14 @@ function PlanCard({ plan }: { plan: Plan }) {
           e.preventDefault();
           navigateTo("/contact");
         }}
-        className={`mt-7 group/btn inline-flex w-full items-center justify-between rounded-full pl-5 pr-1.5 py-1.5 text-[13px] font-medium transition cursor-pointer ${
+        className={`mt-5 sm:mt-7 group/btn inline-flex w-full items-center justify-between rounded-full pl-4 sm:pl-5 pr-1.5 py-1.5 text-[12.5px] sm:text-[13px] font-medium transition cursor-pointer active:scale-[0.98] ${
           h ? "bg-white text-ink hover:bg-[#0000cd] hover:text-white" : "bg-ink text-bone hover:bg-[#ff5d3b]"
         }`}
         style={!h ? { background: "#0a0a0a", color: "#f5f1ea" } : {}}
       >
-        Get a free audit
-        <span className={`grid place-items-center h-9 w-9 rounded-full transition-all group-hover/btn:rotate-45 ${h ? "bg-ink text-[#0000cd] group-hover/btn:bg-white group-hover/btn:text-[#0000cd]" : "bg-[#0000cd] text-ink"}`} style={!h ? {} : {}}>
-          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <span>Get a free audit</span>
+        <span className={`grid place-items-center h-8 w-8 sm:h-9 sm:w-9 rounded-full transition-all group-hover/btn:rotate-45 ${h ? "bg-ink text-[#0000cd] group-hover/btn:bg-white group-hover/btn:text-[#0000cd]" : "bg-[#0000cd] text-ink"}`} style={!h ? {} : {}}>
+          <svg viewBox="0 0 24 24" className="h-3 sm:h-3.5 w-3 sm:w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 17 17 7M9 7h8v8" />
           </svg>
         </span>

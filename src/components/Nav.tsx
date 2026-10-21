@@ -26,7 +26,7 @@ export default function Nav() {
     { href: "/#services", label: "Services", n: "02" },
     { href: "/#why", label: "Studio", n: "03" },
     { href: "/#results", label: "Results", n: "04" },
-    { href: "/#blog", label: "Blog", n: "05" },
+    { href: "/blog", label: "Blog", n: "05" },
     { href: "/founder", label: "Founder", n: "06" },
     { href: "/contact", label: "Contact", n: "07" },
   ];

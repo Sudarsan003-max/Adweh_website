@@ -10,12 +10,12 @@ import Solutions from "./components/Solutions";
 import Showcase from "./components/Showcase";
 import WhyUs from "./components/WhyUs";
 import Testimonials from "./components/Testimonials";
-import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AllArticles from "./components/AllArticles";
 import MainframeHero from "./components/MainframeHero";
 import ContactPage from "./components/ContactPage";
+import BlogPage from "./components/BlogPage";
 import { useRoute } from "./utils/navigation";
 
 export default function App() {
@@ -57,9 +57,9 @@ export default function App() {
         <main className="pt-24">
           <Founder />
         </main>
-      ) : route === "articles" ? (
+      ) : route === "blog" || route === "articles" ? (
         <main className="pt-24">
-          <AllArticles />
+          <BlogPage />
         </main>
       ) : (
         <main>
@@ -72,7 +72,6 @@ export default function App() {
           <Showcase />
           <WhyUs />
           <Testimonials />
-          <Blog />
           <Contact />
         </main>
       )}

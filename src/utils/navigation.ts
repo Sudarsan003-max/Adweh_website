@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export type RouteType = "home" | "contact" | "founder" | "articles" | "mainframe";
+export type RouteType = "home" | "contact" | "founder" | "articles" | "blog" | "mainframe";
 
 interface RouteMeta {
   title: string;
@@ -24,6 +24,11 @@ const ROUTE_META: Record<RouteType, RouteMeta> = {
     description: "Isaac Vivian is the Founder of ADWEH, engineering comprehensive patient discovery engines across AIEO, GEO, SEO, and cybersecurity-focused website development.",
     canonical: "https://adweh.com/founder",
   },
+  blog: {
+    title: "Insights & Guides — ADWEH Digital Growth Studio",
+    description: "Explore clinical growth guides, AIEO, GEO, SEO, and cybersecurity-focused website development insights by ADWEH.",
+    canonical: "https://adweh.com/blog",
+  },
   articles: {
     title: "All Articles & Guides — ADWEH Insights",
     description: "Explore guides, case studies, and growth insights across AIEO, GEO, SEO, and website development for healthcare and aesthetic clinics.",
@@ -45,13 +50,15 @@ export function parseCurrentRoute(): RouteType {
   // Pathname-based detection
   if (path === "/contact") return "contact";
   if (path === "/founder") return "founder";
-  if (path === "/articles" || path === "/all-articles") return "articles";
+  if (path === "/blog" || path === "/insights") return "blog";
+  if (path === "/articles" || path === "/all-articles") return "blog";
   if (path === "/mainframe") return "mainframe";
 
   // Hash-based backward compatibility
   if (hash === "#contact-page") return "contact";
   if (hash === "#founder") return "founder";
-  if (hash === "#all-articles" || hash === "#articles") return "articles";
+  if (hash === "#blog" || hash === "#insights") return "blog";
+  if (hash === "#all-articles" || hash === "#articles") return "blog";
   if (hash === "#mainframe") return "mainframe";
 
   return "home";

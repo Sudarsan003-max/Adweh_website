@@ -59,7 +59,7 @@ export default function Approach() {
   const activePillar = pillars[scene];
 
   return (
-    <section className="relative py-28 bg-[#030712] overflow-hidden" id="opportunity">
+    <section className="relative py-10 sm:py-28 bg-[#030712] overflow-hidden" id="opportunity">
       {/* Ambient background spotlight scene */}
       <div className="absolute inset-0 bg-[#030712] z-0" />
       <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1b3bf5]/10 blur-[130px] pointer-events-none z-0" />
@@ -68,10 +68,10 @@ export default function Approach() {
       <div className="absolute top-[25%] left-[20%] w-[350px] h-[350px] rounded-full bg-[#1b3bf5]/6 blur-[100px] animate-pulse pointer-events-none z-0" style={{ animationDuration: '10s' }} />
       <div className="absolute bottom-[15%] right-[20%] w-[300px] h-[300px] rounded-full bg-[#1b3bf5]/5 blur-[90px] animate-pulse pointer-events-none z-0" style={{ animationDuration: '15s' }} />
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-5 flex flex-col items-center">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-5 flex flex-col items-center">
         
         {/* Title and Intro layout matching original style but styled for dark backdrop */}
-        <div className="w-full max-w-[1000px] mb-8 text-center sm:text-left">
+        <div className="w-full max-w-[1000px] mb-4 sm:mb-8 text-center sm:text-left">
           <div className="flex items-center justify-center sm:justify-start gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[#f5f1ea]/60">
             <span className="grid place-items-center h-5 w-5 rounded-full text-[9px] font-semibold bg-white text-[#0a0a0a]">
               5
@@ -79,9 +79,9 @@ export default function Approach() {
             <span>005 / The opportunity</span>
           </div>
 
-          <div className="mt-8 grid lg:grid-cols-12 gap-8 items-end">
+          <div className="mt-4 sm:mt-8 grid lg:grid-cols-12 gap-4 sm:gap-8 items-end">
             <div className="lg:col-span-7">
-              <h2 className="font-display text-[38px] sm:text-[54px] lg:text-[72px] leading-[0.95] tracking-[-0.04em] text-[#f5f1ea] text-left">
+              <h2 className="font-display text-[28px] xs:text-[38px] sm:text-[54px] lg:text-[72px] leading-[0.95] tracking-[-0.04em] text-[#f5f1ea] text-left">
                 An industry <span className="font-serif-i italic">rapidly</span>
                 <br />
                 going <span className="relative inline-block">
@@ -92,7 +92,7 @@ export default function Approach() {
                 </span>.
               </h2>
             </div>
-            <p className="lg:col-span-5 text-[14px] leading-relaxed text-[#f5f1ea]/70 text-left max-w-md lg:ml-auto">
+            <p className="lg:col-span-5 text-[13px] sm:text-[14px] leading-relaxed text-[#f5f1ea]/70 text-left max-w-md lg:ml-auto">
               Healthcare is rapidly digitizing, with rising expectations for seamless, retail‑like experiences.
               Patients prefer online‑first care — success now depends on trust, data‑driven execution,
               and full‑funnel ROI delivery.
@@ -101,10 +101,10 @@ export default function Approach() {
         </div>
 
         {/* MacBook Container */}
-        <div className="relative w-full max-w-[1020px] mt-6 flex flex-col items-center group @container">
+        <div className="relative w-full max-w-[1020px] mt-4 sm:mt-6 flex flex-col items-center group @container">
           
           {/* Lid (MacBook Screen) */}
-          <div className="relative w-[88%] aspect-[16/10] bg-gradient-to-b from-[#2e313d] via-[#101115] to-[#07080a] rounded-t-[2.2cqi] p-[1.2cqi] shadow-[0_30px_75px_-10px_rgba(0,0,0,0.95),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_1px_rgba(255,255,255,0.05)] border border-[#1b1c22] border-t-[#494e5e] border-b-[#0b0c0f] flex flex-col z-10">
+          <div className="relative w-[96%] sm:w-[88%] aspect-[16/10] bg-gradient-to-b from-[#2e313d] via-[#101115] to-[#07080a] rounded-t-[2.2cqi] p-[1.2cqi] shadow-[0_30px_75px_-10px_rgba(0,0,0,0.95),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_1px_rgba(255,255,255,0.05)] border border-[#1b1c22] border-t-[#494e5e] border-b-[#0b0c0f] flex flex-col z-10">
             {/* Webcam & Sensors */}
             <div className="absolute top-[0.4%] left-1/2 -translate-x-1/2 flex items-center gap-[0.5cqi] pointer-events-none">
               {/* Green indicator LED (off-state faint dot) */}
