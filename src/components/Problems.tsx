@@ -5,93 +5,103 @@ import { navigateTo } from "../utils/navigation";
 const problems = [
   {
     n: "01",
-    title: "Invisibility across AI, Generative Engines & Search",
-    items: [
-      "Zero citation authority across ChatGPT, Claude, and Perplexity (AIEO)",
-      "Omission from Google AI Overviews and Gemini generative summaries (GEO)",
-      "Poor local SEO and low visibility in local Google Maps search",
-      "Lack of structured enterprise schemas and knowledge graph authority",
-      "Low visibility for high-intent, prompt-driven customer and buyer inquiries",
-    ],
+    title: "You're Missing High-Intent Searches",
+    summary: "Potential customers are looking for services like yours, but competing websites may be easier to find.",
+    detail: "Weak technical SEO, thin service pages, or poor local visibility can keep you out of the conversation when buyers are actively searching Google for solutions in your area.",
   },
   {
     n: "02",
-    title: "Insecure or Outdated Website Infrastructure",
-    items: [
-      "Websites built without cybersecurity-focused development practices",
-      "Untested platforms with security vulnerabilities & unhardened endpoints",
-      "Websites not optimized for search engines, AIEO, or generative discovery",
-      "Poor Core Web Vitals, slow load speeds, and broken mobile conversion",
-      "Unsecured forms risking customer data, privacy leaks, and regulatory compliance",
-    ],
+    title: "AI Search Is Changing How Buyers Compare Businesses",
+    summary: "People increasingly use AI-powered tools to research services, shortlist providers, and understand options.",
+    detail: "If your business facts, services, and entity information are unclear, inconsistent, or difficult to verify, AI answer systems like ChatGPT and Gemini will simply recommend your competitors.",
   },
   {
     n: "03",
-    title: "Fragmented Discovery & Zero AI-Era Readiness",
-    items: [
-      "No strategic roadmap for the shift from blue links to AI answers",
-      "Disjointed vendors with no unified search or generative tracking",
-      "Inconsistent brand citations across digital registries and ecosystem directories",
-      "Vulnerable digital assets hindering brand reputation and executive trust",
-      "Falling behind competitors who optimize for AI and generative engines",
-    ],
+    title: "Your Website Isn't Helping Visitors Take Action",
+    summary: "Getting visitors to your website is only half the battle.",
+    detail: "Slow pages, confusing navigation, weak calls to action, and poorly designed enquiry journeys cause prospective clients to bounce and call another provider instead.",
+  },
+  {
+    n: "04",
+    title: "Your Digital Presence Has No Connected Strategy",
+    summary: "Activity without integration produces unpredictable results.",
+    detail: "A website vendor, an isolated SEO provider, and disconnected content initiatives can leave you with plenty of marketing invoices but little clarity about what is actually driving qualified enquiries.",
   },
 ];
 
 export default function Problems() {
   return (
-    <section id="problems" className="relative py-10 sm:py-24 bg-ink overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
+    <section id="problems" className="relative py-8 sm:py-20 bg-ink overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
       {/* Subtle dot bg */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{
-        backgroundImage: "radial-gradient(rgba(255,255,255,1) 1px, transparent 1px)",
-        backgroundSize: "32px 32px"
-      }} />
-      <div className="relative mx-auto max-w-[1400px] px-5">
-        <SectionHead n="004" label="The challenge" light />
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: "radial-gradient(rgba(255,255,255,1) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6">
+        <SectionHead n="003" label="The challenge" light />
 
-        <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10">
+        <div className="mt-5 sm:mt-14 grid lg:grid-cols-12 gap-4 sm:gap-10">
           <div className="lg:col-span-7">
-            <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em]">
-              The growth <span className="font-serif-i">bottlenecks</span>
-              <br />
-              we eliminate <span className="text-[#ff5d3b]">every day.</span>
+            <h2 className="font-display text-[28px] xs:text-[36px] sm:text-[60px] lg:text-[76px] leading-[1.0] sm:leading-[0.95] tracking-[-0.035em]">
+              Being online doesn't mean <span className="font-serif-i italic text-[#ff5d3b]">you're</span>
+              <br className="hidden sm:inline" />{" "}
+              being found.
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pt-4">
-            <p className="text-[14px] sm:text-[15px] leading-relaxed text-bone/65" style={{ color: "rgba(245,241,234,.65)" }}>
-              Most growing enterprises struggle with the same three critical barriers.
-              We've identified them, systematized the solution, and solved them for 130+ market leaders.
+            <p className="text-[14px] sm:text-[17px] leading-relaxed text-bone/70" style={{ color: "rgba(245,241,234,.7)" }}>
+              You may have a website. You may even have a strong business. But if customers cannot discover you when they are ready to compare options, that demand goes elsewhere.
             </p>
           </div>
         </div>
 
         {/* Problems list */}
-        <div className="mt-6 sm:mt-16 border-t border-white/10">
+        <div className="mt-5 sm:mt-16 border-t border-white/10 divide-y divide-white/10">
           {problems.map((p) => (
-            <ProblemRow key={p.n} p={p} />
+            <div key={p.n} className="py-3.5 sm:py-7 grid lg:grid-cols-12 gap-2 sm:gap-6 items-start hover:bg-white/[0.02] transition-colors px-1 sm:px-2 rounded-xl">
+              <div className="lg:col-span-6 flex items-baseline gap-2.5 sm:gap-4">
+                <span className="font-mono text-xs sm:text-[13px] text-[#ff5d3b] font-bold shrink-0">
+                  {p.n}
+                </span>
+                <h3 className="font-display text-[16.5px] sm:text-[24px] font-bold text-white tracking-tight leading-snug">
+                  {p.title}
+                </h3>
+              </div>
+              <div className="lg:col-span-6 text-[13px] sm:text-[15px] text-bone/75 leading-relaxed font-sans pl-5 lg:pl-0" style={{ color: "rgba(245,241,234,.75)" }}>
+                <p className="font-medium text-white/90 mb-0.5 sm:mb-1">{p.summary}</p>
+                <p className="text-[12px] sm:text-[14px] text-bone/65">{p.detail}</p>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* CTA strip */}
-        <div className="mt-6 sm:mt-12 rounded-2xl sm:rounded-3xl bg-white text-ink p-4 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-5">
-          <div className="flex items-start gap-3.5 sm:gap-4">
-            <span className="grid place-items-center h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-ink text-[#0000cd] text-base sm:text-xl shrink-0" style={{ background: "#0a0a0a" }}>✓</span>
-            <div>
-              <div className="font-display text-lg sm:text-3xl tracking-[-0.03em]">Solved for 130+ enterprise brands.</div>
-              <div className="text-[11.5px] sm:text-[13px] opacity-70 mt-0.5 sm:mt-1">From mid-market disruptors to multinational leaders across industries.</div>
+        {/* Transition callout & CTA */}
+        <div className="mt-6 sm:mt-16 rounded-xl sm:rounded-3xl bg-white text-ink p-4 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6 shadow-xl">
+          <div className="max-w-2xl">
+            <div className="text-[9.5px] sm:text-[10px] font-mono uppercase tracking-[0.2em] text-[#1e2bc8] font-bold mb-1.5 sm:mb-2">
+              [ The Solution ]
             </div>
+            <div className="font-display text-lg sm:text-3xl font-bold tracking-tight text-[#0a0a0a]">
+              The solution isn't more digital activity.
+            </div>
+            <p className="text-[12.5px] sm:text-[15px] text-ink/75 mt-1 sm:mt-2 leading-relaxed">
+              It's a connected strategy that makes discovery, trust, and conversion work together to turn customer searches into qualified enquiries.
+            </p>
           </div>
+
           <a
-            href="/#services"
+            href="/contact"
             onClick={(e) => {
               e.preventDefault();
-              navigateTo("/#services");
+              navigateTo("/contact");
             }}
-            className="group inline-flex items-center gap-2 rounded-full bg-ink text-bone pl-4 sm:pl-5 pr-1.5 sm:pr-2 py-1.5 sm:py-2 text-[12.5px] sm:text-[13px] font-medium cursor-pointer active:scale-[0.98] transition-transform w-full sm:w-auto justify-between sm:justify-start"
-            style={{ background: "#0a0a0a", color: "#f5f1ea" }}
+            className="group inline-flex items-center justify-between sm:justify-start gap-3 rounded-full bg-[#0a0a0a] text-white pl-5 sm:pl-6 pr-2 py-2 sm:py-2.5 text-[12.5px] sm:text-[13px] font-semibold cursor-pointer active:scale-[0.98] transition hover:bg-[#1e2bc8] shrink-0 w-full md:w-auto"
           >
-            <span>Explore the solutions</span>
-            <span className="grid place-items-center h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-[#0000cd] text-ink transition-transform group-hover:rotate-45 shrink-0">
+            <span>Find Out Where You're Losing Visibility</span>
+            <span className="grid place-items-center h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-white text-[#0a0a0a] transition-transform group-hover:rotate-45 shrink-0">
               <svg viewBox="0 0 24 24" className="h-3 sm:h-3.5 w-3 sm:w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7 17 17 7M9 7h8v8" />
               </svg>
@@ -100,53 +110,5 @@ export default function Problems() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ProblemRow({ p }: { p: { n: string; title: string; items: string[] } }) {
-  const [openMobile, setOpenMobile] = useState(p.n === "01");
-
-  return (
-    <div
-      onClick={() => setOpenMobile(!openMobile)}
-      className="group relative border-b border-white/10 py-5 sm:py-8 md:py-10 grid grid-cols-12 gap-2 sm:gap-6 hover:bg-white/[0.02] transition cursor-pointer"
-      data-cursor="hover"
-    >
-      {/* number */}
-      <div className="col-span-2 md:col-span-1">
-        <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] opacity-50">[ {p.n} ]</div>
-      </div>
-      {/* title */}
-      <div className="col-span-8 md:col-span-5">
-        <h3 className="font-display text-xl sm:text-2xl md:text-3xl tracking-[-0.02em] leading-tight transition group-hover:text-[#0000cd]">
-          {p.title}
-        </h3>
-        {/* Mobile tap preview hint */}
-        <div className="md:hidden mt-1.5 text-[10px] font-mono text-bone/40">
-          {openMobile ? "Tap to close bottlenecks ▲" : `[ +${p.items.length} bottlenecks · Tap to view ▼ ]`}
-        </div>
-      </div>
-      {/* arrow (top right on mobile, end on desktop) */}
-      <div className="col-span-2 md:col-span-1 md:order-last flex justify-end items-start">
-        <span className={`grid place-items-center h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-white/15 text-[#0000cd] transition duration-300 group-hover:bg-[#0000cd] group-hover:text-ink ${
-          openMobile ? "rotate-90 md:rotate-0 md:group-hover:rotate-45" : "group-hover:rotate-45"
-        }`}>
-          <svg viewBox="0 0 24 24" className="h-3 sm:h-3.5 w-3 sm:w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 17 17 7M9 7h8v8" />
-          </svg>
-        </span>
-      </div>
-      {/* items: toggleable on mobile (< md), always visible on desktop (md:) */}
-      <div className={`col-span-12 md:col-span-5 mt-2 md:mt-0 ${openMobile ? "block" : "hidden md:block"}`}>
-        <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1 sm:gap-y-1.5 pl-6 sm:pl-0 pt-2 sm:pt-0 border-t border-white/5 sm:border-0">
-          {p.items.map((it) => (
-            <li key={it} className="flex items-start gap-2 text-[12.5px] sm:text-[13px] text-bone/65" style={{ color: "rgba(245,241,234,.65)" }}>
-              <span className="mt-1.5 h-1 w-1 rounded-full bg-[#ff5d3b] flex-none" />
-              <span>{it}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
   );
 }

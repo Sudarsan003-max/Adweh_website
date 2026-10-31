@@ -144,30 +144,30 @@ export default function Showcase() {
   const ry = (tilt?.id === 3 && tilt) ? -tilt.y * 35 : 0;
 
   return (
-    <section className="relative py-10 sm:py-24 bg-[#020202] text-bone overflow-hidden" style={{ background: "#050505", color: "#f5f1ea" }}>
+    <section className="relative py-8 sm:py-24 bg-[#020202] text-bone overflow-hidden" style={{ background: "#050505", color: "#f5f1ea" }}>
       {/* Background glowing gradients */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0000cd]/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-20 -left-40 w-96 h-96 bg-[#4169e1]/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="mx-auto max-w-[1400px] px-5">
-        <SectionHead n="007" label="System Showcase" light />
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
+        <SectionHead n="008" label="How We Measure Progress" light />
 
-        <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-end">
-          <div className="lg:col-span-7">
-            <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-white">
-              Visualizing your <span className="font-serif-i italic text-[#0000cd]">pipeline</span>
-              <br />
-              and customer growth.
+        <div className="mt-5 sm:mt-12 grid lg:grid-cols-12 gap-5 sm:gap-10 items-end">
+          <div className="lg:col-span-8">
+            <h2 className="font-display text-[28px] xs:text-[36px] sm:text-[60px] lg:text-[76px] leading-[1.0] sm:leading-[0.95] tracking-[-0.035em] text-white">
+              Visibility is useful.
+              <br className="hidden sm:inline" />{" "}
+              <span className="font-serif-i italic text-[#5c85ff]">Business outcomes</span> matter more.
             </h2>
           </div>
-          <p className="lg:col-span-5 text-[14px] sm:text-[15px] leading-relaxed text-bone/60 max-w-md lg:ml-auto">
-            A secure, enterprise‑grade dashboard system engineered to track lead velocity, customer lifetime value, and marketing ROI in real‑time.
+          <p className="lg:col-span-4 text-[13.5px] sm:text-[15px] leading-relaxed text-bone/70 max-w-md lg:ml-auto">
+            We look beyond rankings alone to understand whether your digital presence is reaching the right people and supporting meaningful action.
           </p>
         </div>
 
         {/* Widescreen Behance-style Layout with 3D Perspective Container */}
         <div 
-          className="mt-6 sm:mt-16 relative flex items-center justify-start md:justify-center gap-3 sm:gap-6 py-4 sm:py-16 overflow-x-auto lg:overflow-visible scrollbar-hide max-w-full px-2 sm:px-4 md:px-0"
+          className="mt-5 sm:mt-16 relative flex items-center justify-start md:justify-center gap-3 sm:gap-6 py-2 sm:py-16 overflow-x-auto lg:overflow-visible scrollbar-hide max-w-full px-1 sm:px-4 md:px-0"
           style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
         >
           
@@ -190,15 +190,15 @@ export default function Showcase() {
             onMouseMove={(e) => handleMouseMove(e, 2)}
             onMouseEnter={() => setHoveredCard(2)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className="relative w-80 h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-3xl p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0, 0, 205,0.05)] hover:border-white/20 shrink-0 flex flex-col justify-between overflow-hidden"
+            className="relative w-[270px] sm:w-80 h-[320px] sm:h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0,0,205,0.05)] hover:border-white/20 shrink-0 flex flex-col justify-between overflow-hidden"
             style={getCardStyle(2)}
           >
             <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-[#0000cd]/10 rounded-full blur-2xl pointer-events-none" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.04] rounded-3xl" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.04] rounded-2xl sm:rounded-3xl" />
             
             {/* Spotlight Glow Layer */}
             <div 
-              className="pointer-events-none absolute inset-0 transition-opacity duration-300 rounded-3xl z-10"
+              className="pointer-events-none absolute inset-0 transition-opacity duration-300 rounded-2xl sm:rounded-3xl z-10"
               style={{ 
                 background: `radial-gradient(circle 180px at var(--mx, 0px) var(--my, 0px), rgba(0, 0, 205, 0.18), transparent 80%)`,
                 opacity: tilt?.id === 2 ? 1 : 0
@@ -206,20 +206,20 @@ export default function Showcase() {
             />
 
             <div style={{ transform: "translateZ(15px)" }}>
-              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-bone/45">Revenue Generated</div>
-              <div className="text-[9px] font-mono text-bone/30 mt-0.5">Verified Client Growth</div>
-              <div className="mt-5 text-4xl font-display font-medium tracking-tight text-white">$400K+</div>
+              <div className="text-[9.5px] sm:text-[10px] font-mono uppercase tracking-[0.2em] text-bone/45">Search &amp; AI Visibility</div>
+              <div className="text-[8.5px] sm:text-[9px] font-mono text-bone/30 mt-0.5">Observed Impressions &amp; Citations</div>
+              <div className="mt-3 sm:mt-5 text-3xl sm:text-4xl font-display font-medium tracking-tight text-white">Top 3</div>
             </div>
 
             {/* Glowing Chart Peak Tooltip */}
             <div 
-              className="absolute right-8 top-[165px] bg-[#0000cd] text-white text-[10px] font-mono font-bold px-2.5 py-1 rounded-full shadow-lg shadow-[#0000cd]/30 animate-pulse z-10 border border-white/10"
+              className="absolute right-6 sm:right-8 top-[135px] sm:top-[165px] bg-[#0000cd] text-white text-[9px] sm:text-[10px] font-mono font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-lg shadow-[#0000cd]/30 animate-pulse z-10 border border-white/10"
               style={{ transform: "translateZ(30px)" }}
             >
-              ▲ $400K+
+              ▲ Top Ranks &amp; AI Citations
             </div>
 
-            <div className="relative h-44 w-full mt-4 overflow-hidden rounded-xl bg-black/30 border border-white/5" style={{ transform: "translateZ(10px)" }}>
+            <div className="relative h-32 sm:h-44 w-full mt-3 sm:mt-4 overflow-hidden rounded-lg sm:rounded-xl bg-black/30 border border-white/5" style={{ transform: "translateZ(10px)" }}>
               <svg viewBox="0 0 300 200" className="w-full h-full" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
@@ -247,7 +247,7 @@ export default function Showcase() {
             onMouseMove={(e) => handleMouseMove(e, 3)}
             onMouseEnter={() => setHoveredCard(3)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className="relative w-[280px] xs:w-[310px] max-w-[calc(100vw-36px)] h-[560px] xs:h-[620px] shrink-0 z-20 select-none"
+            className="relative w-[260px] xs:w-[290px] sm:w-[310px] max-w-[calc(100vw-36px)] h-[480px] xs:h-[540px] sm:h-[620px] shrink-0 z-20 select-none"
             style={getCardStyle(3)}
           >
             {/* Volume & Power Buttons (3D Protrusions) */}
@@ -626,7 +626,7 @@ export default function Showcase() {
                     <div className={`text-[8.5px] font-mono uppercase tracking-[0.25em] text-center transition-colors duration-500 ${
                       isLightScene ? "text-black/40" : "text-white/35"
                     }`}>
-                      130+ Brands · $400K+ Generated
+                      Search · AIEO · GEO · Web Architecture
                     </div>
                     {/* Screen Bottom Bar Indicator */}
                     <div className={`w-28 h-1 mx-auto rounded-full mt-1.5 transition-colors duration-500 ${
@@ -730,8 +730,41 @@ export default function Showcase() {
 
         </div>
 
-        <div className="mt-8 sm:mt-16 text-center text-[10.5px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-bone/40">
-          ✦ Real‑Time compliance monitoring & enterprise conversion funnels ✦
+        {/* 4 Measurement Pillars from Section 08 */}
+        <div className="mt-12 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-[#5c85ff] font-bold">01 · Search Visibility</div>
+            <p className="mt-2 text-xs text-bone/70 leading-relaxed font-sans">Relevant organic impressions, clicks, rankings, and local discovery where applicable.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-[#5c85ff] font-bold">02 · AI Visibility</div>
+            <p className="mt-2 text-xs text-bone/70 leading-relaxed font-sans">Observed brand mentions and references in defined research prompts, with methodology and limitations documented.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-[#5c85ff] font-bold">03 · Website Experience</div>
+            <p className="mt-2 text-xs text-bone/70 leading-relaxed font-sans">Page performance, technical health, usability, and enquiry-path effectiveness.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-[#5c85ff] font-bold">04 · Commercial Signals</div>
+            <p className="mt-2 text-xs text-bone/70 leading-relaxed font-sans">Qualified form submissions, calls, booking requests, and attributable pipeline where tracking is available.</p>
+          </div>
+        </div>
+
+        {/* Dashboard disclaimer & CTA */}
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[11px] font-mono text-bone/50 max-w-2xl leading-relaxed">
+            * Dashboard visuals are illustrative unless connected to live, permissioned client data. AI response samples vary by platform, prompt, geography, personalization, and time.
+          </p>
+          <a
+            href="/contact"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo("/contact");
+            }}
+            className="inline-flex items-center gap-2 rounded-full bg-white text-[#0a0a0a] px-5 py-2.5 text-xs font-semibold hover:bg-[#1e2bc8] hover:text-white transition shrink-0 cursor-pointer"
+          >
+            See What We Could Measure For You →
+          </a>
         </div>
       </div>
     </section>

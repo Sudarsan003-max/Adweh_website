@@ -2,134 +2,185 @@ import { useState, useEffect } from "react";
 import { navigateTo } from "../utils/navigation";
 
 interface ArticleItem {
-  category: "AIEO" | "GEO" | "SEO" | "Website Development";
+  id: string;
+  category: "SEO" | "AIEO" | "GEO" | "Website Development" | "Industry Guides";
   title: string;
-  excerpt: string;
-  url: string;
+  summary: string;
+  readTime: string;
+  content: string[];
 }
 
-const ALL_ARTICLES: ArticleItem[] = [
+const EDITORIAL_LIBRARY: ArticleItem[] = [
   {
+    id: "aieo-guide",
     category: "AIEO",
-    title: "AIEO for Modern Business: Getting Recommended by ChatGPT & Perplexity",
-    excerpt: "Learn how market-leading enterprises optimize entities, knowledge graphs, and brand citations to earn direct recommendations in conversational AI models.",
-    url: "https://adweh.com/aieo-healthcare-chatgpt-perplexity/",
+    title: "What Is AI Engine Optimization (AIEO)? A Practical Guide for Businesses",
+    summary: "Explain AI-assisted research, brand clarity, and realistic optimization practices for conversational assistants like ChatGPT, Claude, and Perplexity.",
+    readTime: "6 min read",
+    content: [
+      "AI Engine Optimization (AIEO) is the practice of structuring your business information, entity presence, and authoritative answers so conversational AI systems can easily understand and reference your company.",
+      "When prospective customers ask ChatGPT or Perplexity for provider recommendations, these systems don't browse the web like traditional search engines. They synthesize answers from corroborating sources across the web.",
+      "To become visible, businesses must establish unambiguous entity facts: who you are, what services you provide, your physical locations, and verifiable credentials.",
+      "Realistic optimization does not guarantee citations on every prompt, but systematic corroboration significantly increases the probability that your business is shortlisted."
+    ],
   },
   {
+    id: "geo-guide",
     category: "GEO",
-    title: "Generative Engine Optimization: Optimizing for Google AI Overviews",
-    excerpt: "The complete guide to GEO for enterprises — structuring factual answers, passage schemas, and entity attribution for Gemini snapshots.",
-    url: "https://adweh.com/geo-google-ai-overviews-enterprises/",
+    title: "Generative Engine Optimization (GEO): What Businesses Need to Know",
+    summary: "Define GEO, content quality, source credibility, and measurement limitations across Google AI Overviews and Gemini.",
+    readTime: "7 min read",
+    content: [
+      "Generative Engine Optimization (GEO) focuses on the content quality and authority signals that influence generative search experiences, specifically Google AI Overviews and Gemini snapshots.",
+      "Unlike blue-link rankings, generative engines quote and summarize passages directly from authoritative web pages. High-quality informational architecture and passage-level clarity are essential.",
+      "Source credibility, corroborated third-party mentions, and structured schema data help search algorithms verify that your content is trustworthy.",
+      "Because generative summaries vary by location, query phrasing, and model updates, GEO requires disciplined visibility tracking rather than simplistic rank claims."
+    ],
   },
   {
+    id: "seo-vs-aieo-vs-geo",
     category: "SEO",
-    title: "Local SEO & Multi-Location Search: Dominating Google Maps Visibility",
-    excerpt: "How real estate developers, hotels, and multi-location businesses optimize Google Maps local search to generate consistent organic inbound inquiries.",
-    url: "https://adweh.com/local-seo-multi-location-enterprises/",
+    title: "SEO vs AIEO vs GEO: What's the Difference?",
+    summary: "Explain overlaps, differences, and when to prioritize each discipline in a modern digital growth roadmap.",
+    readTime: "5 min read",
+    content: [
+      "Traditional SEO optimizes for keyword intent and indexability in standard search engine results pages (SERPs).",
+      "AIEO optimizes for conversational retrieval and answer generation in large language models like ChatGPT and Claude.",
+      "GEO bridges both worlds, optimizing structured content and knowledge graph signals for synthesized generative overviews on Google.",
+      "The disciplines overlap significantly: an authoritative, technically sound website is the prerequisite for all three. We recommend a balanced combination based on your current baseline."
+    ],
   },
   {
+    id: "google-ai-overviews",
+    category: "GEO",
+    title: "How to Improve Your Visibility in Google AI Overviews",
+    summary: "Focus on helpful content, accessibility, clear entities, and why no provider can promise guaranteed inclusion.",
+    readTime: "6 min read",
+    content: [
+      "Google AI Overviews synthesize direct answers to complex, multi-layered search queries. Being cited in these snapshots puts your business at the very top of the search results.",
+      "Google prioritizes content that provides concise, fact-checked definitions, structured comparisons, and transparent expertise (E-E-A-T).",
+      "Technical accessibility—such as fast load speeds, semantic HTML tags, and schema markup—ensures Google's crawlers can parse your answers without friction.",
+      "Important reassurance: No agency can guarantee inclusion in AI Overviews, but rigorous adherence to Google's helpful content guidelines provides the strongest foundation."
+    ],
+  },
+  {
+    id: "local-seo-multi-location",
+    category: "SEO",
+    title: "Local SEO for Multi-Location Businesses",
+    summary: "Profiles, location pages, NAP consistency, customer reviews, and capturing high-intent local search demand.",
+    readTime: "8 min read",
+    content: [
+      "For clinics, real estate firms, and hospitality brands, high-intent searches almost always carry local intent ('near me', 'in Anna Nagar', 'in Chennai').",
+      "Winning the local 3-pack requires verified Google Business Profiles, localized landing pages with unique service details, and strict Name-Address-Phone (NAP) consistency.",
+      "A healthy, authentic stream of customer reviews across verified platforms signals trust to both human searchers and local search algorithms.",
+      "Our verified client data shows that ranking in the local map pack delivers the highest conversion-to-call rate of any inbound channel."
+    ],
+  },
+  {
+    id: "website-ready-seo-ai",
     category: "Website Development",
-    title: "Cybersecurity-Focused Development for High-Value Web Platforms",
-    excerpt: "Building resilient enterprise websites using security-conscious development practices, strict headers, data encryption, and compliance standards.",
-    url: "https://adweh.com/cybersecurity-focused-website-development-enterprises/",
+    title: "How to Build a Website Ready for SEO and AI Search",
+    summary: "Crawlability, semantic structure, content architecture, page speed, and mobile accessibility.",
+    readTime: "6 min read",
+    content: [
+      "A website is the operational engine of your digital visibility. If search crawlers encounter broken code, slow scripts, or convoluted hierarchies, your visibility suffers.",
+      "Building for both Google and AI engines requires clean semantic HTML (h1, h2, table, article), accessible navigation, and zero-bloat architecture.",
+      "Fast Core Web Vitals directly correlate with higher organic rankings and significantly reduced visitor drop-off.",
+      "Security-conscious foundations—such as HTTPS, strict HTTP security headers, and secure enquiry endpoints—protect user privacy while building algorithmic trust."
+    ],
   },
   {
+    id: "security-focused-checklist",
     category: "Website Development",
-    title: "Secure Website Building and Vulnerability Testing",
-    excerpt: "How to develop and test enterprise websites to identify vulnerabilities, harden lead intake endpoints, and ensure airtight customer data security.",
-    url: "https://adweh.com/secure-website-building-testing-vulnerabilities/",
+    title: "Security-Focused Website Development: A Business Owner's Checklist",
+    summary: "Practical controls, form safeguards, HTTPS headers, and why no web build is completely invulnerable.",
+    readTime: "7 min read",
+    content: [
+      "Cybersecurity in web development is not an afterthought—it is a core business necessity. Unsecured lead forms and outdated CMS plugins expose companies to severe compliance risks.",
+      "A practical security checklist includes: enforcing modern TLS encryption, implementing Content Security Policy (CSP), sanitizing form inputs to prevent XSS/SQLi, and regular vulnerability scanning.",
+      "Compliance clarification: No website can be guaranteed 100% immune to threats. Security-conscious development minimizes attack surfaces and adheres to agreed security standards without making false claims."
+    ],
   },
   {
-    category: "Website Development",
-    title: "Building Websites Optimized for SEO, AIEO, and GEO",
-    excerpt: "Engineering high-performance digital infrastructure from the ground up for search engines, AI-powered search, and generative engine discovery.",
-    url: "https://adweh.com/websites-optimized-seo-aieo-geo/",
-  },
-  {
+    id: "measure-ai-visibility",
     category: "AIEO",
-    title: "Conversational Query Targeting in Enterprise AI Engines",
-    excerpt: "How high-intent buyers search using natural language prompts and how companies optimize semantic authority to capture conversational intent.",
-    url: "https://adweh.com/conversational-query-targeting-aieo/",
+    title: "How to Measure AI Search Visibility Without Misleading Metrics",
+    summary: "Prompt sets, sampling, volatility, and connecting observations to commercial business relevance.",
+    readTime: "5 min read",
+    content: [
+      "Many marketing claims around 'AI visibility scores' are fabricated or based on single, non-repeatable queries.",
+      "Rigorous AI tracking requires standardized prompt sets tested systematically across platforms (ChatGPT, Gemini, Perplexity), logging date, model version, geography, and context.",
+      "AI response outputs are inherently probabilistic and volatile. Tracking trends over 3 to 6 months provides actionable intelligence on brand mention share-of-voice.",
+      "Ultimately, AI visibility matters only when it drives qualified enquiry volume and inbound phone calls."
+    ],
   },
   {
-    category: "GEO",
-    title: "Enterprise Knowledge Graphs & Citation Authority for GEO",
-    excerpt: "How to build and connect authoritative ecosystem citations and schema structures that generative search engines trust.",
-    url: "https://adweh.com/enterprise-knowledge-graphs-citations-geo/",
-  },
-  {
+    id: "high-intent-keywords",
     category: "SEO",
-    title: "High-Intent Keyword Architecture for Commercial Enterprises",
-    excerpt: "Targeting high-converting, commercial search terms that drive qualified inquiries across real estate, hospitality, healthcare, and manufacturing.",
-    url: "https://adweh.com/high-intent-keyword-architecture-seo/",
+    title: "High-Intent SEO Keywords: How to Reach Buyers, Not Just Browsers",
+    summary: "Search intent mapping, commercial terms, and structuring dedicated service pages that convert.",
+    readTime: "6 min read",
+    content: [
+      "Ranking for high-volume generic keywords often brings traffic that never buys. High-intent keywords reflect immediate commercial desire (e.g. 'lip pigmentation treatment in Ambattur' vs 'what is pigmentation').",
+      "Structuring dedicated, treatment-specific or service-specific pages allows you to match exact user intent with clear conversion pathways.",
+      "As seen in our verified clinic case studies, specific treatment pages allowed Dr. Swathi's clinic to rank #1 for 'excessive sweating' and 'IV therapy' rather than competing only on generic terms."
+    ],
   },
   {
-    category: "SEO",
-    title: "Online Reputation & Review Signals for Regional Search Dominance",
-    excerpt: "How to build and protect a formidable review profile to maximize organic click-through, buyer confidence, and local search authority.",
-    url: "https://adweh.com/online-reputation-management-enterprises-india/",
+    id: "traffic-few-enquiries",
+    category: "Website Development",
+    title: "Why Your Website Gets Traffic but Few Enquiries",
+    summary: "Conversion clarity, UX bottlenecks, page load speed, trust friction, and weak calls to action.",
+    readTime: "5 min read",
+    content: [
+      "If your analytics show healthy traffic but your inbox remains quiet, you have a conversion journey failure.",
+      "Common causes include: vague service descriptions, absence of verified proof, hidden contact details, friction-heavy contact forms, and slow mobile loading.",
+      "Streamlining the enquiry journey—with one-tap WhatsApp contact, prominent trust signals, and clear next steps—frequently doubles lead capture without needing more traffic."
+    ],
   },
   {
-    category: "AIEO",
-    title: "Brand Sentiment & Entity Anchoring Across AI Assistants",
-    excerpt: "Auditing and reinforcing positive company recommendations across major conversational AI models and LLM engines.",
-    url: "https://adweh.com/brand-sentiment-entity-anchoring-aieo/",
+    id: "reviews-consistency",
+    category: "Industry Guides",
+    title: "Online Reviews and Business Information: Why Consistency Matters",
+    summary: "Reputation, review response management, and keeping business facts uniform across directories.",
+    readTime: "5 min read",
+    content: [
+      "Inconsistent business hours, conflicting phone numbers, or mismatched addresses across directories confuse both prospective clients and search algorithms.",
+      "AI models cross-corroborate information from multiple web sources. Discrepancies reduce the system's confidence in recommending your business.",
+      "Maintaining an active, consistent profile with authentic patient and customer reviews creates the strongest reputation anchor in your local market."
+    ],
   },
   {
-    category: "GEO",
-    title: "Search Engines vs Generative Engines: The Future of Customer Discovery",
-    excerpt: "A complete analysis of how generative AI summaries are reshaping buyer decision-making and cross-industry brand discovery.",
-    url: "https://adweh.com/search-engines-vs-generative-engines-enterprises/",
-  },
-];
-
-const CHANNELS = [
-  {
-    num: "01",
-    title: "AIEO (AI Engine Optimization)",
-    desc: "Earn direct brand citations and entity recommendations across ChatGPT, Claude, and Perplexity when prospective clients ask AI assistants for recommendations.",
-    badge: "AI CITATIONS",
-    metric: "Top AI Citations",
-  },
-  {
-    num: "02",
-    title: "GEO (Generative Engine Optimization)",
-    desc: "Structure authoritative citations, enterprise facts, and knowledge graphs for featured synthesis inside Google AI Overviews and Gemini search snapshots.",
-    badge: "GENERATIVE SEARCH",
-    metric: "AI Overviews Ready",
-  },
-  {
-    num: "03",
-    title: "SEO (Search Engine Optimization)",
-    desc: "Optimize Google Maps presence and high-intent commercial search keywords to capture qualified customer inquiries.",
-    badge: "ORGANIC POWER",
-    metric: "Local Search",
-  },
-  {
-    num: "04",
-    title: "Website Development",
-    desc: "Cybersecurity-focused development, secure website building and vulnerability testing, fully optimized for search engines, AIEO, and generative discovery.",
-    badge: "SECURE WEB",
-    metric: "SOC-2 & GDPR Ready",
+    id: "buyer-research-patterns",
+    category: "Industry Guides",
+    title: "How Buyers Research Healthcare, Hospitality, Property, and B2B Online",
+    summary: "Industry-specific discovery patterns and how customers evaluate choices before making decisions.",
+    readTime: "8 min read",
+    content: [
+      "Healthcare patients search for specific symptom relief, doctor credentials, and nearby clinic reviews before calling.",
+      "Real estate buyers research neighborhood infrastructure, developer track records, and floor plan specifications over several months.",
+      "B2B procurement teams seek technical specifications, compliance standards, and fast RFQ intake funnels.",
+      "Aligning your website's architecture to your industry's specific decision-making process ensures you meet buyers at each stage of evaluation."
+    ],
   },
 ];
 
 export default function BlogPage() {
-  const [modalOpen, setModalOpen] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState<string>("ALL");
+  const [activeArticle, setActiveArticle] = useState<ArticleItem | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const filteredArticles = selectedFilter === "ALL"
-    ? ALL_ARTICLES
-    : ALL_ARTICLES.filter((a) => a.category === selectedFilter);
+    ? EDITORIAL_LIBRARY
+    : EDITORIAL_LIBRARY.filter((a) => a.category === selectedFilter);
 
   return (
     <section className="relative py-8 sm:py-14 px-4 sm:px-6 min-h-screen bg-ink overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
       {/* Background Glow */}
-      <div className="absolute top-24 left-1/4 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-[#0000cd]/10 blur-[130px] pointer-events-none" />
+      <div className="absolute top-24 left-1/4 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-[#1e2bc8]/10 blur-[130px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1400px]">
         {/* Top Header & Breadcrumb Bar */}
@@ -138,9 +189,9 @@ export default function BlogPage() {
             <span className="grid place-items-center h-6 w-6 rounded-full bg-bone text-ink text-[9px] font-bold" style={{ background: "#f5f1ea", color: "#0a0a0a" }}>
               §
             </span>
-            <span className="opacity-60">009</span>
+            <span className="opacity-60">011</span>
             <span>/</span>
-            <span className="text-white">Insights & Guides</span>
+            <span className="text-white">Insights &amp; Guides</span>
           </div>
 
           <a
@@ -149,7 +200,7 @@ export default function BlogPage() {
               e.preventDefault();
               navigateTo("/");
             }}
-            className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-4 sm:px-5 py-2 text-[11px] sm:text-[12px] font-semibold hover:bg-white hover:text-ink transition duration-300 cursor-pointer active:scale-95"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-4 sm:px-5 py-2 text-[11px] sm:text-[12px] font-semibold hover:bg-white hover:text-ink transition duration-300 cursor-pointer"
             style={{ color: "#f5f1ea" }}
           >
             ← Back to Home
@@ -158,176 +209,87 @@ export default function BlogPage() {
 
         {/* Hero Section */}
         <div className="max-w-3xl">
-          <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd] mb-3">[ ADWEH Intelligence · 2026 ]</div>
-          <h1 className="font-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-bone">
-            Insights & Guides for <span className="font-serif-i text-[#0000cd]">Enterprise Growth</span>
+          <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#5c85ff] font-bold mb-3">
+            [ INSIGHTS &amp; GUIDES ]
+          </div>
+          <h1 className="font-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-white">
+            Understand how customers <span className="font-serif-i italic text-[#5c85ff]">find businesses</span> today.
           </h1>
-          <p className="mt-3.5 sm:mt-5 text-[14px] sm:text-[16px] leading-relaxed text-bone/70">
-            Actionable playbooks, strategic frameworks, and technical teardowns on AIEO, GEO, SEO, and cybersecurity-focused website development for ambitious leaders across real estate, hospitality, healthcare, manufacturing, and commerce.
+          <p className="mt-4 text-[15px] sm:text-[17px] leading-relaxed text-bone/70 font-sans">
+            Clear, practical perspectives on Google search, AI-powered discovery, website performance, and the decisions that turn visibility into customer enquiries.
           </p>
         </div>
 
-        {/* Featured Post Card + Core Pillars Grid */}
-        <div className="mt-8 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-start">
-          {/* Left Column: Featured Post Card */}
-          <div className="lg:col-span-5">
-            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-white/70 mb-3">[ Featured Case Study ]</div>
-            
-            <div className="group relative rounded-2xl sm:rounded-[28px] bg-white/[0.02] border border-white/10 p-5 sm:p-7 hover:bg-white/[0.04] hover:border-white/15 transition-all duration-300">
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#0000cd]/20 border border-[#0000cd]/30 px-3 py-1 text-[9.5px] font-mono text-white uppercase tracking-[0.1em]">
-                CLIENT ACQUISITION · CASE STUDY
-              </span>
-              
-              <h2 className="mt-4 sm:mt-5 font-display text-2xl sm:text-3xl lg:text-4xl leading-[1.15] tracking-tight text-bone">
-                How Industry Leaders Are Getting <span className="font-serif-i text-[#0000cd]">3x More Qualified Inquiries</span> Using AIEO, GEO, SEO & Secure Web
-              </h2>
-              
-              <p className="mt-3 text-[13.5px] sm:text-[14px] leading-relaxed text-bone/70">
-                Picture this: two market competitors in the same sector, offering similar services. One has a consistent pipeline of high-ticket enterprise inquiries; the other struggles for leads. The difference is authoritative discovery across search and generative AI engines.
-              </p>
-              
-              <div className="mt-6 pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
-                <button
-                  type="button"
-                  onClick={() => setModalOpen(true)}
-                  className="text-[12px] font-medium text-bone/80 hover:text-white underline underline-offset-4 cursor-pointer"
-                >
-                  Quick Read Preview
-                </button>
+        {/* Category Tabs */}
+        <div className="mt-8 sm:mt-12 flex flex-wrap items-center gap-2 border-b border-white/10 pb-4">
+          {[
+            { label: "All Topics", value: "ALL" },
+            { label: "SEO", value: "SEO" },
+            { label: "AIEO", value: "AIEO" },
+            { label: "GEO", value: "GEO" },
+            { label: "Website Development", value: "Website Development" },
+            { label: "Industry Guides", value: "Industry Guides" },
+          ].map((cat) => (
+            <button
+              key={cat.value}
+              onClick={() => setSelectedFilter(cat.value)}
+              className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition cursor-pointer ${
+                selectedFilter === cat.value
+                  ? "bg-[#1e2bc8] text-white font-bold"
+                  : "bg-white/5 text-bone/60 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
 
-                <a
-                  href="https://adweh.com/digital-growth-enterprise-client-acquisition/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#0000cd] text-ink pl-4 pr-1.5 py-1.5 text-[12px] font-semibold hover:bg-bone transition group/btn"
-                >
-                  Read Full Guide
-                  <span className="grid place-items-center h-7 w-7 rounded-full bg-ink text-[#0000cd] transition-transform group-hover/btn:translate-x-0.5">
-                    →
+        {/* 12 Articles Grid */}
+        <div className="mt-8 sm:mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredArticles.map((art) => (
+            <div
+              key={art.id}
+              onClick={() => setActiveArticle(art)}
+              className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-7 hover:border-[#1e2bc8] hover:bg-white/[0.04] transition-all cursor-pointer flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#5c85ff] font-bold">
+                    {art.category}
                   </span>
-                </a>
+                  <span className="text-[10px] font-mono text-bone/40">{art.readTime}</span>
+                </div>
+
+                <h3 className="font-display text-xl font-bold text-white mt-4 tracking-tight leading-snug group-hover:text-[#5c85ff] transition-colors">
+                  {art.title}
+                </h3>
+
+                <p className="mt-3 text-[13.5px] text-bone/70 leading-relaxed font-sans">
+                  {art.summary}
+                </p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                <span className="text-xs font-semibold text-[#5c85ff] group-hover:underline">
+                  Read Full Guide →
+                </span>
+                <span className="text-[10px] font-mono text-bone/40">Editorial</span>
               </div>
             </div>
-          </div>
-
-          {/* Right Column: The 4 Core Growth Channels */}
-          <div className="lg:col-span-7">
-            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-white/70 mb-3">[ The 4 Core Capabilities ]</div>
-            
-            <div className="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
-              {CHANNELS.map((ch) => (
-                <div
-                  key={ch.num}
-                  className="group relative rounded-2xl bg-white/[0.015] border border-white/5 p-4 sm:p-5 hover:border-white/15 hover:bg-white/[0.03] transition duration-300"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-bone/40 group-hover:text-[#0000cd] transition duration-300">{ch.num}</span>
-                    <span className="rounded-md bg-white/5 border border-white/10 px-2 py-0.5 font-mono text-[9px] text-bone/60 uppercase tracking-[0.1em]">
-                      {ch.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-3 font-display text-lg sm:text-xl font-medium text-bone group-hover:text-[#0000cd] transition duration-300">
-                    {ch.title}
-                  </h3>
-
-                  <p className="mt-1.5 text-[12.5px] sm:text-[13px] leading-relaxed text-bone/60">
-                    {ch.desc}
-                  </p>
-
-                  <div className="mt-4 flex items-center justify-between text-[10.5px] font-mono border-t border-white/5 pt-3">
-                    <span className="opacity-40">Impact</span>
-                    <span className="text-[#0000cd] font-semibold">{ch.metric}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Quick Summary Banner */}
-            <div className="mt-4 sm:mt-5 rounded-2xl border border-[#0000cd]/15 bg-[#0000cd]/[0.02] p-4 sm:p-5">
-              <div className="text-[9.5px] font-mono uppercase tracking-[0.2em] text-[#0000cd]">[ Growth Engine Verdict ]</div>
-              <p className="mt-2 text-[12.5px] sm:text-[13px] leading-relaxed text-bone/80">
-                Enterprises that lead in 2026 treat AIEO, GEO, SEO, and cybersecurity-focused website development as core customer acquisition infrastructure. Combining AI citations with local search dominance and secure platforms creates a compounding 24/7 client acquisition engine.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Complete Articles Library Section */}
-        <div className="mt-14 sm:mt-20 pt-8 sm:pt-12 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd] mb-1.5">[ Knowledge Base ]</div>
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl tracking-tight text-bone">
-                All Published Articles & Guides
-              </h2>
+        {/* Bottom Assessment CTA */}
+        <div className="mt-16 rounded-3xl bg-white text-ink p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
+          <div className="max-w-2xl">
+            <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#1e2bc8] font-bold mb-2">
+              [ TAKE ACTION ]
             </div>
-
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap items-center gap-1.5 rounded-full bg-white/5 p-1 border border-white/10 text-[11px] font-mono">
-              {["ALL", "AIEO", "GEO", "SEO", "Website Development"].map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedFilter(cat)}
-                  className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
-                    selectedFilter === cat
-                      ? "bg-[#0000cd] text-white font-semibold shadow-sm"
-                      : "text-bone/60 hover:text-white"
-                  }`}
-                >
-                  {cat === "Website Development" ? "Web Dev" : cat}
-                </button>
-              ))}
+            <div className="font-display text-2xl sm:text-3xl font-bold text-[#0a0a0a]">
+              Want to find out where you're losing visibility?
             </div>
-          </div>
-
-          {/* Articles Grid */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {filteredArticles.map((art, idx) => (
-              <a
-                key={idx}
-                href={art.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col justify-between rounded-2xl bg-white/[0.02] border border-white/10 p-5 sm:p-6 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0000cd]/15 border border-[#0000cd]/25 px-2.5 py-0.5 text-[9px] font-mono text-[#0000cd] uppercase tracking-[0.1em]">
-                      {art.category}
-                    </span>
-                    <span className="text-[11px] text-white/30 group-hover:text-white transition">↗</span>
-                  </div>
-
-                  <h3 className="mt-4 font-display text-lg sm:text-xl leading-snug tracking-tight text-bone group-hover:text-[#0000cd] transition duration-300">
-                    {art.title}
-                  </h3>
-
-                  <p className="mt-2 text-[12.5px] leading-relaxed text-bone/60">
-                    {art.excerpt}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-semibold text-bone/80 group-hover:text-[#0000cd] transition">
-                  <span>Read Article</span>
-                  <span className="grid place-items-center h-6 w-6 rounded-full bg-white/5 text-bone group-hover:bg-[#0000cd] group-hover:text-ink transition">
-                    →
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA Banner */}
-        <div className="mt-14 sm:mt-20 rounded-2xl sm:rounded-3xl border border-white/10 bg-gradient-to-r from-white/[0.03] to-white/[0.01] p-6 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd] mb-1">[ Take The Next Step ]</div>
-            <h3 className="font-display text-2xl sm:text-3xl text-bone tracking-tight">
-              Ready to transform your customer acquisition?
-            </h3>
-            <p className="mt-2 text-[13.5px] text-bone/60 max-w-lg">
-              Get an end-to-end digital audit evaluating your AIEO, GEO, SEO, and website security posture.
+            <p className="text-sm text-ink/75 mt-2 font-sans">
+              Request a free visibility assessment. We'll review your search presence, AI readiness, and website conversion points.
             </p>
           </div>
 
@@ -337,102 +299,60 @@ export default function BlogPage() {
               e.preventDefault();
               navigateTo("/contact");
             }}
-            className="rounded-full bg-[#0000cd] text-ink px-6 py-3 text-[13px] font-semibold hover:bg-bone transition whitespace-nowrap cursor-pointer active:scale-95 shrink-0"
+            className="inline-flex items-center gap-2 rounded-full bg-[#0a0a0a] text-white px-7 py-3.5 text-sm font-semibold hover:bg-[#1e2bc8] transition shrink-0 cursor-pointer shadow-lg"
           >
-            Book Free Audit →
+            Get a Visibility Assessment for Your Business →
           </a>
         </div>
       </div>
 
-      {/* Modal Reader Overlay */}
-      {modalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-end bg-black/80 backdrop-blur-md transition-all duration-300">
-          <div className="h-full w-full max-w-[720px] bg-[#0c0c0c] border-l border-white/10 p-6 sm:p-10 overflow-y-auto flex flex-col justify-between shadow-[20px_0_80px_rgba(0,0,0,0.8)]">
-            <div>
-              {/* Header inside modal */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#0000cd]">ADWEH Insights · Guide Preview</span>
-                <button
-                  onClick={() => setModalOpen(false)}
-                  className="group grid place-items-center h-9 w-9 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition cursor-pointer"
-                  aria-label="Close modal"
-                >
-                  <span className="font-mono text-xs text-bone group-hover:rotate-90 transition-transform duration-300">✕</span>
-                </button>
-              </div>
+      {/* Article Reader Modal */}
+      {activeArticle && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
+          onClick={() => setActiveArticle(null)}
+        >
+          <div
+            className="bg-[#141414] text-bone rounded-3xl border border-white/15 max-w-2xl w-full p-6 sm:p-10 my-8 shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}
+            style={{ color: "#f5f1ea" }}
+          >
+            <button
+              onClick={() => setActiveArticle(null)}
+              className="absolute top-5 right-5 text-bone/50 hover:text-white font-mono text-xl cursor-pointer"
+            >
+              ✕
+            </button>
 
-              {/* Scrollable Content */}
-              <article className="mt-6 space-y-5 text-bone/80 text-[14.5px] leading-relaxed font-sans">
-                <span className="inline-block bg-[#0000cd]/15 px-2.5 py-0.5 rounded font-mono text-[9.5px] text-[#0000cd] uppercase tracking-[0.1em]">
-                  Comprehensive Guide
-                </span>
-                
-                <h2 className="font-display text-2xl sm:text-4xl leading-tight text-bone tracking-tight mt-2">
-                  How Industry Leaders Scale <span className="font-serif-i text-[#0000cd]">Client Acquisition</span>
-                </h2>
-
-                <p>
-                  Picture this: two market competitors in the same sector, offering similar services at similar price points. One is booked weeks in advance with high-ticket clients. The other is struggling to fill its sales pipeline.
-                </p>
-
-                <p>
-                  What is the difference? The first company dominates high-intent search on Google and gets directly recommended by conversational AI engines like ChatGPT. The second one remains invisible.
-                </p>
-
-                <div className="border-l-2 border-[#0000cd] pl-4 py-1.5 my-4 italic text-bone/95 text-[14px]">
-                  "In 2026, multi-model digital discovery is no longer optional. It is the single biggest lever for predictable enterprise client acquisition."
-                </div>
-
-                <h3 className="font-display text-xl text-bone mt-6 font-semibold">
-                  The 4 Core Capabilities That Drive Enterprise Growth
-                </h3>
-                
-                <div className="space-y-3 mt-3">
-                  <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5">
-                    <h4 className="font-display font-medium text-bone text-[14px]">1. AIEO (AI Engine Optimization)</h4>
-                    <p className="mt-1 text-[12.5px] opacity-80">
-                      When prospective buyers ask conversational assistants like ChatGPT, Claude, or Perplexity for the top providers in their sector, AIEO ensures your brand is indexed and cited as an authoritative entity.
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5">
-                    <h4 className="font-display font-medium text-bone text-[14px]">2. GEO (Generative Engine Optimization)</h4>
-                    <p className="mt-1 text-[12.5px] opacity-80">
-                      Google AI Overviews and Gemini generate synthesized answers at the top of search queries. GEO structures your entity citations, schemas, and facts so generative engines feature your brand directly inside the answer snippet.
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5">
-                    <h4 className="font-display font-medium text-bone text-[14px]">3. SEO (Search Engine Optimization)</h4>
-                    <p className="mt-1 text-[12.5px] opacity-80">
-                      High-intent keyword optimization paired with Google Business Profile regional presence in Google Maps. Organic search brings trusted, consistent inbound enquiries month after month without recurring ad spend.
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5">
-                    <h4 className="font-display font-medium text-bone text-[14px]">4. Website Development</h4>
-                    <p className="mt-1 text-[12.5px] opacity-80">
-                      Cybersecurity-focused development using security-conscious practices, vulnerability testing, and seamless optimization for search engines, AIEO, and generative discovery.
-                    </p>
-                  </div>
-                </div>
-
-                <p className="mt-6 pt-4 border-t border-white/10 text-[11px] font-mono opacity-50">
-                  © ADWEH Research. All rights reserved.
-                </p>
-              </article>
+            <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-[#5c85ff] mb-2 font-bold">
+              <span>{activeArticle.category}</span>
+              <span>·</span>
+              <span>{activeArticle.readTime}</span>
             </div>
 
-            <div className="mt-6 border-t border-white/10 pt-4 flex items-center justify-between">
-              <span className="text-[12px] opacity-70">
-                Ready to scale?
-              </span>
-              <button
-                onClick={() => { setModalOpen(false); navigateTo("/contact"); }}
-                className="rounded-full bg-[#0000cd] text-ink px-5 py-2 text-xs font-semibold hover:bg-bone transition cursor-pointer"
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
+              {activeArticle.title}
+            </h2>
+
+            <div className="mt-6 space-y-4 text-[14.5px] leading-relaxed text-bone/80 font-sans border-t border-white/10 pt-6">
+              {activeArticle.content.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <span className="text-xs font-mono text-bone/50">ADWEH Editorial Library</span>
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveArticle(null);
+                  navigateTo("/contact");
+                }}
+                className="inline-flex items-center gap-2 rounded-full bg-[#1e2bc8] text-white px-5 py-2 text-xs font-semibold hover:bg-white hover:text-black transition"
               >
-                Book Free Audit
-              </button>
+                Discuss This For Your Business →
+              </a>
             </div>
           </div>
         </div>

@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
-import { SectionHead } from "./About";
 import { navigateTo } from "../utils/navigation";
+import { whatsappLink } from "./CaseStudies/caseStudiesData";
 
 const FORM_ENDPOINT = "https://script.google.com/a/macros/medscalesystems.com/s/AKfycbzFrV2s1-DpgBT5hlHoMWUwdeU1ESSwS6CoSyRPW7AexgCZ3TKDbQfRxrfxvtNiisI/exec";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", practice: "", stage: "AIEO", notes: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    website: "",
+    industry: "Healthcare & Clinics",
+    priority: "Not Sure",
+    notes: "",
+    phone: "",
+  });
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -26,7 +35,7 @@ export default function ContactPage() {
             "Content-Type": "text/plain",
           },
           body: JSON.stringify({
-            token: "medscale_secure_token_2026_xyz",
+            token: "adweh_visibility_assessment_2026",
             ...form,
             submittedAt: new Date().toISOString(),
           }),
@@ -43,7 +52,7 @@ export default function ContactPage() {
   return (
     <section className="relative py-12 px-5 min-h-screen bg-ink" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
       {/* Ambient decorative blobs */}
-      <div className="absolute top-20 right-10 h-[480px] w-[480px] rounded-full bg-[#0000cd]/10 blur-[130px] pointer-events-none" />
+      <div className="absolute top-20 right-10 h-[480px] w-[480px] rounded-full bg-[#1e2bc8]/15 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 h-[360px] w-[360px] rounded-full bg-[#ff5d3b]/10 blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1400px]">
@@ -53,9 +62,9 @@ export default function ContactPage() {
             <span className="grid place-items-center h-6 w-6 rounded-full bg-bone text-ink text-[9px]" style={{ background: "#f5f1ea", color: "#0a0a0a" }}>
               §
             </span>
-            <span className="opacity-60">010</span>
+            <span className="opacity-60">012</span>
             <span>/</span>
-            <span>Contact ADWEH</span>
+            <span>Contact &amp; Visibility Assessment</span>
           </div>
 
           <button
@@ -71,218 +80,258 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-6 space-y-8">
             <div>
-              <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#0000cd] font-semibold mb-3">
-                [ Schedule Consultation ]
+              <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#5c85ff] font-bold mb-3">
+                [ START WITH CLARITY ]
               </div>
               <h1 className="font-display text-[36px] sm:text-[64px] lg:text-[76px] leading-[0.92] tracking-[-0.04em] text-white">
-                Let's <span className="font-serif-i italic">elevate</span>
+                Find out what's
                 <br />
-                your enterprise
+                <span className="font-serif-i italic text-[#5c85ff]">holding back</span> your
                 <br />
-                <span className="text-[#0000cd]">growth.</span>
+                digital visibility.
               </h1>
-              <p className="mt-6 text-[15.5px] leading-relaxed text-bone/70 max-w-lg">
-                Connect with ADWEH to deploy specialized growth infrastructure across AIEO, GEO, SEO, and cybersecurity-focused website development for leading enterprises.
+              <p className="mt-6 text-[15.5px] leading-relaxed text-bone/70 max-w-lg font-sans">
+                You don't need to guess whether your website, Google presence, or AI-search readiness deserves attention. Tell us about your business and we'll identify the most useful areas to review.
               </p>
             </div>
 
+            {/* What Your Assessment Can Cover */}
+            <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 space-y-4">
+              <div className="text-xs font-mono uppercase tracking-wider text-white font-bold">
+                What Your Assessment Can Cover:
+              </div>
+              <div className="space-y-3.5 text-sm text-bone/75 font-sans">
+                <div className="flex items-start gap-3">
+                  <span className="text-[#5c85ff] font-bold">●</span>
+                  <div>
+                    <strong className="text-white">Google search:</strong> How clearly your services and locations are represented in search.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[#5c85ff] font-bold">●</span>
+                  <div>
+                    <strong className="text-white">AI discovery:</strong> Whether your business facts and expertise are easy to find and understand.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[#5c85ff] font-bold">●</span>
+                  <div>
+                    <strong className="text-white">Website foundation:</strong> Technical, usability, performance, and security-focused observations within the assessment scope.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[#5c85ff] font-bold">●</span>
+                  <div>
+                    <strong className="text-white">Conversion opportunities:</strong> Whether visitors can quickly understand your offer and contact you.
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Direct Contact Bento Cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4 font-mono text-xs">
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                <div className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Head Office</div>
-                <div className="mt-2 text-[14px] font-medium leading-relaxed">
+                <div className="text-[10px] uppercase tracking-[0.2em] opacity-50">Head Office</div>
+                <div className="mt-2 text-[13px] font-sans font-medium leading-relaxed">
                   2/17B Palyathan Street, Alandur<br />
-                  <span className="text-white">Chennai – 600 016, India</span>
+                  <span className="text-white">Chennai – 600 016, Tamil Nadu, India</span>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                <div className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Direct Email</div>
-                <div className="mt-2 text-[14px] font-medium text-white">
-                  <a href="mailto:admin@adweh.com" className="hover:text-[#0000cd] transition">
+                <div className="text-[10px] uppercase tracking-[0.2em] opacity-50">Direct Contact</div>
+                <div className="mt-2 text-[13px] font-sans font-medium leading-relaxed">
+                  <a href="mailto:admin@adweh.com" className="text-white hover:text-[#5c85ff] transition block">
                     admin@adweh.com
                   </a>
-                </div>
-                <div className="mt-1 text-[11px] font-mono text-bone/50">Response SLA: &lt; 24h</div>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                <div className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Direct Phone</div>
-                <div className="mt-2 text-[15px] font-medium text-white">
-                  <a href="tel:+918667031931" className="hover:text-[#0000cd] transition">
+                  <a href="tel:+918667031931" className="text-white hover:text-[#5c85ff] transition block mt-1">
                     +91 86670 31931
                   </a>
                 </div>
-                <div className="mt-1 text-[11px] font-mono text-bone/50">Mon–Fri · 07:00 AM – 09:00 PM IST</div>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                <div className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-50">Specialization</div>
-                <div className="mt-2 text-[14px] font-medium text-white">
-                  100% Growth Focused
-                </div>
-                <div className="mt-1 text-[11px] font-mono text-bone/50">130+ Brands Scaled</div>
               </div>
             </div>
 
-            {/* Strategic Consultation Commitments */}
-            <div className="space-y-1 border-t border-white/10 pt-6">
-              {[
-                { k: "Free Strategy Call", v: "30‑min deep dive into current search and AI visibility" },
-                { k: "Custom Growth Audit", v: "Full assessment across AIEO, GEO, SEO & web security" },
-                { k: "Transparent Engagement", v: "Clear deliverables with zero lock‑in commitments" },
-              ].map((b) => (
-                <div key={b.k} className="flex items-center justify-between py-4 border-b border-white/5">
-                  <div className="flex items-center gap-4">
-                    <span className="grid place-items-center h-8 w-8 rounded-full bg-[#0000cd] text-ink text-[11px] font-bold">
-                      ✓
-                    </span>
-                    <div>
-                      <div className="text-[14.5px] font-medium text-white">{b.k}</div>
-                      <div className="text-[12px] opacity-60">{b.v}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="pt-2">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-mono text-[#5c85ff] hover:underline"
+              >
+                Prefer a conversation? Ask About a Strategy Call on WhatsApp →
+              </a>
             </div>
           </div>
 
-          {/* Right Column: Interactive Consultation Form */}
+          {/* Form */}
           <div className="lg:col-span-6">
-            <div
-              className="rounded-2xl sm:rounded-[28px] bg-bone text-ink p-5 sm:p-10 shadow-2xl"
+            <form
+              onSubmit={handleSubmit}
+              className="relative rounded-3xl bg-bone text-ink p-6 sm:p-10 shadow-2xl"
               style={{ background: "#f5f1ea" }}
             >
-              <div className="flex items-center justify-between border-b border-ink/10 pb-4">
-                <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-60">
-                  [ Consultation Request · Form ]
+              <div className="flex items-center justify-between pb-4 border-b border-ink/10">
+                <div>
+                  <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
+                    Tell Us About Your Business
+                  </h2>
+                  <p className="text-xs text-ink/60 mt-1">We'll review your details and recommend the most useful next step.</p>
                 </div>
-                <span className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#0a0a0a] pulse-dot" /> Live
-                </span>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-ink/50">* Required</span>
               </div>
 
               {sent ? (
-                <div className="mt-12 text-center py-16">
-                  <div className="mx-auto grid place-items-center h-16 w-16 rounded-full bg-[#0000cd] text-ink text-2xl font-bold">
+                <div className="py-14 text-center space-y-4">
+                  <div className="w-14 h-14 rounded-full bg-[#1e2bc8] text-white text-2xl flex items-center justify-center mx-auto">
                     ✓
                   </div>
-                  <h3 className="mt-6 font-display text-3xl tracking-tight">Request received.</h3>
-                  <p className="mt-3 opacity-70 text-[14.5px] max-w-sm mx-auto leading-relaxed">
-                    Thank you {form.name || "there"} — our growth strategist will review your business information and respond within 24 hours.
+                  <h3 className="font-display text-2xl font-bold text-ink">Thanks—your request has been received.</h3>
+                  <p className="text-sm text-ink/75 max-w-md mx-auto leading-relaxed">
+                    We'll review the details and contact you about the next step.
                   </p>
                   <button
                     onClick={() => setSent(false)}
-                    className="mt-8 inline-flex items-center rounded-full bg-[#0a0a0a] text-bone px-6 py-2.5 text-[12px] font-semibold hover:bg-[#0000cd] transition"
+                    className="mt-4 text-xs font-mono uppercase tracking-wider text-[#1e2bc8] hover:underline cursor-pointer"
                   >
-                    Submit Another Request
+                    Submit another enquiry
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="mt-6 space-y-5">
-                  <h3 className="font-display text-2xl sm:text-3xl tracking-tight">
-                    Tell us about <span className="font-serif-i italic">your business.</span>
-                  </h3>
+                <div className="mt-6 space-y-4 font-sans">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-1">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        placeholder="Your full name"
+                        className="w-full rounded-xl border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[#1e2bc8] focus:outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-1">
+                        Work Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        placeholder="you@company.com"
+                        className="w-full rounded-xl border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[#1e2bc8] focus:outline-none"
+                      />
+                    </div>
+                  </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-[10px] font-mono tracking-[0.22em] uppercase opacity-60 block">Your Name</label>
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-1">
+                        Company / Brand *
+                      </label>
                       <input
-                        required
                         type="text"
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        placeholder="Sarah Johnson"
-                        className="mt-2 w-full rounded-full bg-ink/5 border border-ink/10 px-4 py-3 text-[16px] sm:text-[14px] placeholder:opacity-40 focus:outline-none focus:border-ink/40 focus:bg-bone transition"
-                        style={{ background: "rgba(10,10,10,.04)" }}
+                        required
+                        value={form.company}
+                        onChange={(e) => setForm({ ...form, company: e.target.value })}
+                        placeholder="Company or clinic name"
+                        className="w-full rounded-xl border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[#1e2bc8] focus:outline-none"
                       />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-1">
+                        Website URL
+                      </label>
+                      <input
+                        type="text"
+                        value={form.website}
+                        onChange={(e) => setForm({ ...form, website: e.target.value })}
+                        placeholder="https://example.com"
+                        className="w-full rounded-xl border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[#1e2bc8] focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-1">
+                        Industry
+                      </label>
+                      <select
+                        value={form.industry}
+                        onChange={(e) => setForm({ ...form, industry: e.target.value })}
+                        className="w-full rounded-xl border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink focus:border-[#1e2bc8] focus:outline-none"
+                      >
+                        <option value="Healthcare & Clinics">Healthcare &amp; Clinics</option>
+                        <option value="Real Estate & Property">Real Estate &amp; Property</option>
+                        <option value="Hotels & Hospitality">Hotels &amp; Hospitality</option>
+                        <option value="Manufacturing & B2B">Manufacturing &amp; B2B</option>
+                        <option value="Commerce & Growing Brands">Commerce &amp; Growing Brands</option>
+                        <option value="Other">Other Service Business</option>
+                      </select>
                     </div>
 
                     <div>
-                      <label className="text-[10px] font-mono tracking-[0.22em] uppercase opacity-60 block">Work Email</label>
-                      <input
-                        required
-                        type="email"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        placeholder="sarah@company.com"
-                        className="mt-2 w-full rounded-full bg-ink/5 border border-ink/10 px-4 py-3 text-[16px] sm:text-[14px] placeholder:opacity-40 focus:outline-none focus:border-ink/40 focus:bg-bone transition"
-                        style={{ background: "rgba(10,10,10,.04)" }}
-                      />
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-1">
+                        Main Priority
+                      </label>
+                      <select
+                        value={form.priority}
+                        onChange={(e) => setForm({ ...form, priority: e.target.value })}
+                        className="w-full rounded-xl border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink focus:border-[#1e2bc8] focus:outline-none"
+                      >
+                        <option value="SEO">SEO (Search Engine Optimization)</option>
+                        <option value="AIEO">AIEO (AI Assistant Citations)</option>
+                        <option value="GEO">GEO (Generative Engine Optimization)</option>
+                        <option value="Website Development">Security-Focused Website</option>
+                        <option value="Not Sure">Not Sure / Complete Review</option>
+                      </select>
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-[10px] font-mono tracking-[0.22em] uppercase opacity-60 block">Company / Brand Name</label>
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-1">
+                      Phone / WhatsApp (Optional)
+                    </label>
                     <input
-                      required
-                      type="text"
-                      value={form.practice}
-                      onChange={(e) => setForm({ ...form, practice: e.target.value })}
-                      placeholder="Apex Real Estate / Grand Hotel"
-                      className="mt-2 w-full rounded-full bg-ink/5 border border-ink/10 px-4 py-3 text-[16px] sm:text-[14px] placeholder:opacity-40 focus:outline-none focus:border-ink/40 focus:bg-bone transition"
-                      style={{ background: "rgba(10,10,10,.04)" }}
+                      type="tel"
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      placeholder="+91 86670 31931"
+                      className="w-full rounded-xl border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[#1e2bc8] focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="text-[10px] font-mono tracking-[0.22em] uppercase opacity-60 block">Service Needed</label>
-                    <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-1.5 rounded-2xl sm:rounded-full bg-ink/5 p-1.5">
-                      {[
-                        { label: "AIEO", val: "AIEO" },
-                        { label: "GEO", val: "GEO" },
-                        { label: "SEO", val: "SEO" },
-                        { label: "Web Dev", val: "Website Development" },
-                      ].map((s) => {
-                        const active = form.stage === s.val;
-                        return (
-                          <button
-                            type="button"
-                            key={s.label}
-                            onClick={() => setForm({ ...form, stage: s.val })}
-                            className={`text-[12px] py-2.5 min-h-[40px] rounded-xl sm:rounded-full transition font-medium cursor-pointer active:scale-95 ${
-                              active ? "bg-[#0a0a0a] text-[#f5f1ea]" : "hover:bg-ink/5"
-                            }`}
-                          >
-                            {s.label}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="text-[10px] font-mono tracking-[0.22em] uppercase opacity-60 block">What is your primary growth goal?</label>
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-1">
+                      What would you like to improve?
+                    </label>
                     <textarea
+                      rows={3}
                       value={form.notes}
                       onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                      rows={4}
-                      placeholder="Current client volume, AI/search presence, security or website goals…"
-                      className="mt-2 w-full rounded-2xl bg-ink/5 border border-ink/10 px-4 py-3 text-[16px] sm:text-[14px] placeholder:opacity-40 focus:outline-none focus:border-ink/40 focus:bg-bone transition"
-                      style={{ background: "rgba(10,10,10,.04)" }}
+                      placeholder="Share details on your current rankings, target services, or website objectives..."
+                      className="w-full rounded-xl border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/30 focus:border-[#1e2bc8] focus:outline-none"
                     />
                   </div>
+
+                  <p className="text-[11px] text-ink/60 leading-normal">
+                    By submitting, you agree to be contacted about your enquiry. Read our Privacy Policy for how we handle your information.
+                  </p>
 
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="group/btn relative inline-flex w-full items-center justify-between rounded-full bg-[#0a0a0a] text-bone pl-6 pr-1.5 py-1.5 min-h-[50px] text-[13.5px] font-semibold overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer active:scale-[0.99] transition-transform"
-                    style={{ color: "#f5f1ea" }}
+                    className="w-full rounded-xl bg-[#0a0a0a] text-white py-4 text-sm font-semibold hover:bg-[#1e2bc8] transition duration-200 cursor-pointer disabled:opacity-50"
                   >
-                    <span>{submitting ? "Submitting request..." : "Schedule Strategy Session"}</span>
-                    <span className="grid place-items-center h-10 w-10 rounded-full bg-[#0000cd] text-ink transition-transform group-hover/btn:rotate-45">
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M7 17 17 7M9 7h8v8" />
-                      </svg>
-                    </span>
+                    {submitting ? "Submitting..." : "Request My Visibility Assessment →"}
                   </button>
-
-                  <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-center opacity-50 pt-2">
-                    🔒 Enterprise Data Privacy · Strict Confidentiality · No Spam
-                  </p>
-                </form>
+                </div>
               )}
-            </div>
+            </form>
           </div>
         </div>
       </div>

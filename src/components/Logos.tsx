@@ -1,49 +1,43 @@
-const brands = [
-  "Apex Real Estate",
-  "Metro Hospitality",
-  "CVS Health",
-  "Vanguard Industrial",
-  "The Grand Palace Hotels",
-  "Johnson & Johnson",
-  "Aura Living Spaces",
-  "Precision Dynamics",
-  "Vitality Health Group",
+const verifiedPartners = [
+  "Soul Skin Clinic",
+  "Virtue Clinic & Academy",
+  "Dr. Swathi's Cosmetic Clinic",
+  "Subam Skin Clinic",
+  "Mithran Fertility Center",
+  "Healthcare & Clinics",
+  "Real Estate & Property",
+  "Hotels & Hospitality",
+  "Manufacturing & B2B",
+  "Commerce & Modern Brands",
 ];
 
 export default function Logos() {
   return (
-    <section className="relative bg-ink py-10 sm:py-20 overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
-      <div className="mx-auto max-w-[1400px] px-5">
-        <div className="grid lg:grid-cols-12 gap-4 sm:gap-6 items-end">
-          <div className="lg:col-span-4">
-            <div className="text-[10px] font-mono uppercase tracking-[0.22em] opacity-50 mb-2 sm:mb-3">[ Trusted by · 002 ]</div>
-            <h2 className="font-display text-2xl sm:text-4xl tracking-[-0.03em]">
-              Industry leaders trust the growth engine.
+    <section className="relative bg-ink py-6 sm:py-16 overflow-hidden" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
+        <div className="grid lg:grid-cols-12 gap-3 sm:gap-6 items-end">
+          <div className="lg:col-span-5">
+            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#5c85ff] font-bold mb-1.5 sm:mb-2">
+              [ VERIFIED EVIDENCE &amp; SECTORS · 002 ]
+            </div>
+            <h2 className="font-display text-xl sm:text-4xl tracking-tight text-white">
+              High-intent visibility across competitive sectors.
             </h2>
           </div>
-          <div className="lg:col-span-8 text-[12.5px] sm:text-[13px] opacity-60 max-w-md lg:ml-auto">
-            From real estate developers and luxury hotels to specialized healthcare networks and precision manufacturing — we operate as an embedded growth team behind category leaders.
+          <div className="lg:col-span-7 text-[12.5px] sm:text-[14px] text-bone/70 max-w-lg lg:ml-auto font-sans">
+            From specialized dermatology and fertility clinics to real estate, hospitality, and B2B manufacturing—we build the search and AI foundations that help businesses win their market.
           </div>
         </div>
       </div>
 
-      <div className="mt-6 sm:mt-14 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
-        <div className="marquee-track inline-flex gap-8 sm:gap-16 whitespace-nowrap pr-8 sm:pr-16">
-          {[...brands, ...brands, ...brands].map((b, i) => (
-            <span key={i} className="inline-flex items-center gap-3 sm:gap-5">
-              <span className="font-display text-[28px] sm:text-[56px] tracking-[-0.03em] text-bone" style={{ color: "#f5f1ea" }}>{b}</span>
-              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#0000cd]" />
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-4 sm:mt-6 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
-        <div className="marquee-track-rev inline-flex gap-8 sm:gap-16 whitespace-nowrap pr-8 sm:pr-16">
-          {[...brands, ...brands, ...brands].map((b, i) => (
-            <span key={i} className="inline-flex items-center gap-3 sm:gap-5">
-              <span className="font-display text-[28px] sm:text-[56px] tracking-[-0.03em] text-outline-bone">{b}</span>
-              <span className="text-[#0000cd] text-lg sm:text-2xl">✦</span>
+      <div className="mt-5 sm:mt-12 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+        <div className="marquee-track inline-flex gap-5 sm:gap-14 whitespace-nowrap pr-5 sm:pr-14">
+          {[...verifiedPartners, ...verifiedPartners].map((b, i) => (
+            <span key={i} className="inline-flex items-center gap-2.5 sm:gap-5">
+              <span className="font-display text-[20px] sm:text-[44px] tracking-tight text-white font-medium">
+                {b}
+              </span>
+              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#1e2bc8]" />
             </span>
           ))}
         </div>

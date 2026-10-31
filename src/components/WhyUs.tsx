@@ -1,171 +1,116 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { SectionHead } from "./About";
+import { navigateTo } from "../utils/navigation";
 
 const reasons = [
   {
     n: "01",
-    icon: "✦",
-    title: "100% Growth Focused",
-    items: [
-      "Specialized exclusively in AIEO, GEO, SEO, and website development",
-      "Deep insight into high-intent search behavior and digital entity authority",
-      "Pioneering AI assistant visibility and generative search discovery",
-    ],
+    title: "Commercial Thinking First",
+    summary: "Targeting high-intent buyers, not vanity numbers.",
+    desc: "We start with the customers you want, the searches that matter, and the actions you want visitors to take—not a generic checklist of vanity impressions and meaningless rankings.",
   },
   {
     n: "02",
-    icon: "↑",
-    title: "Proven Track Record",
-    items: [
-      "130+ enterprises and high-growth brands scaled across India",
-      "$400K+ in measurable revenue generated for clients",
-      "Average 428% growth in qualified organic inbound inquiries",
-      "Strengthening Google Maps presence and AI engine citations",
-    ],
+    title: "Search and AI Visibility Together",
+    summary: "One connected presence across Google and AI assistants.",
+    desc: "Traditional search and AI-powered discovery increasingly influence the same buying journey. Our approach connects them instead of treating them as competing channels.",
   },
   {
     n: "03",
-    icon: "⛨",
-    title: "Security-Conscious Web & Compliance Rigor",
-    items: [
-      "Cybersecurity-focused development practices across every build",
-      "Secure website building, automated testing & vulnerability remediation",
-      "Security-conscious forms, SSL/TLS encryption, and enterprise-compliant data standards",
-    ],
+    title: "Websites Built for the Next Step",
+    summary: "Converting visitors into qualified customer enquiries.",
+    desc: "A website should do more than look professional. It should explain your offer with precision, establish undeniable credibility, and make it effortless for prospects to take the next step.",
   },
   {
     n: "04",
-    icon: "⊕",
-    title: "Next-Gen Search & Web Stack",
-    items: [
-      "Websites engineered from the ground up for SEO, AIEO & GEO",
-      "Optimization for multi-model visibility across ChatGPT, Claude & Google Overviews",
-      "In-house technical engineering with zero outsourcing",
-    ],
+    title: "Transparent Priorities",
+    summary: "Clear roadmaps and realistic expectations.",
+    desc: "You should know exactly what is being improved, why it matters, and how progress will be reviewed. We focus on measurable signals and realistic expectations—no smoke and mirrors.",
+  },
+  {
+    n: "05",
+    title: "Security-Conscious Development",
+    summary: "Rigorous standards and vulnerability awareness.",
+    desc: "We use security-focused development and testing practices appropriate to the agreed scope. No website is risk-free, and compliance claims are never exaggerated without rigorous evidence.",
   },
 ];
 
 export default function WhyUs() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [activeIdx, setActiveIdx] = useState(0);
-
-  const handleScroll = () => {
-    if (!scrollRef.current) return;
-    const left = scrollRef.current.scrollLeft;
-    const cardWidth = scrollRef.current.offsetWidth * 0.82;
-    const idx = Math.round(left / (cardWidth || 1));
-    setActiveIdx(Math.min(reasons.length - 1, Math.max(0, idx)));
-  };
-
-  const scrollToIdx = (idx: number) => {
-    if (!scrollRef.current) return;
-    const cards = scrollRef.current.children;
-    if (cards[idx]) {
-      (cards[idx] as HTMLElement).scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-    }
-    setActiveIdx(idx);
-  };
-
   return (
-    <section id="why" className="relative py-10 sm:py-24 bg-bone-2/40 overflow-hidden" style={{ background: "#ebe5da" }}>
-      <div className="mx-auto max-w-[1400px] px-5">
-        <SectionHead n="008" label="Why the studio" />
+    <section id="why" className="relative py-8 sm:py-20 bg-bone-2/40 overflow-hidden" style={{ background: "#ebe5da" }}>
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
+        <SectionHead n="007" label="Why Work With Us" />
 
-        <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-end">
-          <div className="lg:col-span-7">
-            <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-ink">
-              Not another <span className="font-serif-i">agency.</span>
-              <br />
-              A specialist <span className="text-[#ff5d3b]">partner.</span>
+        <div className="mt-5 sm:mt-14 grid lg:grid-cols-12 gap-5 sm:gap-12 items-end">
+          <div className="lg:col-span-8">
+            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#1e2bc8] font-bold mb-2 sm:mb-3">
+              [ THE ADWEH ADVANTAGE ]
+            </div>
+            <h2 className="font-display text-[30px] xs:text-[38px] sm:text-[60px] lg:text-[76px] leading-[0.98] sm:leading-[0.95] tracking-[-0.035em] text-ink">
+              You don't need marketing jargon.{" "}
+              <br className="hidden sm:inline" />
+              You need a <span className="font-serif-i italic text-[#1e2bc8]">clearer path</span> to growth.
             </h2>
           </div>
-          <p className="lg:col-span-5 text-[14px] sm:text-[15px] leading-relaxed text-ink/70 max-w-md lg:ml-auto">
-            We partner with ambitious organizations — bringing deep technical expertise,
-            advanced AI and search systems, and proven execution that delivers measurable results.
-          </p>
-        </div>
-
-        {/* Mobile Horizontal Snap Carousel (< md) */}
-        <div className="md:hidden mt-6">
-          <div
-            ref={scrollRef}
-            onScroll={handleScroll}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-3 -mx-5 px-5 scrollbar-hide"
-          >
-            {reasons.map((r) => (
-              <div
-                key={r.title}
-                className="w-[85vw] max-w-[320px] shrink-0 snap-center rounded-2xl bg-[#f5f1ea] border border-ink/10 p-5 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-start justify-between">
-                    <span className="grid place-items-center h-10 w-10 rounded-full bg-[#0a0a0a] text-[#f5f1ea] text-lg">
-                      {r.icon}
-                    </span>
-                    <span className="font-mono text-[9.5px] tracking-[0.2em] opacity-50">[ {r.n} / 04 ]</span>
-                  </div>
-                  <h3 className="mt-4 font-display text-xl tracking-tight leading-snug">{r.title}</h3>
-                  <ul className="mt-3 space-y-2">
-                    {r.items.map((it) => (
-                      <li key={it} className="flex items-start gap-2 text-[12px] opacity-75 leading-relaxed">
-                        <span className="mt-1.5 h-1 w-2 bg-current opacity-60 flex-none" />
-                        <span>{it}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex items-center justify-center gap-1.5 mt-2">
-            {reasons.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => scrollToIdx(i)}
-                aria-label={`Go to reason ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeIdx === i ? "w-6 bg-[#0000cd]" : "w-1.5 bg-ink/20"
-                }`}
-              />
-            ))}
+          <div className="lg:col-span-4">
+            <p className="text-[14px] sm:text-[16px] leading-relaxed text-ink/75 font-sans">
+              We replace agency buzzwords with clear commercial priorities, solid engineering, and measurable visibility across search and AI systems.
+            </p>
           </div>
         </div>
 
-        {/* Desktop Grid (md and up) */}
-        <div className="hidden md:grid md:grid-cols-2 gap-px bg-ink/10 rounded-2xl sm:rounded-3xl overflow-hidden border border-ink/10 mt-8 sm:mt-16">
-          {reasons.map((r, i) => (
+        {/* 5 Reasons Grid */}
+        <div className="mt-6 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5">
+          {reasons.map((r) => (
             <div
-              key={r.title}
-              className="group relative bg-[#f5f1ea] text-ink p-5 sm:p-8 lg:p-10 transition duration-300"
-              data-cursor="hover"
+              key={r.n}
+              className="rounded-2xl sm:rounded-3xl border border-ink/10 bg-white p-4 sm:p-8 hover:border-[#1e2bc8] hover:shadow-lg transition-all flex flex-col justify-between group"
             >
-              <div className="flex items-start justify-between">
-                <span className="grid place-items-center h-11 w-11 sm:h-14 sm:w-14 rounded-full bg-[#0a0a0a] text-[#f5f1ea] text-xl sm:text-2xl transition group-hover:bg-[#0000cd]">
-                  {r.icon}
-                </span>
-                <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] opacity-50">[ {r.n} / 04 ]</span>
+              <div>
+                <div className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-ink/5">
+                  <span className="font-mono text-xs font-bold text-[#1e2bc8]">{r.n}</span>
+                  <span className="text-[9px] font-mono uppercase tracking-widest text-ink/40">Principle</span>
+                </div>
+                <h3 className="font-display text-lg sm:text-2xl font-bold text-ink mt-3 sm:mt-4 tracking-tight leading-snug">
+                  {r.title}
+                </h3>
+                <div className="text-xs font-semibold text-[#1e2bc8] mt-1 font-mono">
+                  {r.summary}
+                </div>
+                <p className="mt-2.5 sm:mt-3 text-[13px] sm:text-[13.5px] leading-relaxed text-ink/70 font-sans">
+                  {r.desc}
+                </p>
               </div>
-              <h3 className="mt-5 sm:mt-8 font-display text-2xl sm:text-3xl lg:text-4xl tracking-[-0.03em] leading-tight">{r.title}</h3>
-              <ul className="mt-3.5 sm:mt-6 space-y-2 sm:space-y-2.5">
-                {r.items.map((it) => (
-                  <li key={it} className="flex items-start gap-2.5 sm:gap-3 text-[12.5px] sm:text-[13.5px] opacity-75">
-                    <span className="mt-2 h-1 w-2.5 sm:w-3 bg-current opacity-60 flex-none" />
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 opacity-0 group-hover:opacity-100 transition">
-                <span className="grid place-items-center h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-[#0000cd] text-[#f5f1ea]">
-                  <svg viewBox="0 0 24 24" className="h-3 sm:h-3.5 w-3 sm:w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M7 17 17 7M9 7h8v8" />
-                  </svg>
-                </span>
-              </div>
-              {i % 2 === 0 && <div className="absolute top-1/2 -right-px h-12 w-px bg-[#0000cd] opacity-0 group-hover:opacity-100 transition" />}
             </div>
           ))}
+
+          {/* Direct CTA card */}
+          <div className="rounded-2xl sm:rounded-3xl bg-[#0a0a0a] text-white p-4 sm:p-8 flex flex-col justify-between shadow-xl">
+            <div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#5c85ff] font-bold mb-2">
+                [ Next Step ]
+              </div>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Ready to review your digital visibility?
+              </h3>
+              <p className="mt-2 sm:mt-3 text-[13px] sm:text-[13.5px] text-bone/70 leading-relaxed font-sans" style={{ color: "rgba(245,241,234,.7)" }}>
+                Let's analyze where your business stands in Google search and AI assistant answers today.
+              </p>
+            </div>
+
+            <div className="mt-4 sm:mt-6">
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo("/contact");
+                }}
+                className="inline-flex items-center justify-center w-full sm:w-auto gap-2 rounded-full bg-white text-[#0a0a0a] px-5 py-2.5 sm:px-6 sm:py-3 text-[12.5px] sm:text-[13px] font-semibold hover:bg-[#1e2bc8] hover:text-white transition cursor-pointer text-center"
+              >
+                Talk to ADWEH About Your Growth Priorities →
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

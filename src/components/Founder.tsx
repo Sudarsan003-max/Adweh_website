@@ -7,29 +7,12 @@ export default function Founder() {
   const [activeTab, setActiveTab] = useState("overview");
 
   const results = [
-    "Engineered high-converting search, AI, and social acquisition engines, consistently driving 50+ high-ticket enterprise client acquisitions monthly across real estate, hospitality, and healthcare.",
-    "Designed and deployed custom API integrations and CRM workflow automations, accelerating inbound lead response times to under 5 minutes.",
-    "Architected comprehensive customer-lifecycle tracking systems, mapping key pipeline conversions and optimizing enterprise sales velocity.",
-    "Efficiently directed and optimized high-yield monthly digital media and organic search infrastructure across search, generative AI, and professional networks.",
-    "Developed targeted outbound marketing and account-based strategies, maintaining a consistent 30%+ open rate and 8%+ engagement rate.",
-    "Audited and optimized sales operations and intake workflows, elevating discovery-to-contract conversion rates by 40% through structured execution.",
-    "Delivered strategic growth consulting and operational audits for 130+ leading brands across real estate, hospitality, healthcare, and manufacturing nationwide."
+    "Engineered search and AI visibility systems across Google, ChatGPT, and Gemini, moving over 340+ competitive keywords into page one rankings.",
+    "Integrated entity and schema architectures that earned direct brand citations and features in Google AI Overviews.",
+    "Architected high-speed, security-conscious website infrastructure with clean conversion funnels that transform search traffic into qualified enquiries.",
+    "Designed structured local SEO and multi-location map presence across high-competition metropolitan and regional markets.",
+    "Audited digital visibility and designed execution roadmaps for healthcare clinics, real estate, hospitality, manufacturing, and commerce brands.",
   ];
-
-  // Likes interactive state for the 3 LinkedIn posts
-  const [likes, setLikes] = useState({ post1: 8, post2: 5, post3: 10 });
-  const [liked, setLiked] = useState({ post1: false, post2: false, post3: false });
-
-  const handleLike = (postKey: "post1" | "post2" | "post3") => {
-    setLiked((prev) => {
-      const isLiked = !prev[postKey];
-      setLikes((lPrev) => ({
-        ...lPrev,
-        [postKey]: isLiked ? lPrev[postKey] + 1 : lPrev[postKey] - 1
-      }));
-      return { ...prev, [postKey]: isLiked };
-    });
-  };
 
   return (
     <div className="mx-auto max-w-[1200px] px-5 py-12 text-ink">
@@ -40,344 +23,244 @@ export default function Founder() {
           e.preventDefault();
           navigateTo("/");
         }}
-        className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.25em] opacity-60 hover:opacity-100 hover:text-[#ff5d3b] transition duration-300 mb-8 cursor-pointer"
+        className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.25em] opacity-60 hover:opacity-100 hover:text-[#1e2bc8] transition duration-300 mb-8 cursor-pointer"
       >
         ← Back to Studio Home
       </a>
 
-      {/* 1. Header: Immersive Editorial Split Card (Different, Unique & Larger Portrait) */}
-      <div className="rounded-[32px] border border-ink/10 bg-[#ebe5da]/20 overflow-hidden shadow-sm relative flex flex-col md:flex-row" style={{ background: "rgba(235,229,218,.35)" }}>
-        {/* Left Side: Dark Portrait block with grid overlay */}
-        <div className="w-full md:w-72 bg-[#0a0a0a] relative flex items-center justify-center p-6 sm:p-8 shrink-0 overflow-hidden">
-          {/* Subtle grid and ambient glow */}
+      {/* 1. Header: Immersive Editorial Split Card */}
+      <div
+        className="rounded-[32px] border border-ink/10 bg-[#ebe5da]/20 overflow-hidden shadow-sm relative flex flex-col md:flex-row"
+        style={{ background: "rgba(235,229,218,.35)" }}
+      >
+        {/* Left Side: Dark Portrait block */}
+        <div className="w-full md:w-80 bg-[#0a0a0a] relative flex items-center justify-center p-6 sm:p-8 shrink-0 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-          <div className="absolute -top-10 -left-10 w-32 h-32 bg-coral/5 rounded-full blur-2xl pointer-events-none" />
-          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-lime/5 rounded-full blur-2xl pointer-events-none" />
-          
-          {/* Unique, High-End Squircle Portrait (192px) with Glass offset & Tech Crop Brackets */}
+          <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#1e2bc8]/10 rounded-full blur-2xl pointer-events-none" />
+
+          {/* Squircle Portrait with Frame */}
           <div className="relative group">
-            {/* Animated glow backplate */}
-            <div className="absolute inset-0 rounded-[40px_16px_40px_16px] bg-gradient-to-br from-coral/15 to-lime/20 blur-lg opacity-40 group-hover:opacity-75 transition-opacity duration-500 pointer-events-none" />
-            
-            {/* Outer offset glass frame */}
+            <div className="absolute inset-0 rounded-[40px_16px_40px_16px] bg-gradient-to-br from-[#1e2bc8]/20 to-[#4169e1]/20 blur-lg opacity-40 group-hover:opacity-75 transition-opacity duration-500 pointer-events-none" />
             <div className="absolute -inset-1.5 rounded-[42px_18px_42px_18px] border border-white/10 bg-white/[0.02] backdrop-blur-sm pointer-events-none" />
-            
-            {/* Main image container with custom squircle shape */}
-            <div className="h-48 w-48 sm:h-52 sm:w-52 rounded-[40px_16px_40px_16px] overflow-hidden border border-white/20 bg-[#141414] shadow-2xl relative transition-all duration-700 hover:scale-[1.03]">
-              <img src={isaacAvatar} alt="Isaac Vivian Portrait" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+
+            <div className="h-52 w-52 rounded-[40px_16px_40px_16px] overflow-hidden border border-white/20 bg-[#141414] shadow-2xl relative transition-all duration-700 hover:scale-[1.02]">
+              <img
+                src={isaacAvatar}
+                alt="Isaac Vivian Portrait"
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-40 pointer-events-none" />
             </div>
-            
-            {/* Technical crop corner brackets */}
-            <span className="absolute -top-1 -left-1 w-3.5 h-3.5 border-t-2 border-l-2 border-[#0000cd]/60 rounded-tl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 border-t-2 border-r-2 border-[#0000cd]/60 rounded-tr-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -bottom-1 -left-1 w-3.5 h-3.5 border-b-2 border-l-2 border-[#0000cd]/60 rounded-bl-sm pointer-events-none group-hover:scale-110 transition duration-300" />
-            <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 border-b-2 border-r-2 border-[#0000cd]/60 rounded-br-sm pointer-events-none group-hover:scale-110 transition duration-300" />
+
+            <span className="absolute -top-1 -left-1 w-3.5 h-3.5 border-t-2 border-l-2 border-[#1e2bc8] rounded-tl-sm pointer-events-none" />
+            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 border-t-2 border-r-2 border-[#1e2bc8] rounded-tr-sm pointer-events-none" />
+            <span className="absolute -bottom-1 -left-1 w-3.5 h-3.5 border-b-2 border-l-2 border-[#1e2bc8] rounded-bl-sm pointer-events-none" />
+            <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 border-b-2 border-r-2 border-[#1e2bc8] rounded-br-sm pointer-events-none" />
           </div>
         </div>
 
         {/* Right Side: Profile Details */}
-        <div className="flex-1 p-5 sm:p-8 flex flex-col justify-between gap-6">
+        <div className="flex-1 p-6 sm:p-8 flex flex-col justify-between gap-6">
           <div>
-            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-ink/40 block mb-2">[ Executive Leadership ]</span>
-            <h1 className="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-ink flex items-center gap-2">
+            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#1e2bc8] font-bold block mb-2">
+              FOUNDER / ADWEH
+            </span>
+            <h1 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight text-ink flex items-center gap-2">
               Isaac Vivian
-              <span className="text-[#a3d60c] inline-flex items-center" title="Verified Professional">
-                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-              </span>
             </h1>
-            
-            <p className="mt-3 text-[14px] font-medium leading-relaxed text-ink/80 max-w-2xl font-display flex flex-wrap items-center gap-x-1">
-              Founder <a href="https://www.instagram.com/adweh/" target="_blank" rel="noopener noreferrer" className="text-[#ff5d3b] hover:text-[#ff5d3b]/80 transition duration-300 font-bold underline-draw">@adweh</a> – Growth Partner for High-Value Enterprises | AIEO, GEO, SEO & Secure Website Development
+
+            <p className="mt-2 text-[14px] sm:text-[15px] font-medium leading-relaxed text-ink/80 font-sans">
+              Founder, ADWEH | Business Strategy • Search Visibility • Digital Growth
             </p>
 
-            {/* Minimal, Professional Monospace Tags */}
+            {/* Tags */}
             <div className="mt-4 flex flex-wrap gap-2">
               {[
-                "AIEO & GEO Systems",
-                "Local SEO Systems",
-                "Cybersecure Web Dev"
+                "Search Engine Optimization",
+                "AI-Powered Discovery",
+                "Website Strategy",
+                "Conversion Systems",
+                "Entity Architecture",
               ].map((label, index) => (
-                <span key={index} className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase border border-ink/10 bg-ink/[0.02] text-ink/65">
+                <span
+                  key={index}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] font-mono font-medium tracking-wide border border-ink/10 bg-white/60 text-ink/75"
+                >
                   {label}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Footer details aligned bottom */}
+          {/* Footer details */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pt-5 border-t border-ink/5 mt-auto">
-            {/* Location & Connections */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] font-mono text-ink/55">
-              <span className="flex items-center gap-1.5">
-                <svg className="w-3.5 h-3.5 fill-current opacity-60" viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                Chennai, Tamil Nadu, India
-              </span>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] font-mono text-ink/60">
+              <span>Chennai, Tamil Nadu, India</span>
+              <span>·</span>
+              <span>BBA LLB (Hons.), SOEL</span>
             </div>
 
-            {/* LinkedIn CTA with Shimmer & Scale Lift */}
-            <div className="shrink-0">
+            <div className="shrink-0 flex items-center gap-3">
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo("/contact");
+                }}
+                className="inline-flex items-center gap-2 rounded-full bg-[#1e2bc8] text-white px-5 py-3 text-[12.5px] font-semibold hover:bg-[#0a0a0a] transition duration-200"
+              >
+                Discuss Your Business Visibility →
+              </a>
               <a
                 href="https://www.linkedin.com/in/isaac-vivian/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 rounded-full bg-ink text-bone px-6 py-3.5 text-[12.5px] font-bold hover:bg-lime hover:text-ink transition-all duration-300 hover:shadow-lg hover:shadow-lime/10 hover:scale-[1.02] group relative overflow-hidden"
-                style={{ background: "#0a0a0a" }}
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-3 text-[12.5px] font-medium hover:bg-black hover:text-white transition"
               >
-                {/* Shimmer overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                <svg className="w-4.5 h-4.5 fill-current transition-transform duration-500 group-hover:rotate-[15deg]" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-                Connect on LinkedIn
+                LinkedIn
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. Interactive Navigation Tabs */}
-      <div className="mt-12 border-b border-ink/10 flex gap-2 md:gap-6 overflow-x-auto pb-px">
+      {/* 2. Navigation Tabs */}
+      <div className="mt-12 border-b border-ink/10 flex gap-4 md:gap-8 pb-px">
         {[
-          { id: "overview", label: "Overview & Story", count: null },
-          { id: "experience", label: "Timeline & Milestones", count: results.length }
+          { id: "overview", label: "Story & Philosophy" },
+          { id: "experience", label: "Focus Areas & Background" },
         ].map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`relative pb-4 px-2 md:px-4 font-display text-[14px] font-extrabold tracking-tight transition-all duration-300 focus:outline-none whitespace-nowrap ${
-              activeTab === tab.id
-                ? "text-coral"
-                : "text-ink/50 hover:text-ink/80"
+            className={`relative pb-3 font-display text-[15px] font-bold tracking-tight transition-all duration-200 focus:outline-none ${
+              activeTab === tab.id ? "text-[#1e2bc8]" : "text-ink/50 hover:text-ink/80"
             }`}
           >
-            <span className="flex items-center gap-1.5">
-              {tab.label}
-              {tab.count !== null && (
-                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${activeTab === tab.id ? "bg-coral/10 text-coral" : "bg-ink/5 text-ink/40"}`}>
-                  {tab.count}
-                </span>
-              )}
-            </span>
+            <span>{tab.label}</span>
             {activeTab === tab.id && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-coral rounded-full" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#1e2bc8] rounded-full" />
             )}
           </button>
         ))}
       </div>
 
-      {/* 3. Tab Content Modules with Fade-in Effect */}
-      <div className="mt-8 transition-opacity duration-300">
-        
-        {/* A. OVERVIEW & STORY TAB */}
+      {/* 3. Tab Content */}
+      <div className="mt-8">
         {activeTab === "overview" && (
           <div className="grid lg:grid-cols-12 gap-8 items-start">
-            {/* Story Paragraphs */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="rounded-3xl border border-ink/10 bg-[#ebe5da]/20 p-6 sm:p-8 shadow-sm" style={{ background: "rgba(235,229,218,.3)" }}>
-                <h3 className="font-display text-xl font-bold text-ink mb-6 flex items-center gap-2">
-                  <span className="w-1.5 h-6 bg-coral rounded-full" />
-                  Founder Story & Philosophy
-                </h3>
-                <div className="text-[14.5px] leading-relaxed text-ink/85 space-y-6 font-sans">
-                  <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-coral first-letter:leading-none">
-                    Isaac Vivian is the Founder of ADWEH, a specialized growth advisory and technology partner for ambitious enterprises across real estate, hospitality, healthcare, manufacturing, and modern commerce. Under his leadership, ADWEH builds comprehensive digital discovery infrastructures that integrate AIEO, GEO, SEO, and cybersecurity-focused website development to deliver scalable, predictable customer acquisition.
+              <div
+                className="rounded-3xl border border-ink/10 bg-[#ebe5da]/20 p-6 sm:p-8 shadow-sm"
+                style={{ background: "rgba(235,229,218,.3)" }}
+              >
+                <h2 className="font-display text-xl font-bold text-ink mb-4 flex items-center gap-2">
+                  <span className="w-1.5 h-6 bg-[#1e2bc8] rounded-full" />
+                  Connecting Discovery, Trust, and Action
+                </h2>
+                <div className="text-[14.5px] leading-relaxed text-ink/85 space-y-4 font-sans">
+                  <p>
+                    Isaac Vivian founded ADWEH around a practical belief: a business's digital presence should do more than exist. It should help the right customers discover the business, understand its value, and take the next step.
                   </p>
                   <p>
-                    With an entrepreneurial career shaped by a deep focus on conversion design, digital systems, and buyer psychology, Isaac recognized early that lead volume is irrelevant without robust operational follow-through. His business philosophy centers on execution endurance, building scalable systems that allow market leaders to convert digital visibility into measurable revenue and high-value contracts.
+                    His approach combines commercial thinking, buyer psychology, digital strategy, and execution. Rather than treating SEO, AI visibility, and website development as isolated activities, he views them as connected parts of how a business becomes known and chosen.
                   </p>
                   <p>
-                    Beyond client acquisition systems, Isaac is actively engaged in researching the convergence of artificial intelligence, automated enterprise workflows, and digital infrastructure—areas influenced by his ongoing mentorship with industry leaders, including Mr. Lakshmi Narayanan (Emeritus Vice Chairman of Cognizant).
+                    At ADWEH, this thinking shapes the work: understand the customer, build a credible digital foundation, improve discoverability, and measure what matters.
                   </p>
                 </div>
               </div>
 
-              {/* Executive Office Showcase */}
+              {/* Philosophy Callout Card */}
+              <div className="rounded-3xl border border-[#1e2bc8]/25 bg-gradient-to-br from-paper to-[#1e2bc8]/5 p-8 relative overflow-hidden shadow-sm">
+                <span className="font-serif text-[120px] text-[#1e2bc8]/10 absolute -top-10 -left-2 select-none pointer-events-none">“</span>
+                <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#1e2bc8] font-bold mb-3 relative z-10">
+                  [ The Philosophy ]
+                </div>
+                <blockquote className="font-serif-i text-[20px] sm:text-[23px] leading-relaxed text-ink/90 relative z-10 font-semibold">
+                  A business doesn't grow because it has a website. It grows when the right people can find it, trust it, and act.
+                </blockquote>
+                <p className="mt-3 text-[14px] text-ink/75 font-sans relative z-10">
+                  Search habits change. Technology changes. The fundamentals of trust, relevance, and customer value remain.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Side: Photo Showcase & Credentials */}
+            <div className="lg:col-span-5 space-y-6">
               <div className="rounded-3xl border border-ink/10 bg-[#0a0a0a] overflow-hidden shadow-md relative group">
-                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
+                <div className="relative aspect-[16/11] w-full overflow-hidden">
                   <img
                     src={isaacPortrait}
                     alt="Isaac Vivian — Founder, ADWEH"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 flex items-end justify-between gap-4">
-                    <div>
-                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-coral font-bold block mb-1">Executive Studio</span>
-                      <p className="text-bone/90 text-xs sm:text-[13.5px] font-medium font-sans">
-                        Isaac Vivian — Founder & Growth Strategist, ADWEH
-                      </p>
-                    </div>
-                    <span className="shrink-0 font-mono text-[9px] uppercase tracking-[0.2em] px-3 py-1 rounded-full border border-white/15 bg-white/5 text-white/70 backdrop-blur-sm hidden sm:inline-block">
-                      Chennai, India
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#5c85ff] font-bold block mb-1">
+                      Founder Profile
                     </span>
+                    <p className="text-white text-xs sm:text-[13px] font-medium font-sans">
+                      Isaac Vivian — Founder &amp; Growth Strategist, ADWEH
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Core Belief Callout Card */}
-              <div className="rounded-3xl border border-coral/25 bg-gradient-to-br from-paper to-coral/5 p-8 relative overflow-hidden shadow-sm group hover:border-coral/40 transition duration-500">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-coral/5 rounded-full blur-2xl pointer-events-none" />
-                <span className="font-serif text-[130px] text-coral/10 absolute -top-12 -left-2 select-none pointer-events-none">“</span>
-                <blockquote className="font-serif-i text-[20px] leading-relaxed text-ink/90 pt-8 relative z-10">
-                  Business is less about intelligence and more about endurance. Most people never stay in the game long enough to discover what they’re truly capable of.
-                </blockquote>
-                <cite className="block mt-5 font-mono text-[10px] uppercase tracking-[0.2em] text-coral font-bold">— Isaac Vivian, Founder</cite>
-              </div>
-            </div>
-
-            {/* Right Side Bento: About systems & details */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="rounded-3xl border border-ink/10 bg-[#ebe5da]/20 p-6 sm:p-8" style={{ background: "rgba(235,229,218,.3)" }}>
-                <h3 className="font-display text-lg font-bold text-ink border-b border-ink/5 pb-3">The Systems View</h3>
-                <div className="mt-4 text-[13.5px] leading-relaxed text-ink/80 space-y-4 font-sans">
-                  <p>
-                    Many high-value enterprises across real estate, hospitality, healthcare, and manufacturing deploy significant budgets yet struggle to maintain consistent conversion velocity.
-                    <strong> The bottleneck is rarely the product or service expertise; it is the acquisition infrastructure.</strong>
-                  </p>
-                  <p>
-                    ADWEH resolves this by deploying end-to-end customer acquisition engines designed to streamline every phase of the buyer lifecycle:
-                  </p>
-                  
-                  {/* Clean Monospace Step Cards */}
-                  <div className="space-y-3 mt-4">
-                    {[
-                      { num: "01", title: "AIEO (AI Engine Optimization)", desc: "Optimizing direct brand citations and entity recommendations across ChatGPT, Claude, and Perplexity." },
-                      { num: "02", title: "GEO (Generative Engine Optimization)", desc: "Structuring enterprise content and schema graphs for inclusion in Google AI Overviews and Gemini generative summaries." },
-                      { num: "03", title: "SEO (Search Engine Optimization)", desc: "Targeting high-intent organic search and regional maps visibility with commercial keyword optimization." },
-                      { num: "04", title: "Cybersecurity Web Development", desc: "Building and testing secure websites optimized for search engines, AI-powered search, and generative discovery." }
-                    ].map((item, index) => (
-                      <div key={index} className="rounded-xl border border-ink/5 bg-paper/30 p-4 hover:border-ink/15 transition-all duration-300 group">
-                        <div className="flex items-center gap-2.5">
-                          <span className="font-mono text-[10px] text-coral font-bold bg-coral/5 px-2 py-0.5 rounded">{item.num}</span>
-                          <h4 className="font-display font-bold text-[13.5px] text-ink group-hover:text-coral transition duration-200">{item.title}</h4>
-                        </div>
-                        <p className="mt-2 text-[12px] leading-relaxed text-ink/70">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Clean Metrics Grid instead of emoji badges */}
-                  <div className="border-t border-ink/5 pt-5 mt-5">
-                    <span className="text-[10px] font-mono uppercase tracking-[0.15em] opacity-50 block mb-3">Results Delivered</span>
-                    <div className="grid grid-cols-3 gap-2 border border-ink/10 bg-paper/40 rounded-2xl p-4 divide-x divide-ink/10">
-                      <div className="text-center">
-                        <span className="block font-display text-xl sm:text-2xl font-extrabold text-coral">50+</span>
-                        <span className="block text-[8px] font-mono uppercase tracking-wider text-ink/60 mt-1">Leads / Mo</span>
-                      </div>
-                      <div className="text-center">
-                        <span className="block font-display text-xl sm:text-2xl font-extrabold text-coral">&lt; 5m</span>
-                        <span className="block text-[8px] font-mono uppercase tracking-wider text-ink/60 mt-1">Response</span>
-                      </div>
-                      <div className="text-center px-1 flex flex-col justify-center items-center">
-                        <span className="block font-display text-[12px] sm:text-[13px] font-extrabold text-ink leading-none">Scalable</span>
-                        <span className="block text-[8px] font-mono uppercase tracking-wider text-ink/60 mt-1">Revenue</span>
-                      </div>
-                    </div>
-                  </div>
+              <div
+                className="rounded-3xl border border-ink/10 bg-[#ebe5da]/20 p-6"
+                style={{ background: "rgba(235,229,218,.3)" }}
+              >
+                <div className="text-[10px] font-mono uppercase tracking-wider text-[#1e2bc8] font-bold mb-2">
+                  Academic Background
                 </div>
+                <h3 className="font-display text-lg font-bold text-ink">BBA LLB (Hons.)</h3>
+                <p className="text-xs text-ink/70 font-mono mt-0.5">
+                  School of Excellence in Law, Dr. Ambedkar Law University
+                </p>
+                <p className="mt-3 text-xs text-ink/75 leading-relaxed font-sans">
+                  Rigorous foundation in commercial contracts, corporate compliance, regulatory clarity, and structured analytical problem-solving.
+                </p>
               </div>
             </div>
           </div>
         )}
 
-        {/* B. TIMELINE & MILESTONES TAB */}
         {activeTab === "experience" && (
           <div className="grid lg:grid-cols-12 gap-8 items-start">
-            {/* Timeline (Experience & Education) */}
-            <div className="lg:col-span-7 space-y-6">
-              <h3 className="font-display text-xl font-bold text-ink mb-6 flex items-center gap-2">
-                <span className="w-1.5 h-6 bg-coral rounded-full" />
-                Professional Journey & Academic Background
-              </h3>
-
-              <div className="relative border-l-2 border-ink/10 pl-6 ml-4 space-y-10">
-                {/* Node 1: ADWEH */}
-                <div className="relative">
-                  {/* Glowing vertical node dot */}
-                  <span className="absolute -left-[33px] top-1.5 w-4.5 h-4.5 rounded-full border-[3px] border-paper bg-[#0a0a0a] shadow-sm z-10" />
-                  <div className="rounded-2xl border border-ink/10 bg-[#ebe5da]/15 p-6 hover:bg-[#ebe5da]/25 transition duration-300 group">
-                    <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div>
-                        <h4 className="font-display font-extrabold text-[17px] text-ink group-hover:text-coral transition duration-300">Founder</h4>
-                        <p className="text-[13px] text-coral font-bold mt-0.5">ADWEH · Full-time</p>
-                      </div>
-                      <span className="rounded-full bg-ink/5 px-3 py-1 font-mono text-[9px] text-ink/60 font-semibold">May 2023 – Present</span>
-                    </div>
-                    <p className="mt-3.5 text-[13.5px] leading-relaxed text-ink/75">
-                      Scaling customer acquisition across real estate, hospitality, healthcare, manufacturing, and commerce through integrated AIEO, GEO, SEO, and cybersecurity-focused website development.
-                    </p>
-                  </div>
+            <div className="lg:col-span-7 space-y-4">
+              <h2 className="font-display text-xl font-bold text-ink mb-4 flex items-center gap-2">
+                <span className="w-1.5 h-6 bg-[#1e2bc8] rounded-full" />
+                Areas of Focus
+              </h2>
+              {[
+                { title: "Search Engine Optimization", desc: "Technical foundations, search intent mapping, and local discovery that bring qualified buyers into your funnel." },
+                { title: "AI-Powered Discovery", desc: "Clarity, entity structure, and authoritative citations so AI assistants like ChatGPT and Gemini surface your business." },
+                { title: "Website Strategy", desc: "Conversion pathways, semantic hierarchy, and mobile performance designed to guide visitors toward action." },
+                { title: "Conversion-Oriented Communication", desc: "Messaging that establishes clear value propositions and overcomes buyer hesitation." },
+                { title: "Commercial Growth Systems", desc: "Connecting lead volume to pipeline velocity and measurable commercial return." },
+              ].map((f, i) => (
+                <div key={i} className="rounded-2xl border border-ink/10 bg-white p-5">
+                  <div className="font-display font-bold text-[16px] text-ink">{f.title}</div>
+                  <p className="text-xs text-ink/75 mt-1 leading-relaxed font-sans">{f.desc}</p>
                 </div>
-
-                {/* Node 2: MBA Golden Gate University */}
-                <div className="relative">
-                  <span className="absolute -left-[33px] top-1.5 w-4.5 h-4.5 rounded-full border-[3px] border-paper bg-lime shadow-sm z-10 pulse-dot" />
-                  <div className="rounded-2xl border border-ink/10 bg-[#ebe5da]/15 p-6 hover:bg-[#ebe5da]/25 transition duration-300 group">
-                    <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div>
-                        <h4 className="font-display font-extrabold text-[17px] text-ink group-hover:text-coral transition duration-300">MBA – Business Analytics & Finance</h4>
-                        <p className="text-[13px] text-ink/70 font-semibold mt-0.5">Golden Gate University</p>
-                      </div>
-                      <span className="rounded-full bg-ink/5 px-3 py-1 font-mono text-[9px] text-ink/60 font-semibold">Mar 2025 – Jun 2026</span>
-                    </div>
-                    <p className="mt-3.5 text-[13.5px] leading-relaxed text-ink/75">
-                      Comprehensive business intelligence focus, combining financial modeling, corporate valuation, and analytical decision structures to solve market scaling challenges.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Node 3: BBA LLB (Hons.) */}
-                <div className="relative">
-                  <span className="absolute -left-[33px] top-1.5 w-4.5 h-4.5 rounded-full border-[3px] border-paper bg-ink/40 shadow-sm z-10" />
-                  <div className="rounded-2xl border border-ink/10 bg-[#ebe5da]/15 p-6 hover:bg-[#ebe5da]/25 transition duration-300 group">
-                    <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div>
-                        <h4 className="font-display font-extrabold text-[17px] text-ink group-hover:text-coral transition duration-300">BBA LLB (Hons.)</h4>
-                        <p className="text-[13.5px] text-ink/70 font-semibold mt-0.5">School of Excellence in Law – Dr. Ambedkar Law University</p>
-                      </div>
-                      <span className="rounded-full bg-ink/5 px-3 py-1 font-mono text-[9px] text-ink/60 font-semibold">Apr 2017 – May 2022</span>
-                    </div>
-                    <p className="mt-3.5 text-[13.5px] leading-relaxed text-ink/75">
-                      Acquired strong foundation in commercial negotiations, corporate regulations, compliance structures, and legal frameworks vital for building robust enterprises.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
-            {/* Metric Milestone Grid */}
-            <div className="lg:col-span-5 space-y-6">
-              <h3 className="font-display text-xl font-bold text-ink mb-6 flex items-center gap-2">
-                <span className="w-1.5 h-6 bg-lime rounded-full" />
-                Key Project Milestones
-              </h3>
-
-              <div className="grid sm:grid-cols-1 gap-4">
-                {results.map((r, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-2xl border border-ink/5 bg-paper p-5 transition-all duration-300 hover:border-lime hover:shadow-[0_0_15px_rgba(0, 0, 205,0.15)] group hover:-translate-y-0.5"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-[10px] text-ink/30 font-bold uppercase tracking-wider">Milestone {idx + 1}</span>
-                      <span className="w-5.5 h-5.5 rounded-full bg-lime/10 text-[#a3d60c] font-black text-[11px] grid place-items-center group-hover:bg-lime group-hover:text-ink transition duration-300">✓</span>
-                    </div>
-                    <p className="mt-3 text-[13.5px] leading-relaxed text-ink/80 font-medium font-sans">
-                      {r}
-                    </p>
-                  </div>
-                ))}
-              </div>
+            <div className="lg:col-span-5 space-y-4">
+              <h2 className="font-display text-xl font-bold text-ink mb-4 flex items-center gap-2">
+                <span className="w-1.5 h-6 bg-[#1e2bc8] rounded-full" />
+                Verified Milestones
+              </h2>
+              {results.map((r, idx) => (
+                <div key={idx} className="rounded-2xl border border-ink/5 bg-paper p-4 text-xs leading-relaxed text-ink/80 flex items-start gap-3">
+                  <span className="font-mono text-[10px] text-[#1e2bc8] font-bold mt-0.5 shrink-0">0{idx + 1}</span>
+                  <p className="font-sans">{r}</p>
+                </div>
+              ))}
             </div>
           </div>
         )}
-
-
       </div>
     </div>
   );

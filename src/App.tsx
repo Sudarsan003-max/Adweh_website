@@ -7,15 +7,19 @@ import Founder from "./components/Founder";
 import Problems from "./components/Problems";
 import Approach from "./components/Approach";
 import Solutions from "./components/Solutions";
+import Industries from "./components/Industries";
 import Showcase from "./components/Showcase";
 import WhyUs from "./components/WhyUs";
 import Testimonials from "./components/Testimonials";
+import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import AllArticles from "./components/AllArticles";
 import MainframeHero from "./components/MainframeHero";
 import ContactPage from "./components/ContactPage";
 import BlogPage from "./components/BlogPage";
+import CaseStudies from "./components/CaseStudies/CaseStudies";
+import ServicePage from "./components/ServicePage";
+import LandingPage from "./components/LandingPage";
 import { useRoute } from "./utils/navigation";
 
 export default function App() {
@@ -46,6 +50,10 @@ export default function App() {
     return <MainframeHero />;
   }
 
+  if (route === "landing") {
+    return <LandingPage />;
+  }
+
   return (
     <div className="relative min-h-screen bg-paper text-ink grain overflow-x-hidden">
       <Nav />
@@ -57,9 +65,29 @@ export default function App() {
         <main className="pt-24">
           <Founder />
         </main>
-      ) : route === "blog" || route === "articles" ? (
+      ) : route === "blog" ? (
         <main className="pt-24">
           <BlogPage />
+        </main>
+      ) : route === "results" ? (
+        <main className="pt-24">
+          <CaseStudies isStandalone={true} />
+        </main>
+      ) : route === "seo" ? (
+        <main className="pt-24">
+          <ServicePage service="seo" />
+        </main>
+      ) : route === "aieo" ? (
+        <main className="pt-24">
+          <ServicePage service="aieo" />
+        </main>
+      ) : route === "geo" ? (
+        <main className="pt-24">
+          <ServicePage service="geo" />
+        </main>
+      ) : route === "website-development" ? (
+        <main className="pt-24">
+          <ServicePage service="website-development" />
         </main>
       ) : (
         <main>
@@ -69,9 +97,11 @@ export default function App() {
           <Problems />
           <Approach />
           <Solutions />
+          <Industries />
           <Showcase />
           <WhyUs />
           <Testimonials />
+          <FAQ />
           <Contact />
         </main>
       )}

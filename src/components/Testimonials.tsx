@@ -1,190 +1,182 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { SectionHead } from "./About";
-
-const items = [
-  {
-    quote: "ADWEH completely transformed our inbound client acquisition. We went from 45 qualified property inquiries per month to 238 per month in just 6 months. Our sales velocity has been incredible.",
-    name: "Marcus Vance",
-    role: "Managing Director · Apex Realty Group",
-    initials: "MV",
-    tag: "238 inquiries / mo",
-    metric: "+428%",
-  },
-  {
-    quote: "Finally, a digital growth partner that understands high-value guest acquisition and compliance. They handle all our direct booking funnels while delivering exceptional ROI.",
-    name: "Elena Rostova",
-    role: "VP of Digital · Grand Horizon Hotels & Resorts",
-    initials: "ER",
-    tag: "Direct Bookings",
-    metric: "4.8x",
-  },
-  {
-    quote: "The team at ADWEH is professional, deeply technical, and results‑driven. They've established our multi-location brand as the #1 authority in organic search and AI answers.",
-    name: "David Sterling",
-    role: "COO · Rivera Group & Healthcare Partners",
-    initials: "DS",
-    tag: "Market Rank",
-    metric: "#1",
-  },
-];
+import { navigateTo } from "../utils/navigation";
+import { SearchDemo, Lightbox } from "./CaseStudies/CaseStudies";
+import { CASE_STUDIES, PROOF, whatsappLink } from "./CaseStudies/caseStudiesData";
+import type { Shot } from "./CaseStudies/caseStudiesData";
 
 export default function Testimonials() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [activeIdx, setActiveIdx] = useState(0);
-
-  const handleScroll = () => {
-    if (!scrollRef.current) return;
-    const left = scrollRef.current.scrollLeft;
-    const cardWidth = scrollRef.current.offsetWidth * 0.82;
-    const idx = Math.round(left / (cardWidth || 1));
-    setActiveIdx(Math.min(items.length - 1, Math.max(0, idx)));
-  };
-
-  const scrollToIdx = (idx: number) => {
-    if (!scrollRef.current) return;
-    const cards = scrollRef.current.children;
-    if (cards[idx]) {
-      (cards[idx] as HTMLElement).scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-    }
-    setActiveIdx(idx);
-  };
+  const [openShot, setOpenShot] = useState<Shot | null>(null);
 
   return (
-    <section id="results" className="relative py-10 sm:py-24 bg-paper overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-5">
-        <SectionHead n="009" label="The receipts" />
+    <section id="results" className="relative py-8 sm:py-20 bg-paper overflow-hidden">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
+        <SectionHead n="009" label="Verified Results & Evidence" />
 
-        <div className="mt-6 sm:mt-12 grid lg:grid-cols-12 gap-6 sm:gap-10 items-end">
-          <div className="lg:col-span-7">
-            <h2 className="font-display text-[30px] xs:text-[36px] sm:text-[64px] lg:text-[84px] leading-[0.92] tracking-[-0.04em] text-ink">
-              Words from <span className="font-serif-i">industry</span>
-              <br />
-              leaders we serve.
+        <div className="mt-5 sm:mt-14 grid lg:grid-cols-12 gap-5 sm:gap-12 items-end">
+          <div className="lg:col-span-8">
+            <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#1e2bc8] font-bold mb-2 sm:mb-3">
+              [ REAL SCREENSHOTS · MEASURABLE OUTCOMES ]
+            </div>
+            <h2 className="font-display text-[30px] xs:text-[38px] sm:text-[60px] lg:text-[76px] leading-[0.98] sm:leading-[0.95] tracking-[-0.035em] text-ink">
+              Real businesses.{" "}
+              <br className="hidden sm:inline" />
+              Real Google &amp; <span className="font-serif-i italic text-[#1e2bc8]">AI rankings.</span>
             </h2>
           </div>
-          <p className="lg:col-span-5 text-[14px] sm:text-[15px] leading-relaxed text-ink/70 max-w-md lg:ml-auto">
-            Real outcomes across real businesses. Our partnerships average 4.98 / 5 stars across
-            130+ verified enterprise and multi-industry clients.
-          </p>
-        </div>
-
-        {/* Mobile Horizontal Snap Carousel (< md) */}
-        <div className="md:hidden mt-6">
-          <div
-            ref={scrollRef}
-            onScroll={handleScroll}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-3 -mx-5 px-5 scrollbar-hide"
-          >
-            {items.map((t, i) => (
-              <figure
-                key={t.name}
-                className={`w-[85vw] max-w-[330px] shrink-0 snap-center rounded-2xl p-5 flex flex-col justify-between ${
-                  i === 1 ? "bg-[#0000cd] text-white shadow-lg" : "bg-[#f5f1ea] border border-ink/10 text-ink"
-                }`}
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className={`flex text-[13px] ${i === 1 ? "text-white" : "text-ink"}`}>★★★★★</div>
-                    <span className={`text-[9.5px] font-mono uppercase tracking-[0.2em] px-2.5 py-0.5 rounded-full ${i === 1 ? "bg-[#0a0a0a] text-[#f5f1ea]" : "bg-ink/5 text-ink/70"}`}>
-                      {t.tag}
-                    </span>
-                  </div>
-
-                  <div className="mt-3 font-display text-3xl leading-none opacity-20">"</div>
-                  <blockquote className={`mt-1 text-[13px] leading-[1.5] ${i === 1 ? "text-white/85" : "text-ink/85"}`}>
-                    {t.quote}
-                  </blockquote>
-                </div>
-
-                <div className={`mt-5 flex items-end justify-between gap-3 pt-3.5 border-t ${i === 1 ? "border-white/20" : "border-ink/15"}`}>
-                  <figcaption className="flex items-center gap-2.5">
-                    <span className={`grid place-items-center h-8 w-8 rounded-full font-semibold text-[11px] bg-[#0a0a0a] ${i === 1 ? "text-[#0000cd]" : "text-[#f5f1ea]"}`}>
-                      {t.initials}
-                    </span>
-                    <div>
-                      <div className="text-[12px] font-medium">{t.name}</div>
-                      <div className="text-[9.5px] opacity-60">{t.role}</div>
-                    </div>
-                  </figcaption>
-                  <div className="text-right">
-                    <div className="font-display text-xl tracking-tight">{t.metric}</div>
-                  </div>
-                </div>
-              </figure>
-            ))}
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex items-center justify-center gap-1.5 mt-2">
-            {items.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => scrollToIdx(i)}
-                aria-label={`Go to testimonial ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeIdx === i ? "w-6 bg-[#0000cd]" : "w-1.5 bg-ink/20"
-                }`}
-              />
-            ))}
+          <div className="lg:col-span-4">
+            <p className="text-[14px] sm:text-[16px] leading-relaxed text-ink/75 font-sans">
+              No unverified client names or hypothetical testimonials. Every result below is documented with actual screenshots from Google, ChatGPT, and Gemini.
+            </p>
           </div>
         </div>
 
-        {/* Desktop Grid (md and up) */}
-        <div className="hidden md:grid md:grid-cols-3 gap-3.5 sm:gap-5 mt-8 sm:mt-16">
-          {items.map((t, i) => (
-            <figure
-              key={t.name}
-              className={`group relative rounded-2xl sm:rounded-[28px] p-5 sm:p-7 lg:p-8 lift overflow-hidden flex flex-col justify-between ${
-                i === 1 ? "bg-[#0000cd] text-white" : "bg-[#f5f1ea] border border-ink/10 text-ink"
-              }`}
-            >
-              <div>
-                <div className="flex items-center justify-between">
-                  <div className={`flex text-[13px] sm:text-[14px] ${i === 1 ? "text-white" : "text-ink"}`}>★★★★★</div>
-                  <span className={`text-[9.5px] sm:text-[10px] font-mono uppercase tracking-[0.2em] px-2.5 py-0.5 sm:py-1 rounded-full ${i === 1 ? "bg-[#0a0a0a] text-[#f5f1ea]" : "bg-ink/5 text-ink/70"}`}>
-                    {t.tag}
-                  </span>
-                </div>
-
-                <div className="mt-3.5 sm:mt-5 font-display text-4xl sm:text-6xl leading-none opacity-20">"</div>
-                <blockquote className={`mt-1 sm:mt-2 text-[13.5px] sm:text-[15.5px] leading-[1.5] sm:leading-[1.55] ${i === 1 ? "text-white/85" : "text-ink/85"}`}>
-                  {t.quote}
-                </blockquote>
+        {/* Proof metrics bar */}
+        <div className="mt-6 sm:mt-12 rounded-2xl bg-[#0a0a0a] text-white p-4 sm:p-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {PROOF.map((p, idx) => (
+            <div key={idx} className="border-l border-white/10 pl-3 sm:pl-4">
+              <div className="font-display text-2xl sm:text-4xl font-extrabold text-[#5c85ff] tracking-tight">
+                {p.n}
               </div>
-
-              <div className={`mt-5 sm:mt-8 flex items-end justify-between gap-3 pt-4 sm:pt-5 border-t ${i === 1 ? "border-white/20" : "border-ink/15"}`}>
-                <figcaption className="flex items-center gap-2.5 sm:gap-3">
-                  <span className={`grid place-items-center h-9 w-9 sm:h-11 sm:w-11 rounded-full font-semibold text-[11px] sm:text-[12px] bg-[#0a0a0a] ${i === 1 ? "text-[#0000cd]" : "text-[#f5f1ea]"}`}>
-                    {t.initials}
-                  </span>
-                  <div>
-                    <div className="text-[12.5px] sm:text-[13.5px] font-medium">{t.name}</div>
-                    <div className="text-[10px] sm:text-[11px] opacity-60">{t.role}</div>
-                  </div>
-                </figcaption>
-                <div className="text-right">
-                  <div className="font-display text-2xl sm:text-3xl tracking-[-0.03em]">{t.metric}</div>
-                </div>
+              <div className="mt-1 text-[10.5px] sm:text-[12px] font-mono text-bone/60 leading-tight">
+                {p.l}
               </div>
-            </figure>
-          ))}
-        </div>
-
-        {/* Stats strip */}
-        <div className="mt-8 sm:mt-12 rounded-2xl sm:rounded-3xl bg-ink text-bone p-4 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6" style={{ background: "#0a0a0a", color: "#f5f1ea" }}>
-          {[
-            { n: "130+", k: "Brands scaled" },
-            { n: "4.98★", k: "Client rating" },
-            { n: "$400K+", k: "Revenue generated" },
-            { n: "24h", k: "Response time" },
-          ].map((s) => (
-            <div key={s.k}>
-              <div className="font-display text-2xl xs:text-3xl sm:text-5xl tracking-[-0.04em]">{s.n}</div>
-              <div className="mt-1 sm:mt-2 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em] opacity-60">{s.k}</div>
             </div>
           ))}
         </div>
+
+        {/* Live Search Query Simulation Box */}
+        <div className="mt-6 sm:mt-14">
+          <div className="text-[11px] font-mono uppercase tracking-wider text-ink/60 mb-2 font-bold">
+            Live Search Query Simulation:
+          </div>
+          <SearchDemo />
+        </div>
+
+        {/* 5 Verified Case Studies Cards Grid */}
+        <div className="mt-6 sm:mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {CASE_STUDIES.map((c) => {
+            const topShot = c.shots[0];
+            return (
+              <div
+                key={c.id}
+                className="rounded-2xl sm:rounded-3xl border border-ink/10 bg-white p-4 sm:p-7 hover:border-[#1e2bc8] hover:shadow-xl transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-ink/5">
+                    <span className="font-display text-base sm:text-lg font-bold text-ink">
+                      {c.name}
+                    </span>
+                    <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-paper border border-ink/10 text-ink/60">
+                      Verified Case
+                    </span>
+                  </div>
+
+                  <p className="mt-2 text-[10.5px] sm:text-[11px] font-mono text-ink/50">
+                    {c.meta}
+                  </p>
+
+                  <p className="mt-2.5 sm:mt-3 text-[12.5px] sm:text-[13px] text-ink/80 leading-relaxed font-sans line-clamp-3">
+                    {c.intro.replace(/==/g, "")}
+                  </p>
+
+                  {/* Before / After snapshot pill if available */}
+                  {c.before && c.after && (
+                    <div className="mt-3 sm:mt-4 grid grid-cols-2 gap-2 bg-paper p-2.5 sm:p-3 rounded-xl border border-ink/5 text-center">
+                      <div>
+                        <div className="text-[9px] font-mono text-ink/50">{c.before.label}</div>
+                        <div className="text-sm font-bold text-ink">{c.before.big}</div>
+                        <div className="text-[10px] text-ink/60 truncate">{c.before.text}</div>
+                      </div>
+                      <div className="border-l border-ink/10 pl-2">
+                        <div className="text-[9px] font-mono text-[#1e2bc8] font-bold">{c.after.label}</div>
+                        <div className="text-sm font-bold text-[#1e2bc8]">{c.after.big}</div>
+                        <div className="text-[10px] text-ink/60 truncate">{c.after.text}</div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Screenshot Thumbnail with zoom prompt */}
+                  {topShot && (
+                    <div className="mt-3 sm:mt-4">
+                      <button
+                        type="button"
+                        onClick={() => setOpenShot(topShot)}
+                        className="w-full aspect-[16/10] rounded-xl overflow-hidden border border-ink/10 relative group/img cursor-zoom-in bg-black"
+                      >
+                        <img
+                          src={topShot.src}
+                          alt={topShot.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono font-semibold">
+                          🔍 Click to Enlarge Screenshot
+                        </div>
+                      </button>
+                      <div className="mt-1 text-[11px] text-ink/60 font-mono truncate">
+                        <strong>{topShot.title}:</strong> {topShot.query}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-ink/10 flex items-center justify-between">
+                  <a
+                    href="/results"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigateTo("/results");
+                    }}
+                    className="text-xs font-bold text-[#1e2bc8] hover:text-[#0a0a0a] transition-colors"
+                  >
+                    Read full case study &amp; data →
+                  </a>
+                  <span className="text-[10px] font-mono text-ink/40">{c.shots.length} Screenshots</span>
+                </div>
+              </div>
+            );
+          })}
+
+          {/* Callout Card to View All Results */}
+          <div className="rounded-2xl sm:rounded-3xl bg-[#1e2bc8] text-white p-4 sm:p-7 flex flex-col justify-between shadow-xl">
+            <div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/70 font-bold mb-2">
+                [ Free Visibility Assessment ]
+              </div>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                Want to see what prospective customers see for your business?
+              </h3>
+              <p className="mt-2 sm:mt-3 text-[12.5px] sm:text-[13px] text-white/80 leading-relaxed font-sans">
+                Send us your business or clinic name and your three most important services. We'll search Google, ChatGPT, and Gemini and send you the actual screenshots.
+              </p>
+            </div>
+
+            <div className="mt-4 sm:mt-6 space-y-2">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center rounded-full bg-white text-[#0a0a0a] px-4 py-2.5 sm:px-5 sm:py-3 text-xs font-bold hover:bg-[#0a0a0a] hover:text-white transition shadow-md"
+              >
+                Get My Visibility Check on WhatsApp →
+              </a>
+              <a
+                href="/results"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo("/results");
+                }}
+                className="block text-center rounded-full border border-white/30 text-white px-4 py-2 sm:px-5 sm:py-2.5 text-xs font-semibold hover:bg-white/10 transition"
+              >
+                View Dedicated Results Page →
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <Lightbox shot={openShot} onClose={() => setOpenShot(null)} />
     </section>
   );
 }

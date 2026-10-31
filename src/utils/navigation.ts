@@ -1,6 +1,17 @@
 import { useEffect, useState } from "react";
 
-export type RouteType = "home" | "contact" | "founder" | "articles" | "blog" | "mainframe";
+export type RouteType =
+  | "home"
+  | "contact"
+  | "founder"
+  | "blog"
+  | "results"
+  | "seo"
+  | "aieo"
+  | "geo"
+  | "website-development"
+  | "mainframe"
+  | "landing";
 
 interface RouteMeta {
   title: string;
@@ -10,34 +21,70 @@ interface RouteMeta {
 
 const ROUTE_META: Record<RouteType, RouteMeta> = {
   home: {
-    title: "ADWEH — Enterprise Growth Partner",
-    description: "Specialized digital growth studio combining AIEO, GEO, SEO, and cybersecurity-focused website development to scale category leaders across real estate, hospitality, healthcare, manufacturing, and commerce.",
+    title: "SEO, AI Search Optimization & Website Development | ADWEH",
+    description:
+      "Grow your visibility across Google and AI-powered search. ADWEH combines SEO, AIEO, GEO and security-focused website development. Request an assessment.",
     canonical: "https://adweh.com/",
   },
   contact: {
-    title: "Contact ADWEH — Enterprise Growth Advisory & Audits",
-    description: "Connect with ADWEH to schedule your growth consultation across AIEO, GEO, SEO, and cybersecurity-focused website development.",
+    title: "Request a Search & AI Visibility Assessment | ADWEH",
+    description:
+      "Find out where your business may be missing visibility across Google, AI search and your website. Contact ADWEH to discuss practical next steps.",
     canonical: "https://adweh.com/contact",
   },
   founder: {
-    title: "Isaac Vivian — Founder, ADWEH",
-    description: "Isaac Vivian is the Founder of ADWEH, engineering comprehensive customer discovery and acquisition engines across AIEO, GEO, SEO, and cybersecurity-focused website development.",
+    title: "Isaac Vivian | Founder of ADWEH",
+    description:
+      "Meet Isaac Vivian, founder of ADWEH, a search visibility and website development partner focused on SEO, AIEO, GEO and business growth.",
     canonical: "https://adweh.com/founder",
   },
   blog: {
-    title: "Insights & Guides — ADWEH Digital Growth Studio",
-    description: "Explore actionable growth guides, AIEO, GEO, SEO, and cybersecurity-focused website development insights by ADWEH.",
+    title: "SEO, AIEO, GEO & Website Insights | ADWEH",
+    description:
+      "Practical guides to SEO, AI search visibility, GEO, local search and security-focused website development for business owners and decision-makers.",
     canonical: "https://adweh.com/blog",
   },
-  articles: {
-    title: "All Articles & Guides — ADWEH Insights",
-    description: "Explore guides, case studies, and growth insights across AIEO, GEO, SEO, and website development for ambitious market leaders.",
-    canonical: "https://adweh.com/articles",
+  results: {
+    title: "Verified Results & Case Studies | ADWEH",
+    description:
+      "Explore verified search, AIEO, and GEO outcomes with real ranking screenshots across Google, ChatGPT, and Gemini for businesses in Tamil Nadu and India.",
+    canonical: "https://adweh.com/results",
+  },
+  seo: {
+    title: "SEO Services for Growing Businesses | ADWEH",
+    description:
+      "Improve organic search visibility with technical SEO, service-page optimization, content strategy and local SEO. Explore ADWEH's SEO services.",
+    canonical: "https://adweh.com/seo",
+  },
+  aieo: {
+    title: "AI Engine Optimization (AIEO) Services | ADWEH",
+    description:
+      "Help AI-powered tools better understand your business with clearer entities, structured answers, reliable facts and AI visibility reviews. Explore AIEO.",
+    canonical: "https://adweh.com/aieo",
+  },
+  geo: {
+    title: "Generative Engine Optimization (GEO) Services | ADWEH",
+    description:
+      "Strengthen content structure, authority signals and business information for generative search experiences. Explore ADWEH's GEO approach.",
+    canonical: "https://adweh.com/geo",
+  },
+  "website-development": {
+    title: "Security-Focused Website Development | ADWEH",
+    description:
+      "Build a fast, mobile-friendly, security-conscious website with strong SEO foundations and clear enquiry pathways. Explore ADWEH website development.",
+    canonical: "https://adweh.com/website-development",
   },
   mainframe: {
     title: "Mainframe Labs — ADWEH",
-    description: "Interactive enterprise technology and service inquiry portal by ADWEH.",
+    description:
+      "Interactive enterprise technology and service inquiry portal by ADWEH.",
     canonical: "https://adweh.com/mainframe",
+  },
+  landing: {
+    title: "Patient & Client Acquisition Engine — Claim Your Free Audit | ADWEH",
+    description:
+      "Dominate Google Maps Top 3, rank #1 for high-intent searches, and become the top recommendation on ChatGPT & Gemini. Claim your free 30-minute visibility audit.",
+    canonical: "https://adweh.com/lp",
   },
 };
 
@@ -47,18 +94,47 @@ export function parseCurrentRoute(): RouteType {
   const path = window.location.pathname.toLowerCase().replace(/\/+$/, "") || "/";
   const hash = window.location.hash.toLowerCase();
 
+  // Landing page route detection (PPC / Google Ads)
+  if (
+    path === "/lp" ||
+    path === "/landing" ||
+    path === "/audit" ||
+    path === "/growth" ||
+    path === "/ads" ||
+    path === "/google-ads"
+  ) {
+    return "landing";
+  }
+
   // Pathname-based detection
   if (path === "/contact") return "contact";
   if (path === "/founder") return "founder";
-  if (path === "/blog" || path === "/insights") return "blog";
-  if (path === "/articles" || path === "/all-articles") return "blog";
+  if (path === "/blog" || path === "/insights" || path === "/articles") return "blog";
+  if (path === "/results" || path === "/case-studies") return "results";
+  if (path === "/seo") return "seo";
+  if (path === "/aieo") return "aieo";
+  if (path === "/geo") return "geo";
+  if (path === "/website-development" || path === "/web-development") return "website-development";
   if (path === "/mainframe") return "mainframe";
 
   // Hash-based backward compatibility
+  if (
+    hash === "#lp" ||
+    hash === "#landing" ||
+    hash === "#audit" ||
+    hash === "#growth" ||
+    hash === "#ads"
+  ) {
+    return "landing";
+  }
   if (hash === "#contact-page") return "contact";
   if (hash === "#founder") return "founder";
-  if (hash === "#blog" || hash === "#insights") return "blog";
-  if (hash === "#all-articles" || hash === "#articles") return "blog";
+  if (hash === "#blog" || hash === "#insights" || hash === "#articles") return "blog";
+  if (hash === "#results-page" || hash === "#case-studies") return "results";
+  if (hash === "#seo") return "seo";
+  if (hash === "#aieo") return "aieo";
+  if (hash === "#geo") return "geo";
+  if (hash === "#website-development") return "website-development";
   if (hash === "#mainframe") return "mainframe";
 
   return "home";
@@ -97,7 +173,12 @@ export function navigateTo(target: string) {
   if (typeof window === "undefined") return;
 
   // External URLs
-  if (target.startsWith("http://") || target.startsWith("https://") || target.startsWith("tel:") || target.startsWith("mailto:")) {
+  if (
+    target.startsWith("http://") ||
+    target.startsWith("https://") ||
+    target.startsWith("tel:") ||
+    target.startsWith("mailto:")
+  ) {
     window.location.href = target;
     return;
   }
@@ -122,7 +203,6 @@ export function navigateTo(target: string) {
     if (currentRoute !== "home") {
       window.history.pushState({}, "", "/");
       window.dispatchEvent(new Event("adweh-route-change"));
-      // Wait for home components to mount before scrolling
       setTimeout(() => {
         const el = document.getElementById(sectionId);
         if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -134,7 +214,7 @@ export function navigateTo(target: string) {
     return;
   }
 
-  // Dedicated routes (/contact, /founder, /articles, /mainframe)
+  // Dedicated routes (/contact, /founder, /blog, /results, /seo, /aieo, /geo, /website-development, /mainframe)
   window.history.pushState({}, "", target);
   window.dispatchEvent(new Event("adweh-route-change"));
   window.scrollTo({ top: 0, behavior: "smooth" });
