@@ -32,11 +32,17 @@ export interface Shot {
   query: string;
 }
 
+export interface CasePoint {
+  bold: string;
+  text: string;
+}
+
 export interface CaseStudy {
   id: string;
   name: string;
   meta: string;
   intro: string;
+  points: CasePoint[];
   before?: BeforeAfter;
   after?: BeforeAfter;
   extra?: string;
@@ -90,6 +96,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     meta: "Dermatology, Anna Nagar, Chennai. 4.9 rating from 476 Google reviews",
     intro:
       "Anna Nagar is one of the most crowded skin care markets in Chennai, with national chains like Oliva a few streets away. Soul Skin Clinic now ranks first in its neighbourhood, holds a top-three spot for all of Chennai, and is the first clinic ChatGPT recommends.",
+    points: [
+      { bold: "#1 on Google", text: "Ahead of national chains across Anna Nagar" },
+      { bold: "Top 3 in Chennai", text: "High-volume city-wide search ranking" },
+      { bold: "#1 on ChatGPT", text: "First clinic recommended by AI assistants" },
+    ],
     before: { label: "On 1 May", big: "0", text: "keywords in the Google top 3, and 64 in the top 10" },
     after: { label: "By 1 October", big: "113", text: "keywords in the Google top 3, 135 in the top 10 and 45 at position 1" },
     extra:
@@ -119,6 +130,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     meta: "Aesthetics and training, Ambattur, Chennai. 4.9 rating on Google",
     intro:
       "Virtue came to us invisible. Not one of its 160 target keywords showed up on Google. Four months later, it’s the first name patients see when they look for an aesthetic clinic in Ambattur, and the first name students see when they look for an aesthetic academy.",
+    points: [
+      { bold: "0 to 154 Keywords", text: "Moved into Google Top 10 in 4 months" },
+      { bold: "#1 on Google", text: "First aesthetic clinic named in Ambattur" },
+      { bold: "#1 on ChatGPT & Gemini", text: "Top recommendation for clinic & academy" },
+    ],
     before: { label: "In April", big: "0 of 160", text: "target keywords ranking anywhere on Google" },
     after: { label: "By 31 July", big: "154 of 160", text: "in the Google top 10, with 117 in the top 3 and 39 at position 1" },
     extra:
@@ -148,6 +164,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     meta: "Dermatology and aesthetics, Tambaram, Chennai. 4.6 rating from 364 Google reviews",
     intro:
       "None of the clinic’s 88 target keywords ranked on Google in June. By September, 52 were on page one. Today Google’s own AI Overview quotes the clinic’s website, and ChatGPT names Dr. Swathi first for skin analysis, medifacials and acne.",
+    points: [
+      { bold: "0 to 52 Keywords", text: "Moved to Google Page 1 in 90 days" },
+      { bold: "Google AI Overview", text: "Directly cited as authoritative source" },
+      { bold: "#1 on ChatGPT", text: "First name for medifacials & skin analysis" },
+    ],
     before: { label: "In June", big: "0 of 88", text: "target keywords ranking on Google" },
     after: { label: "By September", big: "52", text: "keywords in the Google top 10, 34 in the top 3 and 11 at position 1" },
     extra:
@@ -179,6 +200,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     meta: "Dermatology, Tiruvannamalai. 4.7 rating from 102 Google reviews",
     intro:
       "In a smaller town, being first matters even more, because patients have fewer names to choose from and they pick the top one. Subam Skin Clinic is ==#1 on Google and #1 on ChatGPT== for both ways patients search: “dermatologist” and “skin clinic”. Its website also ranks on page one, next to Justdial.",
+    points: [
+      { bold: "#1 on Google & ChatGPT", text: "Top rank for dermatologist & clinic queries" },
+      { bold: "Page 1 Organic Website", text: "Ranks alongside aggregator directories" },
+      { bold: "Local Town Authority", text: "First choice for regional patients online" },
+    ],
     shots: [
       { src: img("subam-google-dermatologist"), title: "#1 on Google", query: "“best dermatologist in tiruvannamalai”" },
       { src: img("subam-google-skin-clinic"), title: "#1 on Google, plus the website on page 1", query: "“best skin clinic in tiruvannamalai”" },
@@ -192,6 +218,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     meta: "Fertility and IVF, Chidambaram. 4.8 rating from 83 Google reviews",
     intro:
       "Couples choosing a fertility clinic research for weeks, and every one of them searches online before they call. Mithran appears in the ==top three on Google== for its town and is the ==second clinic ChatGPT shortlists==, side by side with a national IVF chain.",
+    points: [
+      { bold: "Top 3 on Google", text: "Leading search rank for regional fertility care" },
+      { bold: "#2 on ChatGPT", text: "Shortlisted alongside national IVF chains" },
+      { bold: "High-Intent Discovery", text: "Patients find clinic during research phase" },
+    ],
     shots: [
       { src: img("mithran-google-fertility-center"), title: "Top 3 on Google", query: "“best fertility center in chidambaram”" },
       { src: img("mithran-chatgpt-fertility-clinic"), title: "#2 on ChatGPT, next to Nova IVF", query: "“Best fertility clinic in chidambaram”" },

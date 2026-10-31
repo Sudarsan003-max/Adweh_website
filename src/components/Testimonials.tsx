@@ -93,17 +93,25 @@ export default function Testimonials() {
                     </span>
                   </div>
 
-                  <p className="mt-2 text-[11px] font-mono text-ink/60">
+                  <p className="mt-2 text-[11px] font-mono text-ink/55 tracking-tight">
                     {c.meta}
                   </p>
 
-                  <p
-                    className={`mt-3 text-[13px] sm:text-[13.5px] text-ink/80 leading-relaxed font-sans ${
-                      isCardExpanded ? "block" : "line-clamp-2 md:line-clamp-none"
-                    }`}
-                  >
-                    {c.intro.replace(/==/g, "")}
-                  </p>
+                  {/* Clean, Short, Premium Bullet Points */}
+                  <div className="mt-3.5 space-y-2">
+                    {c.points.map((pt, pIdx) => (
+                      <div
+                        key={pIdx}
+                        className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#1e2bc8] mt-1.5 shrink-0" />
+                        <div>
+                          <strong className="text-ink font-semibold">{pt.bold}</strong>
+                          <span className="text-ink/75"> — {pt.text}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
 
                   {/* Mobile toggle for Screenshot & details */}
                   {topShot && (

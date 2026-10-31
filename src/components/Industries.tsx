@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SectionHead } from "./About";
 import { navigateTo } from "../utils/navigation";
-import { ChevronDown, ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react";
 
 // ==============================================================
 // BESPOKE ARCHITECTURAL SECTOR GLYPHS
@@ -115,14 +115,18 @@ function OmnichannelCommerceGlyph({ className = "h-5 w-5" }: { className?: strin
   );
 }
 
+interface IndustryPoint {
+  bold: string;
+  text: string;
+}
+
 interface IndustryItem {
   tag: string;
   category: string;
   name: string;
   icon: (props: { className?: string }) => React.JSX.Element;
   serifQuote: string;
-  desc: string;
-  signals: string[];
+  points: IndustryPoint[];
   outcome: string;
   linkText: string;
 }
@@ -133,21 +137,27 @@ const industries: IndustryItem[] = [
     category: "CLINICS & HEALTHCARE",
     name: "Healthcare & Clinics",
     icon: ClinicalPrecisionGlyph,
-    serifQuote: "Where patient trust, credentials, and local presence decide choice.",
-    desc: "We engineer local map-pack dominance and verified medical schema so prospective patients immediately discover your clinic, specialists, and appointment booking.",
-    signals: ["Google 3-Pack Authority", "Practitioner Schema", "AI Assistant Shortlisting"],
-    outcome: "+50 Monthly Patient Enquiries",
+    serifQuote: "Where patient trust & local presence decide choice.",
+    points: [
+      { bold: "Local 3-Pack Dominance", text: "#1 Google Maps rank for high-intent treatments" },
+      { bold: "AI Assistant Shortlisting", text: "First clinic recommended on ChatGPT & Gemini" },
+      { bold: "Verified Growth", text: "+50 monthly qualified patient bookings" },
+    ],
+    outcome: "+50 Patient Enquiries",
     linkText: "Explore Healthcare Strategy",
   },
   {
     tag: "02",
-    category: "REAL ESTATE & DEVELOPERS",
+    category: "PROPERTY & DEVELOPERS",
     name: "Real Estate & Property",
     icon: ArchitecturalElevationGlyph,
-    serifQuote: "High-ticket property searches where the first impression is final.",
-    desc: "We build project architecture and location authority so developers and agencies capture high-intent property buyers before competitors even appear on their radar.",
-    signals: ["Project Launch Architecture", "Location Keyword Domination", "High-Net-Worth Intent"],
-    outcome: "High-Ticket Qualified Inquiries",
+    serifQuote: "High-ticket property searches where first impression is final.",
+    points: [
+      { bold: "Project Launch Authority", text: "Dominates location & luxury development queries" },
+      { bold: "High-Net-Worth Intent", text: "Captures buyers before aggregator portals appear" },
+      { bold: "Direct Buyer Acquisition", text: "Qualified high-ticket inquiries without broker dilution" },
+    ],
+    outcome: "High-Ticket Inquiries",
     linkText: "Explore Property Strategy",
   },
   {
@@ -155,21 +165,27 @@ const industries: IndustryItem[] = [
     category: "LUXURY STAYS & RESORTS",
     name: "Hotels & Hospitality",
     icon: HospitalityCanopyGlyph,
-    serifQuote: "Win direct booking journeys and cut third-party OTA commissions.",
-    desc: "We optimize experiential search queries, rich property schema, and local search ecosystems to convert travellers directly on your website instead of aggregator portals.",
-    signals: ["Direct Booking Engine UX", "Experiential Search Citations", "Local Area Ecosystem"],
-    outcome: "+40% Direct Booking Share",
+    serifQuote: "Win direct booking journeys and cut OTA commission fees.",
+    points: [
+      { bold: "Direct Booking Engine UX", text: "Converts experiential searchers directly on your site" },
+      { bold: "Local Area Ecosystem", text: "Ranked for regional experiences & destination stays" },
+      { bold: "Margin Protection", text: "+40% direct booking share reducing OTA fees" },
+    ],
+    outcome: "+40% Direct Bookings",
     linkText: "Explore Hospitality Strategy",
   },
   {
     tag: "04",
-    category: "PRECISION & SUPPLY CHAIN",
+    category: "INDUSTRIAL & SUPPLY CHAIN",
     name: "Manufacturing & B2B",
     icon: IndustrialFabricationGlyph,
     serifQuote: "Procurement discoverability for high-specification RFQs.",
-    desc: "We make technical specifications, certifications, and RFQ pathways easily discoverable for corporate procurement teams and enterprise decision-makers.",
-    signals: ["Technical Spec Indexing", "Enterprise RFQ Pathways", "Procurement Search Intent"],
-    outcome: "High-Value Corporate Contracts",
+    points: [
+      { bold: "Technical Spec Indexing", text: "Makes engineering capabilities and standards easy to find" },
+      { bold: "Procurement Intent", text: "Shortlisted by corporate decision-makers" },
+      { bold: "Enterprise Contracts", text: "High-value RFQ pipeline for B2B tenders" },
+    ],
+    outcome: "Enterprise RFQ Pipeline",
     linkText: "Explore Manufacturing Strategy",
   },
   {
@@ -178,23 +194,18 @@ const industries: IndustryItem[] = [
     name: "Commerce & Growing Brands",
     icon: OmnichannelCommerceGlyph,
     serifQuote: "Category dominance, zero friction, and high conversion velocity.",
-    desc: "We strengthen product category visibility, semantic search signals, and sub-second UX so ready-to-buy shoppers discover, evaluate, and purchase effortlessly.",
-    signals: ["Product Graph Schema", "Commercial Buyer Intent", "Sub-Second Checkout Velocity"],
-    outcome: "Sub-Second Cart Discovery",
+    points: [
+      { bold: "Category Authority", text: "Ranked for high-intent commercial searchers" },
+      { bold: "Sub-Second Speed", text: "Instant-load store architecture that prevents cart drop-off" },
+      { bold: "Repeat Conversion", text: "Higher average order value and direct customer acquisition" },
+    ],
+    outcome: "Sub-Second Conversion",
     linkText: "Explore Commerce Strategy",
   },
 ];
 
 export default function Industries() {
   const [showAllMobile, setShowAllMobile] = useState(false);
-  const [expandedDetails, setExpandedDetails] = useState<Record<string, boolean>>({});
-
-  const toggleDetails = (tag: string) => {
-    setExpandedDetails((prev) => ({
-      ...prev,
-      [tag]: !prev[tag],
-    }));
-  };
 
   return (
     <section
@@ -238,22 +249,16 @@ export default function Industries() {
           {industries.map((ind, idx) => {
             const Icon = ind.icon;
             const isHiddenOnMobile = !showAllMobile && idx >= 2;
-            const isExpanded = !!expandedDetails[ind.tag];
 
             return (
               <div
                 key={ind.tag}
-                className={`relative rounded-[28px] sm:rounded-[32px] bg-white border border-ink/[0.08] p-6 sm:p-7 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.04)] hover:shadow-[0_22px_50px_-10px_rgba(30,43,200,0.14)] hover:border-[#1e2bc8]/40 hover:-translate-y-1.5 transition-all duration-400 group overflow-hidden flex flex-col justify-between ${
+                className={`relative rounded-[28px] sm:rounded-[32px] bg-white border border-ink/[0.08] p-6 sm:p-7 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.03)] hover:shadow-[0_22px_50px_-10px_rgba(30,43,200,0.12)] hover:border-[#1e2bc8]/40 hover:-translate-y-1.5 transition-all duration-400 group overflow-hidden flex flex-col justify-between ${
                   isHiddenOnMobile ? "hidden sm:flex" : "flex"
                 }`}
               >
                 {/* Top Subtle Ambient Laser Highlight on Hover */}
                 <div className="absolute top-0 inset-x-8 h-[2px] bg-gradient-to-r from-transparent via-[#1e2bc8] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-
-                {/* Oversized Typographic Watermark */}
-                <span className="absolute top-3 right-6 font-display font-black text-[68px] sm:text-[76px] leading-none text-ink/[0.03] group-hover:text-[#1e2bc8]/[0.08] transition-colors pointer-events-none select-none">
-                  {ind.tag}
-                </span>
 
                 <div>
                   {/* Card Header Spec Strip */}
@@ -274,7 +279,9 @@ export default function Industries() {
                       </div>
                     </div>
 
-                    <div className="h-2 w-2 rounded-full bg-[#1e2bc8]/30 group-hover:bg-[#1e2bc8] transition-colors" />
+                    <span className="text-[10px] font-mono text-[#1e2bc8] font-bold bg-[#1e2bc8]/[0.06] px-2.5 py-1 rounded-full border border-[#1e2bc8]/10">
+                      {ind.outcome}
+                    </span>
                   </div>
 
                   {/* Title & Serif Promise */}
@@ -286,62 +293,39 @@ export default function Industries() {
                     “{ind.serifQuote}”
                   </div>
 
-                  {/* Body Paragraph - Compact on mobile with toggle */}
-                  <p
-                    className={`mt-3 text-[13px] sm:text-[13.5px] leading-relaxed text-ink/70 font-sans ${
-                      isExpanded ? "block" : "line-clamp-2 sm:line-clamp-none"
-                    }`}
-                  >
-                    {ind.desc}
-                  </p>
-
-                  <button
-                    type="button"
-                    onClick={() => toggleDetails(ind.tag)}
-                    className="sm:hidden mt-2 inline-flex items-center gap-1 text-[11px] font-mono text-[#1e2bc8] font-bold"
-                  >
-                    <span>{isExpanded ? "Less details ↑" : "More details & signals ↓"}</span>
-                  </button>
+                  {/* Clear Short Premium Points */}
+                  <div className="mt-4 space-y-2.5">
+                    {ind.points.map((pt, pIdx) => (
+                      <div
+                        key={pIdx}
+                        className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans text-ink/85"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#1e2bc8] mt-1.5 shrink-0" />
+                        <div>
+                          <strong className="text-ink font-semibold">{pt.bold}</strong>
+                          <span className="text-ink/70"> — {pt.text}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Architectural Strategy Signals Footer */}
-                <div className={`mt-6 pt-4 border-t border-ink/5 ${isExpanded ? "block" : "hidden sm:block"}`}>
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[9.5px] font-mono uppercase tracking-wider text-ink/40 font-semibold">
-                        Core Search Signals:
-                      </span>
-                      <span className="inline-block text-[10px] font-mono text-[#1e2bc8] font-bold bg-[#1e2bc8]/[0.06] px-2 py-0.5 rounded-full border border-[#1e2bc8]/10">
-                        {ind.outcome}
-                      </span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5">
-                      {ind.signals.map((sig, sIdx) => (
-                        <span
-                          key={sIdx}
-                          className="text-[11px] font-mono text-ink/75 bg-paper px-2.5 py-1 rounded-lg border border-ink/5 flex items-center gap-1.5 group-hover:border-[#1e2bc8]/20 group-hover:bg-[#1e2bc8]/[0.02] transition-colors"
-                        >
-                          <span className="h-1 w-1 rounded-full bg-[#1e2bc8]" />
-                          <span>{sig}</span>
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="pt-2">
-                      <a
-                        href="/contact"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          navigateTo("/contact");
-                        }}
-                        className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#1e2bc8] font-bold group-hover:translate-x-1 transition-transform cursor-pointer"
-                      >
-                        <span>{ind.linkText}</span>
-                        <ArrowUpRight className="h-3.5 w-3.5" />
-                      </a>
-                    </div>
-                  </div>
+                {/* Footer Link */}
+                <div className="mt-6 pt-4 border-t border-ink/5 flex items-center justify-between">
+                  <a
+                    href="/contact"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigateTo("/contact");
+                    }}
+                    className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#1e2bc8] font-bold group-hover:translate-x-1 transition-transform cursor-pointer"
+                  >
+                    <span>{ind.linkText}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                  <span className="text-[10px] font-mono text-ink/40 uppercase tracking-wider">
+                    Custom Scope
+                  </span>
                 </div>
               </div>
             );
@@ -349,11 +333,12 @@ export default function Industries() {
 
           {/* ============================================================== */}
           {/* 6TH CARD: COMMANDING OBSIDIAN FLAGSHIP MONOLITH                 */}
-          {/* Hidden on mobile until expanded for a compact, fast mobile feed  */}
           {/* ============================================================== */}
-          <div className={`relative rounded-[28px] sm:rounded-[32px] bg-[#0c0d12] text-white p-6 sm:p-7 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden flex flex-col justify-between group ${
-            !showAllMobile ? "hidden sm:flex" : "flex"
-          }`}>
+          <div
+            className={`relative rounded-[28px] sm:rounded-[32px] bg-[#0c0d12] text-white p-6 sm:p-7 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden flex flex-col justify-between group ${
+              !showAllMobile ? "hidden sm:flex" : "flex"
+            }`}
+          >
             {/* Ambient Radial Cobalt Light Bloom */}
             <div
               className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none opacity-40 blur-3xl group-hover:opacity-70 transition-opacity duration-700"
@@ -390,33 +375,38 @@ export default function Industries() {
               </div>
 
               {/* Title */}
-              <h3 className="font-display text-[22px] sm:text-[25px] font-bold text-white mt-5 tracking-tight leading-snug">
+              <h3 className="font-display text-[21px] sm:text-[23px] font-bold text-white mt-5 tracking-tight leading-snug">
                 Your industry is unique.
                 <br />
                 <span className="text-white/90">Your search strategy should be too.</span>
               </h3>
 
-              <div className="font-serif-i italic text-[15px] text-white/80 mt-2 leading-snug">
+              <div className="font-serif-i italic text-[14px] sm:text-[15px] text-white/80 mt-1.5 leading-snug">
                 “No off-the-shelf templates. No bloated generic retainers.”
               </div>
 
-              <p className="mt-3.5 text-[13px] sm:text-[13.5px] leading-relaxed text-white/70 font-sans">
-                Whether you operate in luxury healthcare, high-ticket engineering, or regional commerce, we architect search and AI visibility pipelines tailored to how your specific buyers make purchasing decisions.
-              </p>
-
-              {/* Verified Checklist */}
-              <div className="mt-5 space-y-2 border-t border-white/10 pt-4">
-                <div className="flex items-center gap-2 text-[11.5px] font-mono text-white/80">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-[#5c85ff] shrink-0" />
-                  <span>100% Commercial Intent & Buyer Psychology</span>
+              {/* Clear Short Premium Points */}
+              <div className="mt-4 space-y-2.5">
+                <div className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#5c85ff] mt-1.5 shrink-0" />
+                  <div>
+                    <strong className="text-white font-semibold">Custom Blueprint</strong>
+                    <span className="text-white/70"> — Matched to your exact buyer psychology</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-[11.5px] font-mono text-white/80">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-[#5c85ff] shrink-0" />
-                  <span>Unified Google Maps + AI Assistant Visibility</span>
+                <div className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#5c85ff] mt-1.5 shrink-0" />
+                  <div>
+                    <strong className="text-white font-semibold">Dual-Engine Search</strong>
+                    <span className="text-white/70"> — Unified Google Maps & AI assistant authority</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-[11.5px] font-mono text-white/80">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-[#5c85ff] shrink-0" />
-                  <span>Direct Founder Consultation & Technical Review</span>
+                <div className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#5c85ff] mt-1.5 shrink-0" />
+                  <div>
+                    <strong className="text-white font-semibold">Founder Review</strong>
+                    <span className="text-white/70"> — Direct technical analysis & action plan</span>
+                  </div>
                 </div>
               </div>
             </div>

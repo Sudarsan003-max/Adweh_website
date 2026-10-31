@@ -39,10 +39,7 @@ export default function Hero() {
               searching.
             </span>
             <br />
-            Will they find{" "}
-            <span className="underline decoration-[#1e2bc8]/30 decoration-[2px] sm:decoration-[3px] underline-offset-6 sm:underline-offset-[12px]">
-              you?
-            </span>
+            Will they find you?
           </h1>
         </div>
 
