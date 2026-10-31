@@ -4,7 +4,7 @@ import { navigateTo } from "../utils/navigation";
 import { SearchDemo, Lightbox } from "./CaseStudies/CaseStudies";
 import { CASE_STUDIES, PROOF, whatsappLink } from "./CaseStudies/caseStudiesData";
 import type { Shot } from "./CaseStudies/caseStudiesData";
-import { ChevronDown, ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
+import { ChevronDown, ArrowRight, ExternalLink } from "lucide-react";
 
 export default function Testimonials() {
   const [openShot, setOpenShot] = useState<Shot | null>(null);
@@ -87,13 +87,9 @@ export default function Testimonials() {
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between pb-3 border-b border-ink/5">
+                  <div className="pb-3 border-b border-ink/5">
                     <span className="font-display text-lg sm:text-xl font-bold text-ink group-hover:text-[#1e2bc8] transition-colors">
                       {c.name}
-                    </span>
-                    <span className="inline-flex items-center gap-1 text-[9.5px] font-mono uppercase px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">
-                      <CheckCircle2 className="h-3 w-3" />
-                      <span>Verified Case</span>
                     </span>
                   </div>
 
@@ -101,37 +97,13 @@ export default function Testimonials() {
                     {c.meta}
                   </p>
 
-                  <p className="mt-3 text-[13px] sm:text-[13.5px] text-ink/80 leading-relaxed font-sans line-clamp-3">
+                  <p
+                    className={`mt-3 text-[13px] sm:text-[13.5px] text-ink/80 leading-relaxed font-sans ${
+                      isCardExpanded ? "block" : "line-clamp-2 md:line-clamp-none"
+                    }`}
+                  >
                     {c.intro.replace(/==/g, "")}
                   </p>
-
-                  {/* Before / After snapshot pill */}
-                  {c.before && c.after && (
-                    <div className="mt-3 sm:mt-4 grid grid-cols-2 gap-2 bg-paper p-3 rounded-xl border border-ink/10 text-center">
-                      <div>
-                        <div className="text-[9.5px] font-mono text-ink/50 uppercase font-semibold">
-                          {c.before.label}
-                        </div>
-                        <div className="text-base sm:text-lg font-bold text-ink mt-0.5">
-                          {c.before.big}
-                        </div>
-                        <div className="text-[10.5px] text-ink/60 truncate font-mono">
-                          {c.before.text}
-                        </div>
-                      </div>
-                      <div className="border-l border-ink/10 pl-2">
-                        <div className="text-[9.5px] font-mono text-[#1e2bc8] font-bold uppercase">
-                          {c.after.label}
-                        </div>
-                        <div className="text-base sm:text-lg font-bold text-[#1e2bc8] mt-0.5">
-                          {c.after.big}
-                        </div>
-                        <div className="text-[10.5px] text-[#1e2bc8]/80 truncate font-mono">
-                          {c.after.text}
-                        </div>
-                      </div>
-                    </div>
-                  )}
 
                   {/* Mobile toggle for Screenshot & details */}
                   {topShot && (
@@ -198,7 +170,9 @@ export default function Testimonials() {
           })}
 
           {/* Callout Card to View All Results */}
-          <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#1e2bc8] to-[#121c9c] text-white p-5 sm:p-8 flex flex-col justify-between shadow-xl">
+          <div className={`rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#1e2bc8] to-[#121c9c] text-white p-5 sm:p-8 flex flex-col justify-between shadow-xl ${
+            !showAllMobile ? "hidden md:flex" : "flex"
+          }`}>
             <div>
               <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/80 font-bold mb-2">
                 [ Free Visibility Assessment ]
@@ -234,7 +208,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Mobile View Toggle: Show More / Show Less */}
+        {/* Mobile View Toggle: Load More / Show Less */}
         <div className="mt-6 md:hidden text-center">
           <button
             type="button"
@@ -244,7 +218,7 @@ export default function Testimonials() {
             <span>
               {showAllMobile
                 ? "Show Less Case Studies ↑"
-                : "Show All 5 Verified Case Studies (3 more) ↓"}
+                : "Load More Case Studies (3 more) ↓"}
             </span>
             <ChevronDown
               className={`h-4 w-4 text-[#1e2bc8] transition-transform duration-200 ${
