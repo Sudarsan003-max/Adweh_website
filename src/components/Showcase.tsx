@@ -10,6 +10,7 @@ export default function Showcase() {
   const [isAutoplay, setIsAutoplay] = useState(true);
   const [islandExpanded, setIslandExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [mobileDataCard, setMobileDataCard] = useState<"ranks" | "velocity">("ranks");
   const [tilt, setTilt] = useState<{ id: number; x: number; y: number } | null>(null);
 
   // Monitor screen size to disable 3D rotation on mobile viewports
@@ -167,8 +168,8 @@ export default function Showcase() {
 
         {/* Widescreen Behance-style Layout with 3D Perspective Container */}
         <div 
-          className="mt-5 sm:mt-16 relative flex items-center justify-start md:justify-center gap-3 sm:gap-6 py-2 sm:py-16 overflow-x-auto lg:overflow-visible scrollbar-hide max-w-full px-1 sm:px-4 md:px-0"
-          style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
+          className="mt-5 sm:mt-16 relative flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-6 py-2 sm:py-16 max-w-full px-2 sm:px-4 md:px-0"
+          style={{ perspective: isMobile ? "none" : "1500px", transformStyle: isMobile ? "flat" : "preserve-3d" }}
         >
           
           {/* Card 1: Leftmost Abstract Vertical Bars (3D Curled Back) */}
@@ -190,7 +191,9 @@ export default function Showcase() {
             onMouseMove={(e) => handleMouseMove(e, 2)}
             onMouseEnter={() => setHoveredCard(2)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className="relative w-[270px] sm:w-80 h-[320px] sm:h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0,0,205,0.05)] hover:border-white/20 shrink-0 flex flex-col justify-between overflow-hidden"
+            className={`relative w-full max-w-[340px] sm:w-80 h-[320px] sm:h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0,0,205,0.05)] hover:border-white/20 shrink-0 flex-col justify-between overflow-hidden order-3 md:order-1 ${
+              mobileDataCard === "ranks" ? "flex" : "hidden md:flex"
+            }`}
             style={getCardStyle(2)}
           >
             <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-[#0000cd]/10 rounded-full blur-2xl pointer-events-none" />
@@ -242,12 +245,12 @@ export default function Showcase() {
             </div>
           </div>
 
-          {/* Center: 3D iPhone Mockup (Elevated & Hover Interactive) */}
+          {/* Center: 3D iPhone Mockup (Elevated & Hover Interactive) - Centered on Mobile */}
           <div 
             onMouseMove={(e) => handleMouseMove(e, 3)}
             onMouseEnter={() => setHoveredCard(3)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className="relative w-[260px] xs:w-[290px] sm:w-[310px] max-w-[calc(100vw-36px)] h-[480px] xs:h-[540px] sm:h-[620px] shrink-0 z-20 select-none"
+            className="relative w-[270px] xs:w-[290px] sm:w-[310px] max-w-[calc(100vw-36px)] h-[510px] xs:h-[550px] sm:h-[620px] shrink-0 z-20 select-none order-1 md:order-2 mx-auto"
             style={getCardStyle(3)}
           >
             {/* Volume & Power Buttons (3D Protrusions) */}
@@ -639,12 +642,38 @@ export default function Showcase() {
             </div>
           </div>
 
-          {/* Card 3: Acquisition Volume Bar Chart (3D Angled Right) */}
+          {/* Mobile Interactive Performance Switcher (< md) */}
+          <div className="flex md:hidden items-center justify-center gap-2 order-2 mt-2 mb-1 z-20">
+            <button
+              onClick={() => setMobileDataCard("ranks")}
+              className={`px-4 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-wider transition-all cursor-pointer ${
+                mobileDataCard === "ranks"
+                  ? "bg-[#0000cd] text-white font-bold shadow-md shadow-[#0000cd]/40 border border-white/20"
+                  : "bg-white/5 text-bone/50 hover:text-white border border-white/10"
+              }`}
+            >
+              ● Top 3 Visibility
+            </button>
+            <button
+              onClick={() => setMobileDataCard("velocity")}
+              className={`px-4 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-wider transition-all cursor-pointer ${
+                mobileDataCard === "velocity"
+                  ? "bg-[#0000cd] text-white font-bold shadow-md shadow-[#0000cd]/40 border border-white/20"
+                  : "bg-white/5 text-bone/50 hover:text-white border border-white/10"
+              }`}
+            >
+              ⚡ Lead Velocity
+            </button>
+          </div>
+
+          {/* Card 4: Acquisition Volume Bar Chart (3D Angled Right) */}
           <div 
             onMouseMove={(e) => handleMouseMove(e, 4)}
             onMouseEnter={() => setHoveredCard(4)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className="relative w-80 h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-3xl p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0, 0, 205,0.05)] hover:border-white/20 shrink-0 flex flex-col justify-between overflow-hidden"
+            className={`relative w-full max-w-[340px] sm:w-80 h-[340px] sm:h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0, 0, 205,0.05)] hover:border-white/20 shrink-0 flex-col justify-between overflow-hidden order-4 md:order-3 ${
+              mobileDataCard === "velocity" ? "flex" : "hidden md:flex"
+            }`}
             style={getCardStyle(4)}
           >
             <div className="absolute bottom-1/4 right-1/3 w-32 h-32 bg-[#4169e1]/10 rounded-full blur-2xl pointer-events-none" />

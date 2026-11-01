@@ -79,7 +79,7 @@ export default function Approach() {
   const active = steps[activeStep];
 
   return (
-    <section id="opportunity" className="relative py-8 sm:py-24 bg-[#030712] text-bone overflow-hidden" style={{ background: "#060913", color: "#f5f1ea" }}>
+    <section id="opportunity" className="relative py-8 sm:py-24 bg-[#030712] text-bone overflow-hidden scroll-mt-24" style={{ background: "#060913", color: "#f5f1ea" }}>
       {/* Background ambient lighting */}
       <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-[#1e2bc8]/12 blur-[150px] pointer-events-none" />
       <div className="absolute top-[20%] left-[15%] w-[380px] h-[380px] rounded-full bg-[#1b3bf5]/6 blur-[110px] pointer-events-none" />
@@ -112,8 +112,8 @@ export default function Approach() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Lid (MacBook Screen Outer Shell) */}
-          <div className="relative w-full sm:w-[94%] lg:w-[92%] aspect-auto sm:aspect-[16/10] bg-gradient-to-b from-[#2e313d] via-[#101115] to-[#07080a] rounded-t-xl sm:rounded-t-[2.2cqi] p-2 sm:p-[1.1cqi] shadow-[0_30px_80px_-10px_rgba(0,0,0,0.98),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_1px_rgba(255,255,255,0.05)] border border-[#1b1c22] border-t-[#494e5e] border-b-[#0b0c0f] flex flex-col z-10">
+          {/* Lid (MacBook Screen Outer Shell) - Responsive 16:10 aspect ratio preserved on mobile */}
+          <div className="relative w-full sm:w-[94%] lg:w-[92%] aspect-[16/11] sm:aspect-[16/10] bg-gradient-to-b from-[#2e313d] via-[#101115] to-[#07080a] rounded-t-xl sm:rounded-t-[2.2cqi] p-2 sm:p-[1.1cqi] shadow-[0_30px_80px_-10px_rgba(0,0,0,0.98),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_1px_rgba(255,255,255,0.05)] border border-[#1b1c22] border-t-[#494e5e] border-b-[#0b0c0f] flex flex-col z-10">
             
             {/* Webcam & Sensors */}
             <div className="absolute top-[0.4%] left-1/2 -translate-x-1/2 flex items-center gap-[0.5cqi] pointer-events-none z-30">
@@ -126,21 +126,21 @@ export default function Approach() {
             </div>
 
             {/* Screen Content Viewport */}
-            <div className="relative flex-1 bg-[#050814] rounded-lg sm:rounded-[0.5cqi] overflow-hidden border border-black shadow-[inset_0_4px_14px_rgba(0,0,0,0.9)] flex flex-col p-3 sm:p-[2.2cqi] lg:p-[2.8cqi] text-[#f5f1ea] select-none @container justify-between gap-3 sm:gap-0">
+            <div className="relative flex-1 bg-[#050814] rounded-lg sm:rounded-[0.5cqi] overflow-hidden border border-black shadow-[inset_0_4px_14px_rgba(0,0,0,0.9)] flex flex-col p-2.5 sm:p-[2.2cqi] lg:p-[2.8cqi] text-[#f5f1ea] select-none @container justify-between">
               
               {/* Internal Screen Background Ambient Glows & Grid */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#1b3bf5]/12 via-[#050814] to-[#04060e] -z-10" />
               <div className="absolute inset-0 opacity-[0.035] bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:18px_18px] -z-10" />
 
               {/* Screen Header Bar */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-2 sm:pb-[1.2cqi] text-[max(8.5px,1.1cqi)] font-mono">
-                <div className="flex items-center gap-2 sm:gap-[1.2cqi]">
-                  <span className="font-semibold text-white tracking-wider flex items-center gap-1.5 sm:gap-[0.6cqi]">
+              <div className="flex items-center justify-between border-b border-white/10 pb-1.5 sm:pb-[1.2cqi] text-[max(8px,1.1cqi)] font-mono">
+                <div className="flex items-center gap-1.5 sm:gap-[1.2cqi]">
+                  <span className="font-semibold text-white tracking-wider flex items-center gap-1 sm:gap-[0.6cqi]">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1b3bf5] animate-ping" />
                     ADWEH SYSTEMS
                   </span>
-                  <span className="opacity-40">/</span>
-                  <span className="text-[#5c85ff] font-medium tracking-wide">
+                  <span className="opacity-40 hidden xs:inline">/</span>
+                  <span className="text-[#5c85ff] font-medium tracking-wide hidden xs:inline">
                     PLATFORM DEMO
                   </span>
                 </div>
@@ -153,7 +153,7 @@ export default function Approach() {
                       <button
                         key={s.n}
                         onClick={() => setActiveStep(idx)}
-                        className={`transition hover:text-white cursor-pointer px-1.5 py-0.5 rounded text-[10px] sm:text-[max(8px,1cqi)] ${
+                        className={`transition hover:text-white cursor-pointer px-1 py-0.5 rounded text-[9px] sm:text-[max(8px,1cqi)] ${
                           isCurrent
                             ? "text-[#5c85ff] font-bold border-b border-[#5c85ff]"
                             : "text-white/45 hover:text-white/80"
@@ -167,13 +167,79 @@ export default function Approach() {
                 </div>
               </div>
 
-              {/* Looping Card Visualizer and Narrative - Responsive Mobile Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-[3cqi] items-stretch my-auto py-1 sm:py-[1cqi]">
+              {/* ========================================================= */}
+              {/* MOBILE SCREEN INTERIOR VIEW (< md): Sleek Dashboard Demo  */}
+              {/* Preserves 16:10 Laptop silhouette without vertical height */}
+              {/* ========================================================= */}
+              <div className="flex md:hidden flex-col justify-between flex-1 py-1">
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-[7.5px] font-mono font-bold text-[#5c85ff] uppercase tracking-wider bg-[#1b3bf5]/15 px-1.5 py-0.5 rounded-full border border-[#1b3bf5]/30">
+                    {active.badge}
+                  </span>
+                  <span className="font-display font-bold text-[11px] text-[#5c85ff]">
+                    {active.metric}
+                  </span>
+                </div>
+
+                <div className="my-auto py-1">
+                  <h4 className="text-[12.5px] font-display font-semibold text-white tracking-tight leading-tight">
+                    {active.title}<span className="text-[#5c85ff]">.</span>
+                  </h4>
+                  {/* Compact chart bars */}
+                  <div className="h-10 w-full mt-1.5 flex items-end justify-between gap-1">
+                    {active.chart.map((val, idx) => (
+                      <div
+                        key={idx}
+                        className="flex-1 bg-gradient-to-t from-[#1b3bf5] to-[#5c85ff]/60 rounded-[1.5px] transition-all duration-700 ease-out origin-bottom shadow-[0_0_6px_rgba(27,59,245,0.3)]"
+                        style={{
+                          height: `${val * 0.65}%`,
+                          transitionDelay: `${idx * 30}ms`,
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Looping timeline tracking */}
+                <div className="flex items-center justify-between pt-1 border-t border-white/5 text-[7.5px] font-mono text-white/40">
+                  <div className="flex gap-1.5 items-center">
+                    {steps.map((_, idx) => {
+                      const isCurrent = idx === activeStep;
+                      return (
+                        <div
+                          key={idx}
+                          onClick={() => setActiveStep(idx)}
+                          className={`h-1 rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ${
+                            isCurrent ? "w-6 bg-white/20" : "w-2 bg-white/25 hover:bg-white/45"
+                          }`}
+                        >
+                          {isCurrent && (
+                            <div
+                              key={`progress-mob-${activeStep}-${isPaused ? "paused" : "running"}`}
+                              className="absolute inset-0 bg-[#1b3bf5] rounded-full origin-left"
+                              style={{
+                                animation: isPaused ? "none" : `loopBar ${STEP_DURATION}ms linear forwards`,
+                                transformOrigin: "left",
+                              }}
+                            />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <span>{active.label}</span>
+                </div>
+              </div>
+
+              {/* ========================================================= */}
+              {/* DESKTOP SCREEN INTERIOR VIEW (md+): Full Widescreen 2-Col */}
+              {/* ========================================================= */}
+              <div className="hidden md:grid md:grid-cols-12 gap-3 sm:gap-[3cqi] items-stretch my-auto py-1 sm:py-[1cqi]">
                 
                 {/* Left Column: Metric Visualizer Card (Changes in Loops) */}
                 <div
                   key={`card-${activeStep}`}
-                  className="col-span-1 md:col-span-5 bg-white/[0.03] border border-white/[0.08] rounded-xl sm:rounded-[1cqi] p-3 sm:p-[2.2cqi] flex flex-col justify-between relative overflow-hidden backdrop-blur-md shadow-[0_15px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out"
+                  className="col-span-5 bg-white/[0.03] border border-white/[0.08] rounded-xl sm:rounded-[1cqi] p-3 sm:p-[2.2cqi] flex flex-col justify-between relative overflow-hidden backdrop-blur-md shadow-[0_15px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out"
                 >
                   <div className="absolute top-0 right-0 w-24 sm:w-[10cqi] h-24 sm:h-[10cqi] bg-[#1b3bf5]/20 rounded-full blur-[22px] pointer-events-none" />
 
@@ -212,7 +278,7 @@ export default function Approach() {
                 {/* Right Column: Narrative workflow & impact */}
                 <div
                   key={`narrative-${activeStep}`}
-                  className="col-span-1 md:col-span-7 flex flex-col justify-between pl-0 md:pl-[1cqi] py-1 sm:py-[0.5cqi] transition-all duration-700 ease-out"
+                  className="col-span-7 flex flex-col justify-between pl-0 md:pl-[1cqi] py-1 sm:py-[0.5cqi] transition-all duration-700 ease-out"
                 >
                   <div className="space-y-1.5 sm:space-y-[1.4cqi]">
                     <div className="text-[9px] sm:text-[max(8px,0.95cqi)] font-mono text-white/40 tracking-widest uppercase">
@@ -276,12 +342,12 @@ export default function Approach() {
               </div>
 
               {/* Footer status bar inside the screen */}
-              <div className="flex items-center justify-between border-t border-white/10 pt-2 sm:pt-[1.2cqi] text-[8px] sm:text-[max(6px,0.85cqi)] font-mono text-white/35 tracking-widest uppercase">
+              <div className="flex items-center justify-between border-t border-white/10 pt-1.5 sm:pt-[1.2cqi] text-[7.5px] sm:text-[max(6px,0.85cqi)] font-mono text-white/35 tracking-widest uppercase">
                 <span>SECURE WEB INFRASTRUCTURE</span>
                 <span className="hidden sm:inline text-white/20">•</span>
                 <span className="hidden sm:inline text-[#5c85ff]/60">SEARCH TO ENQUIRY SYSTEM</span>
                 <span className="hidden sm:inline text-white/20">•</span>
-                <span>ENTERPRISE-GRADE WEB SECURITY</span>
+                <span className="hidden xs:inline">ENTERPRISE SECURITY</span>
               </div>
             </div>
 
@@ -303,7 +369,7 @@ export default function Approach() {
           <div className="w-[88%] h-2 sm:h-[1cqi] bg-gradient-to-b from-[#050608] via-[#101114] to-[#1a1b22] border-b border-black/80 relative z-20 shadow-[inset_0_4px_6px_rgba(0,0,0,0.9),0_2px_4px_rgba(0,0,0,0.5)]" />
 
           {/* Base with 3D chamfered edge */}
-          <div className="relative w-full h-4 sm:h-[2.2cqi] bg-gradient-to-b from-[#2d313d] via-[#14151a] to-[#08080a] rounded-b-xl sm:rounded-b-[1.4cqi] border-t border-[#3b3f4f] shadow-[0_25px_50px_-10px_rgba(0,0,0,0.9),0_10px_20px_-5px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.15)] z-20 flex justify-center">
+          <div className="relative w-full h-3.5 sm:h-[2.2cqi] bg-gradient-to-b from-[#2d313d] via-[#14151a] to-[#08080a] rounded-b-xl sm:rounded-b-[1.4cqi] border-t border-[#3b3f4f] shadow-[0_25px_50px_-10px_rgba(0,0,0,0.9),0_10px_20px_-5px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.15)] z-20 flex justify-center">
             {/* Top highlight light catcher on the base */}
             <div className="absolute top-0 left-0 right-0 h-[1px] sm:h-[0.15cqi] bg-gradient-to-r from-transparent via-white/25 to-transparent z-30" />
 
@@ -312,7 +378,33 @@ export default function Approach() {
           </div>
 
           {/* Surface Glossy Reflection */}
-          <div className="w-[108%] h-[100px] sm:h-[160px] bg-gradient-to-t from-transparent via-[#1b3bf5]/12 to-transparent absolute bottom-[-90px] sm:bottom-[-150px] blur-lg pointer-events-none -z-10 opacity-80" />
+          <div className="w-[108%] h-[80px] sm:h-[160px] bg-gradient-to-t from-transparent via-[#1b3bf5]/12 to-transparent absolute bottom-[-70px] sm:bottom-[-150px] blur-lg pointer-events-none -z-10 opacity-80" />
+        </div>
+
+        {/* Mobile Synchronized Step Narrative Card (md:hidden) */}
+        <div className="mt-4 w-full rounded-2xl bg-white/[0.03] border border-white/10 p-4 flex flex-col gap-2.5 md:hidden">
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-mono text-[#5c85ff] tracking-widest uppercase font-bold">
+              [ SYSTEM STEP / {active.n} ]
+            </span>
+            <span className="text-[10px] font-mono text-white/50">{active.label}</span>
+          </div>
+          <h3 className="text-base font-display font-bold text-white leading-snug">
+            {active.title}
+          </h3>
+          <p className="text-[12.5px] leading-relaxed text-[#f5f1ea]/80 font-sans">
+            {active.detail}
+          </p>
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {active.deliverables.map((item, idx) => (
+              <span
+                key={idx}
+                className="text-[9.5px] font-mono text-white/70 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Outcome Box */}

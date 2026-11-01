@@ -47,6 +47,18 @@ button, a, input, select, textarea {
 ::-webkit-scrollbar-track { background: #ebe5da; }
 ::-webkit-scrollbar-thumb { background: #0a0a0a; border-radius: 0; }
 
+/* Hide scrollbar utility for mobile snap carousels & horizontal decks */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar,
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Typography helpers */
 .font-display { font-family: 'Geist', 'Inter', sans-serif; letter-spacing: -0.04em; }
 .font-serif-i { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }

@@ -257,6 +257,9 @@ export default function WhyUs() {
         {/* ============================================================== */}
         {/* EXECUTIVE ADVANTAGE CARDS MATRIX                               */}
         {/* ============================================================== */}
+        {/* ============================================================== */}
+        {/* PREMIUM ARCHITECTURAL REASONS / PRINCIPLES CARDS GRID           */}
+        {/* ============================================================== */}
         <div className="mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
           {reasons.map((r, idx) => {
             const Icon = r.icon;
@@ -265,43 +268,51 @@ export default function WhyUs() {
             return (
               <div
                 key={r.n}
-                className={`relative rounded-[28px] sm:rounded-[32px] bg-white border border-ink/[0.08] p-6 sm:p-7 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.03)] hover:shadow-[0_22px_50px_-10px_rgba(30,43,200,0.12)] hover:border-[#1e2bc8]/40 hover:-translate-y-1.5 transition-all duration-400 group overflow-hidden flex flex-col justify-between ${
+                className={`relative rounded-[28px] sm:rounded-[32px] bg-gradient-to-b from-[#0e121d] via-[#090b13] to-[#05060a] text-white border border-white/[0.09] hover:border-[#1b3bf5]/60 p-6 sm:p-7 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.65),inset_0_1px_1px_rgba(255,255,255,0.12)] hover:shadow-[0_25px_60px_-10px_rgba(27,59,245,0.28)] hover:-translate-y-1.5 transition-all duration-500 group overflow-hidden flex flex-col justify-between ${
                   isHiddenOnMobile ? "hidden sm:flex" : "flex"
                 }`}
               >
                 {/* Top Subtle Ambient Laser Highlight on Hover */}
-                <div className="absolute top-0 inset-x-8 h-[2px] bg-gradient-to-r from-transparent via-[#1e2bc8] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="absolute top-0 inset-x-8 h-[2px] bg-gradient-to-r from-transparent via-[#5c85ff] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div>
+                {/* Subtle Radial Blue Core Glow */}
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#1b3bf5]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#1b3bf5]/20 transition-all duration-700" />
+
+                {/* Massive Typographic Ghost Watermark Index */}
+                <span className="absolute top-2 right-4 font-display font-black text-[70px] sm:text-[84px] text-white/[0.03] group-hover:text-white/[0.06] transition-colors pointer-events-none select-none tracking-tighter leading-none">
+                  {r.n}
+                </span>
+
+                <div className="relative z-10">
                   {/* Card Header Spec Strip */}
-                  <div className="flex items-center justify-between pb-4 border-b border-ink/5">
+                  <div className="flex items-center justify-between pb-4 border-b border-white/10">
                     <div className="flex items-center gap-3">
                       {/* High-End Architectural Instrument Plate */}
-                      <div className="relative h-10 w-10 rounded-xl border border-ink/15 bg-[#fbf9f5] flex items-center justify-center text-ink group-hover:text-[#1e2bc8] group-hover:border-[#1e2bc8] group-hover:bg-white group-hover:shadow-[0_6px_20px_-4px_rgba(30,43,200,0.22)] transition-all duration-300">
-                        <Icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-105" />
+                      <div className="relative h-11 w-11 rounded-2xl border border-white/15 bg-gradient-to-br from-white/10 to-white/[0.02] flex items-center justify-center text-[#5c85ff] group-hover:text-white group-hover:border-[#5c85ff] group-hover:bg-[#1b3bf5] group-hover:shadow-[0_0_20px_rgba(27,59,245,0.5)] transition-all duration-400">
+                        <Icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                       </div>
 
                       <div>
-                        <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-ink/50 font-semibold">
+                        <div className="text-[9.5px] font-mono uppercase tracking-[0.2em] text-white/40 font-semibold">
                           [ PRINCIPLE {r.n} ]
                         </div>
-                        <div className="text-[10px] font-mono uppercase tracking-wider text-[#1e2bc8] font-bold">
+                        <div className="text-[10px] font-mono uppercase tracking-wider text-[#5c85ff] font-bold">
                           {r.tag}
                         </div>
                       </div>
                     </div>
 
-                    <span className="text-[9.5px] font-mono uppercase tracking-wider text-ink/50 bg-paper px-2.5 py-1 rounded-full border border-ink/5">
+                    <span className="text-[9.5px] font-mono uppercase tracking-wider text-[#5c85ff] font-bold bg-[#1b3bf5]/15 px-3 py-1 rounded-full border border-[#1b3bf5]/30 shadow-[0_0_12px_rgba(27,59,245,0.2)]">
                       {r.highlight}
                     </span>
                   </div>
 
                   {/* Title & Serif Promise */}
-                  <h3 className="font-display text-[21px] sm:text-[23px] font-bold text-ink mt-5 tracking-tight group-hover:text-[#1e2bc8] transition-colors leading-snug">
+                  <h3 className="font-display text-[21px] sm:text-[23px] font-bold text-white mt-5 tracking-tight group-hover:text-[#5c85ff] transition-colors leading-snug">
                     {r.title}
                   </h3>
 
-                  <div className="font-serif-i italic text-[14px] sm:text-[15px] text-ink/80 mt-1.5 leading-snug">
+                  <div className="mt-2.5 p-3 rounded-xl bg-white/[0.03] border-l-2 border-[#1b3bf5] font-serif-i italic text-[13.5px] sm:text-[14px] text-bone/80 leading-snug">
                     “{r.serifQuote}”
                   </div>
 
@@ -310,12 +321,12 @@ export default function WhyUs() {
                     {r.points.map((pt, pIdx) => (
                       <div
                         key={pIdx}
-                        className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans text-ink/85"
+                        className="flex items-start gap-2.5 text-[12px] sm:text-[13px] leading-snug font-sans text-bone/80"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#1e2bc8] mt-1.5 shrink-0" />
+                        <span className="text-[#5c85ff] text-[10px] mt-0.5 shrink-0">✦</span>
                         <div>
-                          <strong className="text-ink font-semibold">{pt.bold}</strong>
-                          <span className="text-ink/70"> — {pt.text}</span>
+                          <strong className="text-white font-semibold">{pt.bold}</strong>
+                          <span className="text-bone/60"> — {pt.text}</span>
                         </div>
                       </div>
                     ))}
@@ -323,15 +334,13 @@ export default function WhyUs() {
                 </div>
 
                 {/* Bottom Architectural Standard Rule */}
-                <div className="mt-6 pt-4 border-t border-ink/5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[9.5px] font-mono uppercase tracking-wider text-ink/40 font-semibold">
-                      Adweh Engineering Standard:
-                    </span>
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#1e2bc8]/30 group-hover:bg-[#1e2bc8] transition-colors" />
+                <div className="relative z-10 mt-6 pt-4 border-t border-white/10">
+                  <div className="flex items-center justify-between text-[9.5px] font-mono uppercase tracking-wider text-white/40 font-semibold mb-1.5">
+                    <span>ADWEH ENGINEERING STANDARD</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#1b3bf5] animate-pulse" />
                   </div>
-                  <div className="mt-1.5 text-[11px] font-mono font-medium text-ink/80 bg-paper/70 border border-ink/5 px-2.5 py-1.5 rounded-lg flex items-center gap-1.5">
-                    <span className="h-1 w-1 rounded-full bg-[#1e2bc8]" />
+                  <div className="text-[11px] font-mono font-medium text-white/90 bg-white/[0.04] border border-white/10 px-3 py-2 rounded-xl flex items-center gap-2 shadow-inner">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#5c85ff]" />
                     <span className="truncate">{r.standard}</span>
                   </div>
                 </div>
@@ -340,28 +349,28 @@ export default function WhyUs() {
           })}
 
           {/* ============================================================== */}
-          {/* 6TH CARD: DIGITAL VISIBILITY ASSESSMENT TERMINAL               */}
+          {/* 6TH CARD: ROYAL SAPPHIRE OBSIDIAN ASSESSMENT TERMINAL           */}
           {/* ============================================================== */}
           <div
-            className={`relative rounded-[28px] sm:rounded-[32px] bg-[#0c0d12] text-white p-6 sm:p-7 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden flex flex-col justify-between group ${
+            className={`relative rounded-[28px] sm:rounded-[32px] bg-gradient-to-br from-[#121c45] via-[#080d24] to-[#040612] text-white p-6 sm:p-7 shadow-[0_20px_50px_-10px_rgba(27,59,245,0.4),0_0_0_1px_rgba(59,98,255,0.3)] border border-[#1b3bf5]/50 overflow-hidden flex flex-col justify-between group ${
               !showAllMobile ? "hidden sm:flex" : "flex"
             }`}
           >
             {/* Ambient Radial Cobalt Light Bloom */}
             <div
-              className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none opacity-40 blur-3xl group-hover:opacity-70 transition-opacity duration-700"
+              className="absolute -top-20 -right-20 w-72 h-72 rounded-full pointer-events-none opacity-50 blur-3xl group-hover:opacity-80 transition-opacity duration-700"
               style={{
-                background: "radial-gradient(circle, #1e2bc8 0%, rgba(30,43,200,0) 70%)",
+                background: "radial-gradient(circle, #1b3bf5 0%, rgba(27,59,245,0) 70%)",
               }}
             />
 
             {/* Subtle architectural grid lines */}
             <div
-              className="absolute inset-0 pointer-events-none opacity-10"
+              className="absolute inset-0 pointer-events-none opacity-[0.08]"
               style={{
                 backgroundImage:
                   "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
-                backgroundSize: "32px 32px",
+                backgroundSize: "28px 28px",
               }}
             />
 
@@ -377,7 +386,7 @@ export default function WhyUs() {
                     [ SYSTEM AUDIT: ONLINE ]
                   </span>
                 </div>
-                <span className="text-[9.5px] font-mono uppercase tracking-widest text-white/50 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">
+                <span className="text-[9.5px] font-mono uppercase tracking-widest text-[#5c85ff] bg-[#1b3bf5]/20 px-2.5 py-0.5 rounded-full border border-[#1b3bf5]/40 shadow-xs">
                   Direct Action
                 </span>
               </div>
@@ -387,28 +396,28 @@ export default function WhyUs() {
                 Ready to review your digital visibility?
               </h3>
 
-              <div className="font-serif-i italic text-[14px] sm:text-[15px] text-white/80 mt-1.5 leading-snug">
+              <div className="mt-2.5 p-3 rounded-xl bg-white/[0.04] border-l-2 border-[#5c85ff] font-serif-i italic text-[13.5px] sm:text-[14px] text-white/80 leading-snug">
                 “Find out exactly what Google, ChatGPT, and Gemini say about you.”
               </div>
 
               {/* Clear Short Premium Points */}
               <div className="mt-4 space-y-2.5">
-                <div className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#5c85ff] mt-1.5 shrink-0" />
+                <div className="flex items-start gap-2.5 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
+                  <span className="text-[#5c85ff] text-[10px] mt-0.5 shrink-0">✦</span>
                   <div>
                     <strong className="text-white font-semibold">Multi-Engine Audit</strong>
                     <span className="text-white/70"> — Live queries across Google Search, Maps & AI</span>
                   </div>
                 </div>
-                <div className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#5c85ff] mt-1.5 shrink-0" />
+                <div className="flex items-start gap-2.5 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
+                  <span className="text-[#5c85ff] text-[10px] mt-0.5 shrink-0">✦</span>
                   <div>
                     <strong className="text-white font-semibold">Competitor Gaps</strong>
                     <span className="text-white/70"> — Identifies where competitors capture your buyers</span>
                   </div>
                 </div>
-                <div className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#5c85ff] mt-1.5 shrink-0" />
+                <div className="flex items-start gap-2.5 text-[12px] sm:text-[13px] leading-snug font-sans text-white/90">
+                  <span className="text-[#5c85ff] text-[10px] mt-0.5 shrink-0">✦</span>
                   <div>
                     <strong className="text-white font-semibold">24-Hour Delivery</strong>
                     <span className="text-white/70"> — Detailed diagnostic report sent to your inbox</span>
@@ -425,7 +434,7 @@ export default function WhyUs() {
                   e.preventDefault();
                   navigateTo("/contact");
                 }}
-                className="group/cta relative inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink hover:bg-[#1e2bc8] hover:text-white px-6 py-3 text-[12.5px] sm:text-[13px] font-bold transition-all duration-300 w-full shadow-lg active:scale-95 cursor-pointer overflow-hidden"
+                className="group/cta relative inline-flex items-center justify-center gap-2 rounded-full bg-white text-[#0a0a0a] hover:bg-[#1e2bc8] hover:text-white px-6 py-3.5 text-[13px] font-bold transition-all duration-300 w-full shadow-[0_10px_25px_rgba(0,0,0,0.4)] active:scale-95 cursor-pointer overflow-hidden"
               >
                 <span>Request Your Free Assessment</span>
                 <ArrowRight className="h-3.5 w-3.5 group-hover/cta:translate-x-1 transition-transform" />
@@ -439,7 +448,7 @@ export default function WhyUs() {
           <button
             type="button"
             onClick={() => setShowAllMobile(!showAllMobile)}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-ink/20 bg-white font-mono text-xs font-bold text-ink shadow-sm active:scale-95 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-ink/15 bg-[#0a0a0a] font-mono text-xs font-bold text-white shadow-lg active:scale-95 transition-all cursor-pointer"
           >
             <span>
               {showAllMobile
@@ -447,7 +456,7 @@ export default function WhyUs() {
                 : "Load More Principles (3 more) ↓"}
             </span>
             <ChevronDown
-              className={`h-4 w-4 text-[#1e2bc8] transition-transform duration-200 ${
+              className={`h-4 w-4 text-[#5c85ff] transition-transform duration-200 ${
                 showAllMobile ? "rotate-180" : ""
               }`}
             />

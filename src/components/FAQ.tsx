@@ -48,6 +48,7 @@ const faqs: FAQItem[] = [
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   const toggle = (idx: number) => {
     setOpenIdx(openIdx === idx ? null : idx);
@@ -89,8 +90,15 @@ export default function FAQ() {
           <div className="lg:col-span-7 divide-y divide-ink/10 border-y border-ink/10">
             {faqs.map((faq, idx) => {
               const isOpen = openIdx === idx;
+              const isHiddenOnMobile = !showAllMobile && idx >= 4;
+
               return (
-                <div key={idx} className="py-3.5 sm:py-5 transition-colors">
+                <div
+                  key={idx}
+                  className={`py-3.5 sm:py-5 transition-colors ${
+                    isHiddenOnMobile ? "hidden sm:block" : "block"
+                  }`}
+                >
                   <button
                     type="button"
                     onClick={() => toggle(idx)}
@@ -111,6 +119,22 @@ export default function FAQ() {
               );
             })}
           </div>
+        </div>
+
+        {/* Mobile View Toggle: Show More / Show Less */}
+        <div className="mt-6 sm:hidden text-center">
+          <button
+            type="button"
+            onClick={() => setShowAllMobile(!showAllMobile)}
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-ink/20 bg-white font-mono text-xs font-bold text-ink shadow-sm active:scale-95 transition-all"
+          >
+            <span>
+              {showAllMobile
+                ? "Show Less FAQs ↑"
+                : `Show All 9 FAQs (${faqs.length - 4} more) ↓`}
+            </span>
+            <span className="text-[#1e2bc8] font-bold">{showAllMobile ? "↑" : "↓"}</span>
+          </button>
         </div>
       </div>
     </section>

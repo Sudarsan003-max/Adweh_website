@@ -17,14 +17,14 @@ export default function Hero() {
   ];
 
   return (
-    <section id="top" ref={ref} className="relative pt-24 sm:pt-36 pb-0 overflow-hidden bg-white">
+    <section id="top" ref={ref} className="relative pt-28 xs:pt-32 sm:pt-40 pb-0 overflow-hidden bg-white">
       {/* Background 3D render — pre-decoded frame-cache scrubbing, full opacity for rich visibility */}
-      <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden bg-transparent opacity-85 sm:opacity-100 transition-opacity">
+      <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden bg-transparent opacity-90 sm:opacity-100 transition-opacity">
         <ScrubVideo src={HERO_VIDEO} videoClassName="object-right lg:object-right-bottom" />
       </div>
 
-      {/* Gentle mobile bottom fade to protect legibility on small screens while keeping 3D visual crisp */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-white/60 via-transparent to-white sm:hidden" />
+      {/* Gentle mobile backdrop gradient to protect text legibility while keeping 3D visual vibrant */}
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-white/30 via-transparent to-white/90 sm:hidden" />
 
       {/* Vibrant decorative blobs behind 3D render */}
       <div className="pointer-events-none absolute -top-20 -right-40 h-[560px] w-[560px] blob bg-[#1e2bc8] opacity-60 z-0" />
@@ -33,7 +33,7 @@ export default function Hero() {
       <div className="relative z-20 mx-auto max-w-[1400px] px-4 sm:px-6">
         {/* Master Display Headline */}
         <div className="relative max-w-4xl pt-2 sm:pt-4">
-          <h1 className="font-display font-medium leading-[0.96] sm:leading-[0.88] tracking-[-0.04em] text-ink text-[38px] xs:text-[48px] sm:text-[78px] lg:text-[104px]">
+          <h1 className="font-display font-medium leading-[1.02] sm:leading-[0.88] tracking-[-0.035em] text-ink text-[34px] xs:text-[44px] sm:text-[76px] lg:text-[104px]">
             Your next customer is{" "}
             <span className="font-serif-i italic text-[#1e2bc8] font-normal tracking-normal">
               searching.
@@ -44,12 +44,12 @@ export default function Hero() {
         </div>
 
         {/* Sub row - Executive Manifesto Copy */}
-        <div className="mt-5 sm:mt-9 grid lg:grid-cols-12 gap-6 sm:gap-10 items-start">
-          <div className="lg:col-span-8 max-w-2xl space-y-3.5 sm:space-y-4">
-            <p className="text-[17px] sm:text-[23px] leading-[1.38] text-ink font-normal tracking-[-0.015em]">
+        <div className="mt-4 sm:mt-9 grid lg:grid-cols-12 gap-5 sm:gap-10 items-start">
+          <div className="lg:col-span-8 max-w-2xl space-y-3 sm:space-y-4">
+            <p className="text-[16px] sm:text-[23px] leading-[1.4] text-ink font-normal tracking-[-0.015em]">
               When high-intent clients search Google and prompt AI assistants, they choose the business with the clearest authority.
             </p>
-            <p className="text-[14px] sm:text-[16.5px] leading-[1.6] text-ink/75 font-sans">
+            <p className="text-[13.5px] sm:text-[16.5px] leading-[1.6] text-ink/75 font-sans">
               ADWEH integrates SEO, AI Engine Optimization (AIEO), GEO, and security-conscious web development to ensure ambitious businesses get found, get trusted, and get chosen.
             </p>
 
@@ -60,7 +60,7 @@ export default function Hero() {
                   e.preventDefault();
                   navigateTo("/contact");
                 }}
-                className="group relative inline-flex items-center justify-between sm:justify-start gap-3.5 rounded-full bg-[#0a0a0a] text-white pl-6 sm:pl-7 pr-2.5 py-2.5 text-[13px] font-semibold overflow-hidden cursor-pointer active:scale-[0.98] transition-all hover:bg-[#1e2bc8] shadow-lg shadow-black/15"
+                className="group relative inline-flex items-center justify-between sm:justify-start gap-3.5 rounded-full bg-[#0a0a0a] text-white pl-5 sm:pl-7 pr-2.5 py-2.5 sm:py-3 text-[13px] font-semibold overflow-hidden cursor-pointer active:scale-[0.98] transition-all hover:bg-[#1e2bc8] shadow-lg shadow-black/15 w-full sm:w-auto"
               >
                 <span className="relative z-10">Request Visibility Assessment</span>
                 <span className="relative z-10 grid place-items-center h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-white text-[#0a0a0a] transition-transform group-hover:rotate-45 shrink-0">
@@ -74,7 +74,7 @@ export default function Hero() {
                   e.preventDefault();
                   navigateTo("/#opportunity");
                 }}
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/60 backdrop-blur-md px-6 py-2.5 sm:py-3 text-[13px] font-medium text-ink/80 hover:text-ink hover:border-ink hover:bg-white transition-all cursor-pointer active:scale-[0.98]"
+                className="group inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 bg-white/80 backdrop-blur-md px-5 sm:px-6 py-2.5 sm:py-3 text-[13px] font-semibold text-ink hover:text-white hover:border-[#1e2bc8] hover:bg-[#1e2bc8] transition-all cursor-pointer active:scale-[0.98] w-full sm:w-auto shadow-xs"
               >
                 <span>Explore Our Methodology</span>
                 <span className="text-xs transition-transform group-hover:translate-y-0.5">↓</span>
@@ -82,9 +82,9 @@ export default function Hero() {
             </div>
 
             {/* Understated Seal of Integrity */}
-            <div className="pt-2">
+            <div className="pt-1.5 sm:pt-2">
               <div className="inline-flex items-center gap-2.5 text-[11px] sm:text-[12px] font-mono text-ink/60">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#1e2bc8]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#1e2bc8] shrink-0" />
                 <span>Objective diagnostic review. No inflated promises or speculative rankings.</span>
               </div>
             </div>
@@ -93,18 +93,20 @@ export default function Hero() {
       </div>
 
       {/* Luxury Architectural Trust Strip */}
-      <div className="relative z-20 mx-auto max-w-[1400px] px-4 sm:px-6 mt-10 sm:mt-18 pb-0">
-        <div className="border border-ink/10 bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl sm:rounded-3xl p-5 sm:p-7 grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 items-start">
+      <div className="relative z-20 mx-auto max-w-[1400px] px-4 sm:px-6 mt-8 sm:mt-18 pb-0">
+        <div className="border border-ink/10 bg-white/95 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl sm:rounded-3xl p-4 sm:p-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-8 items-start">
           {trustPoints.map((tp, idx) => (
-            <div key={idx} className="flex flex-col border-l border-ink/15 pl-4 sm:pl-5 group">
-              <div className="font-mono text-[10px] text-[#1e2bc8] font-bold tracking-widest mb-1">
+            <div key={idx} className="flex items-start gap-3 sm:flex-col border-l-2 border-[#1e2bc8] sm:border-l sm:border-ink/15 pl-3.5 sm:pl-5 group">
+              <div className="font-mono text-[10px] sm:text-[11px] text-[#1e2bc8] font-bold tracking-widest shrink-0 mt-0.5 sm:mt-0 sm:mb-1">
                 0{idx + 1}
               </div>
-              <div className="font-display text-[15px] sm:text-[18px] font-bold tracking-tight text-ink leading-snug group-hover:text-[#1e2bc8] transition-colors">
-                {tp.label}
-              </div>
-              <div className="text-[11.5px] sm:text-[12.5px] font-sans text-ink/60 mt-1 leading-snug">
-                {tp.desc}
+              <div>
+                <div className="font-display text-[14.5px] sm:text-[18px] font-bold tracking-tight text-ink leading-snug group-hover:text-[#1e2bc8] transition-colors">
+                  {tp.label}
+                </div>
+                <div className="text-[11.5px] sm:text-[12.5px] font-sans text-ink/65 mt-0.5 sm:mt-1 leading-snug">
+                  {tp.desc}
+                </div>
               </div>
             </div>
           ))}
