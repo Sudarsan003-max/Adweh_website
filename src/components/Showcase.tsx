@@ -176,7 +176,7 @@ export default function Showcase() {
           <div 
             onMouseEnter={() => setHoveredCard(1)}
             onMouseLeave={() => setHoveredCard(null)}
-            className="hidden xl:flex w-44 h-[380px] bg-[#0d0d0d] border border-white/5 rounded-3xl overflow-hidden items-end justify-between p-6 opacity-35 hover:opacity-75 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.8)]"
+            className="hidden xl:flex order-1 md:order-1 w-44 h-[380px] bg-[#0d0d0d] border border-white/5 rounded-3xl overflow-hidden items-end justify-between p-6 opacity-35 hover:opacity-75 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.8)]"
             style={getCardStyle(1)}
           >
             <div className="w-3 bg-gradient-to-t from-[#0000cd] to-transparent rounded-full" style={{ height: "60%" }} />
@@ -191,7 +191,7 @@ export default function Showcase() {
             onMouseMove={(e) => handleMouseMove(e, 2)}
             onMouseEnter={() => setHoveredCard(2)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className={`relative w-full max-w-[340px] sm:w-80 h-[320px] sm:h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0,0,205,0.05)] hover:border-white/20 shrink-0 flex-col justify-between overflow-hidden order-3 md:order-1 ${
+            className={`relative w-full max-w-[340px] sm:w-80 h-[320px] sm:h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0,0,205,0.05)] hover:border-white/20 shrink-0 flex-col justify-between overflow-hidden order-3 md:order-2 ${
               mobileDataCard === "ranks" ? "flex" : "hidden md:flex"
             }`}
             style={getCardStyle(2)}
@@ -250,7 +250,7 @@ export default function Showcase() {
             onMouseMove={(e) => handleMouseMove(e, 3)}
             onMouseEnter={() => setHoveredCard(3)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className="relative w-[270px] xs:w-[290px] sm:w-[310px] max-w-[calc(100vw-36px)] h-[510px] xs:h-[550px] sm:h-[620px] shrink-0 z-20 select-none order-1 md:order-2 mx-auto"
+            className="relative w-[270px] xs:w-[290px] sm:w-[310px] max-w-[calc(100vw-36px)] h-[510px] xs:h-[550px] sm:h-[620px] shrink-0 z-20 select-none order-1 md:order-3 mx-auto"
             style={getCardStyle(3)}
           >
             {/* Volume & Power Buttons (3D Protrusions) */}
@@ -671,7 +671,7 @@ export default function Showcase() {
             onMouseMove={(e) => handleMouseMove(e, 4)}
             onMouseEnter={() => setHoveredCard(4)}
             onMouseLeave={() => { handleMouseLeave(); setHoveredCard(null); }}
-            className={`relative w-full max-w-[340px] sm:w-80 h-[340px] sm:h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0, 0, 205,0.05)] hover:border-white/20 shrink-0 flex-col justify-between overflow-hidden order-4 md:order-3 ${
+            className={`relative w-full max-w-[340px] sm:w-80 h-[340px] sm:h-[380px] bg-[#0d0d0d]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),_0_25px_60px_-15px_rgba(0,0,0,0.9),_0_0_40px_rgba(0, 0, 205,0.05)] hover:border-white/20 shrink-0 flex-col justify-between overflow-hidden order-4 md:order-4 ${
               mobileDataCard === "velocity" ? "flex" : "hidden md:flex"
             }`}
             style={getCardStyle(4)}
@@ -742,11 +742,11 @@ export default function Showcase() {
             </div>
           </div>
 
-          {/* Card 4: Rightmost Abstract Horizontal Blocks (3D Curled Back) */}
+          {/* Card 5: Rightmost Abstract Horizontal Blocks (3D Curled Back) */}
           <div 
             onMouseEnter={() => setHoveredCard(5)}
             onMouseLeave={() => setHoveredCard(null)}
-            className="hidden xl:flex w-44 h-[380px] bg-[#0d0d0d] border border-white/5 rounded-3xl overflow-hidden flex-col justify-between p-6 opacity-35 hover:opacity-75 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.8)]"
+            className="hidden xl:flex order-5 md:order-5 w-44 h-[380px] bg-[#0d0d0d] border border-white/5 rounded-3xl overflow-hidden flex-col justify-between p-6 opacity-35 hover:opacity-75 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.8)]"
             style={getCardStyle(5)}
           >
             <div className="h-5 w-full bg-gradient-to-r from-transparent to-[#0000cd]/60 rounded-full" />
