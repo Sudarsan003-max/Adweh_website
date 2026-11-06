@@ -22,7 +22,30 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
 
-    if (FORM_ENDPOINT) {
+    let submittedSuccessfully = false;
+
+    // 1. Primary: Hostinger MySQL & PHP Backend API
+    try {
+      const response = await fetch("/api/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          submittedSuccessfully = true;
+        }
+      }
+    } catch (err) {
+      console.warn("Hostinger MySQL endpoint unreachable, testing backup gateway:", err);
+    }
+
+    // 2. Resilient Backup: Secondary synchronization endpoint
+    if (!submittedSuccessfully && FORM_ENDPOINT) {
       try {
         await fetch(FORM_ENDPOINT, {
           method: "POST",
@@ -36,8 +59,9 @@ export default function Contact() {
             submittedAt: new Date().toISOString(),
           }),
         });
+        submittedSuccessfully = true;
       } catch (error) {
-        console.error("Error submitting form to endpoint:", error);
+        console.error("Backup endpoint error:", error);
       }
     }
 
