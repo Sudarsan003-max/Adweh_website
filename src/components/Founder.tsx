@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { navigateTo } from "../utils/navigation";
 import isaacPortrait from "./isaac_portrait.png";
-import isaacAvatar from "./isaac_avatar.png";
 
 export default function Founder() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -28,48 +27,40 @@ export default function Founder() {
         ← Back to Studio Home
       </a>
 
-      {/* 1. Header: Immersive Editorial Split Card */}
+      {/* 1. Header: Immersive Editorial Split Card with Featured Desk Portrait */}
       <div
-        className="rounded-[32px] border border-ink/10 bg-[#ebe5da]/20 overflow-hidden shadow-sm relative flex flex-col md:flex-row"
+        className="rounded-[32px] border border-ink/10 bg-[#ebe5da]/20 overflow-hidden shadow-sm relative flex flex-col lg:flex-row items-stretch"
         style={{ background: "rgba(235,229,218,.35)" }}
       >
-        {/* Left Side: Dark Portrait block */}
-        <div className="w-full md:w-80 bg-[#0a0a0a] relative flex items-center justify-center p-6 sm:p-8 shrink-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-          <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#1e2bc8]/10 rounded-full blur-2xl pointer-events-none" />
-
-          {/* Squircle Portrait with Frame */}
-          <div className="relative group">
-            <div className="absolute inset-0 rounded-[40px_16px_40px_16px] bg-gradient-to-br from-[#1e2bc8]/20 to-[#4169e1]/20 blur-lg opacity-40 group-hover:opacity-75 transition-opacity duration-500 pointer-events-none" />
-            <div className="absolute -inset-1.5 rounded-[42px_18px_42px_18px] border border-white/10 bg-white/[0.02] backdrop-blur-sm pointer-events-none" />
-
-            <div className="h-52 w-52 rounded-[40px_16px_40px_16px] overflow-hidden border border-white/20 bg-[#141414] shadow-2xl relative transition-all duration-700 hover:scale-[1.02]">
-              <img
-                src={isaacAvatar}
-                alt="Isaac Vivian Portrait"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-40 pointer-events-none" />
-            </div>
-
-            <span className="absolute -top-1 -left-1 w-3.5 h-3.5 border-t-2 border-l-2 border-[#1e2bc8] rounded-tl-sm pointer-events-none" />
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 border-t-2 border-r-2 border-[#1e2bc8] rounded-tr-sm pointer-events-none" />
-            <span className="absolute -bottom-1 -left-1 w-3.5 h-3.5 border-b-2 border-l-2 border-[#1e2bc8] rounded-bl-sm pointer-events-none" />
-            <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 border-b-2 border-r-2 border-[#1e2bc8] rounded-br-sm pointer-events-none" />
+        {/* Left / Top Side: Editorial Desk Portrait */}
+        <div className="w-full lg:w-[440px] bg-[#0a0a0a] relative shrink-0 overflow-hidden min-h-[280px] sm:min-h-[360px] lg:min-h-[420px] flex items-center justify-center group">
+          <img
+            src={isaacPortrait}
+            alt="Isaac Vivian — Founder & Growth Strategist, ADWEH"
+            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
+            <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#5c85ff] font-bold block mb-1">
+              Founder Profile
+            </span>
+            <p className="text-white text-xs sm:text-[13px] font-medium font-sans">
+              Isaac Vivian — Founder &amp; Growth Strategist, ADWEH
+            </p>
           </div>
         </div>
 
         {/* Right Side: Profile Details */}
-        <div className="flex-1 p-6 sm:p-8 flex flex-col justify-between gap-6">
+        <div className="flex-1 p-6 sm:p-9 flex flex-col justify-between gap-6">
           <div>
             <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#1e2bc8] font-bold block mb-2">
               FOUNDER / ADWEH
             </span>
-            <h1 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight text-ink flex items-center gap-2">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-ink flex items-center gap-2">
               Isaac Vivian
             </h1>
 
-            <p className="mt-2 text-[14px] sm:text-[15px] font-medium leading-relaxed text-ink/80 font-sans">
+            <p className="mt-2.5 text-[14.5px] sm:text-[16px] font-medium leading-relaxed text-ink/85 font-sans">
               Founder, ADWEH | Business Strategy • Search Visibility • Digital Growth
             </p>
 
@@ -84,7 +75,7 @@ export default function Founder() {
               ].map((label, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] font-mono font-medium tracking-wide border border-ink/10 bg-white/60 text-ink/75"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] font-mono font-medium tracking-wide border border-ink/10 bg-white/75 text-ink/80 shadow-2xs"
                 >
                   {label}
                 </span>
@@ -92,12 +83,13 @@ export default function Founder() {
             </div>
           </div>
 
-          {/* Footer details */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pt-5 border-t border-ink/5 mt-auto">
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] font-mono text-ink/60">
+          {/* Footer details without academic background */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 pt-5 border-t border-ink/10 mt-auto">
+            <div className="flex items-center gap-2 text-[11px] font-mono text-ink/65">
+              <span className="inline-block w-2 h-2 rounded-full bg-[#1e2bc8]" />
               <span>Chennai, Tamil Nadu, India</span>
               <span>·</span>
-              <span>BBA LLB (Hons.), SOEL</span>
+              <span>IST (UTC+5:30)</span>
             </div>
 
             <div className="shrink-0 flex items-center gap-3">
@@ -115,7 +107,7 @@ export default function Founder() {
                 href="https://www.linkedin.com/in/isaac-vivian/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-3 text-[12.5px] font-medium hover:bg-black hover:text-white transition"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/80 px-4 py-3 text-[12.5px] font-medium hover:bg-black hover:text-white transition"
               >
                 LinkedIn
               </a>
@@ -133,7 +125,7 @@ export default function Founder() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`relative pb-3 font-display text-[15px] font-bold tracking-tight transition-all duration-200 focus:outline-none ${
+            className={`relative pb-3 font-display text-[15px] font-bold tracking-tight transition-all duration-200 focus:outline-none cursor-pointer ${
               activeTab === tab.id ? "text-[#1e2bc8]" : "text-ink/50 hover:text-ink/80"
             }`}
           >
@@ -149,12 +141,16 @@ export default function Founder() {
       <div className="mt-8">
         {activeTab === "overview" && (
           <div className="grid lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-7 space-y-6">
+            {/* Left Column: Vision & Approach */}
+            <div className="lg:col-span-6 space-y-6">
               <div
-                className="rounded-3xl border border-ink/10 bg-[#ebe5da]/20 p-6 sm:p-8 shadow-sm"
+                className="rounded-3xl border border-ink/10 bg-[#ebe5da]/20 p-6 sm:p-8 shadow-sm h-full"
                 style={{ background: "rgba(235,229,218,.3)" }}
               >
-                <h2 className="font-display text-xl font-bold text-ink mb-4 flex items-center gap-2">
+                <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#1e2bc8] font-bold mb-3">
+                  [ VISION &amp; APPROACH ]
+                </div>
+                <h2 className="font-display text-xl sm:text-2xl font-bold text-ink mb-4 flex items-center gap-2">
                   <span className="w-1.5 h-6 bg-[#1e2bc8] rounded-full" />
                   Connecting Discovery, Trust, and Action
                 </h2>
@@ -170,9 +166,12 @@ export default function Founder() {
                   </p>
                 </div>
               </div>
+            </div>
 
+            {/* Right Column: Philosophy & Operating Standards */}
+            <div className="lg:col-span-6 space-y-6">
               {/* Philosophy Callout Card */}
-              <div className="rounded-3xl border border-[#1e2bc8]/25 bg-gradient-to-br from-paper to-[#1e2bc8]/5 p-8 relative overflow-hidden shadow-sm">
+              <div className="rounded-3xl border border-[#1e2bc8]/25 bg-gradient-to-br from-paper to-[#1e2bc8]/5 p-7 sm:p-8 relative overflow-hidden shadow-sm">
                 <span className="font-serif text-[120px] text-[#1e2bc8]/10 absolute -top-10 -left-2 select-none pointer-events-none">“</span>
                 <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#1e2bc8] font-bold mb-3 relative z-10">
                   [ The Philosophy ]
@@ -184,43 +183,35 @@ export default function Founder() {
                   Search habits change. Technology changes. The fundamentals of trust, relevance, and customer value remain.
                 </p>
               </div>
-            </div>
 
-            {/* Right Side: Photo Showcase & Credentials */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="rounded-3xl border border-ink/10 bg-[#0a0a0a] overflow-hidden shadow-md relative group">
-                <div className="relative aspect-[16/11] w-full overflow-hidden">
-                  <img
-                    src={isaacPortrait}
-                    alt="Isaac Vivian — Founder, ADWEH"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#5c85ff] font-bold block mb-1">
-                      Founder Profile
-                    </span>
-                    <p className="text-white text-xs sm:text-[13px] font-medium font-sans">
-                      Isaac Vivian — Founder &amp; Growth Strategist, ADWEH
-                    </p>
-                  </div>
-                </div>
-              </div>
-
+              {/* Operating Standards Card */}
               <div
-                className="rounded-3xl border border-ink/10 bg-[#ebe5da]/20 p-6"
+                className="rounded-3xl border border-ink/10 bg-[#ebe5da]/20 p-6 sm:p-7 shadow-sm"
                 style={{ background: "rgba(235,229,218,.3)" }}
               >
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#1e2bc8] font-bold mb-2">
-                  Academic Background
+                <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#1e2bc8] font-bold mb-3">
+                  [ ADWEH OPERATING STANDARD ]
                 </div>
-                <h3 className="font-display text-lg font-bold text-ink">BBA LLB (Hons.)</h3>
-                <p className="text-xs text-ink/70 font-mono mt-0.5">
-                  School of Excellence in Law, Dr. Ambedkar Law University
-                </p>
-                <p className="mt-3 text-xs text-ink/75 leading-relaxed font-sans">
-                  Rigorous foundation in commercial contracts, corporate compliance, regulatory clarity, and structured analytical problem-solving.
-                </p>
+                <div className="space-y-3 text-xs sm:text-[13px] text-ink/80 font-sans">
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#1e2bc8] font-bold">✦</span>
+                    <div>
+                      <strong className="text-ink">Commercial Clarity:</strong> Every search query and AI citation strategy is mapped directly to buyer intent and commercial outcomes.
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#1e2bc8] font-bold">✦</span>
+                    <div>
+                      <strong className="text-ink">Technical Rigor:</strong> Web architecture engineered with enterprise-grade security, semantic markup, and sub-second performance.
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#1e2bc8] font-bold">✦</span>
+                    <div>
+                      <strong className="text-ink">Verified Proof:</strong> Transparent, auditable reporting without speculative vanity metrics or inflated promises.
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

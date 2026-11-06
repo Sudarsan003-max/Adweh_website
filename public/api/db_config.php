@@ -29,9 +29,9 @@ define('DB_CHARSET', 'utf8mb4');
 
 // Email Notification Settings
 // Whenever a client submits the contact form, an instant notification is sent here.
-define('NOTIFY_EMAIL', 'admin@adweh.com');
+define('NOTIFY_EMAIL', 'info@adweh.com');
 define('ENABLE_EMAIL_NOTIFICATION', true);
-define('MAIL_FROM_HEADER', 'leads@adweh.com');
+define('MAIL_FROM_HEADER', 'info@adweh.com');
 
 // Admin Viewer Security Key
 // Used to access the web-based leads reader at /api/view_leads.php?key=YOUR_KEY

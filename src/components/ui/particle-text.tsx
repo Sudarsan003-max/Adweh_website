@@ -117,10 +117,50 @@ export default function ParticleText({
       }
       particles = next;
 
-      // Pre-render the static blue extrusion once.
-      ectx.clearRect(0, 0, width, height);
+      // Mathematical centering of both the front face particles and extruded 3D shadow
       const layers = Math.max(8, Math.round(extDepth / 1.6));
       const extSize = extDepth / layers + 1.2;
+
+      if (next.length > 0) {
+        let minX = Infinity;
+        let maxX = -Infinity;
+        let minY = Infinity;
+        let maxY = -Infinity;
+
+        // Bounding box of front face
+        for (let i = 0; i < next.length; i++) {
+          const p = next[i];
+          if (p.hx < minX) minX = p.hx;
+          if (p.hx + p.size > maxX) maxX = p.hx + p.size;
+          if (p.hy < minY) minY = p.hy;
+          if (p.hy + p.size > maxY) maxY = p.hy + p.size;
+        }
+
+        // Bounding box including 3D shadow extrusion
+        const maxExtX = extDepth * dirX;
+        const maxExtY = extDepth * dirY;
+        for (let i = 0; i < next.length; i++) {
+          const p = next[i];
+          if (p.hx + maxExtX + extSize > maxX) maxX = p.hx + maxExtX + extSize;
+          if (p.hy + maxExtY + extSize > maxY) maxY = p.hy + maxExtY + extSize;
+          if (p.hx + maxExtX < minX) minX = p.hx + maxExtX;
+          if (p.hy + maxExtY < minY) minY = p.hy + maxExtY;
+        }
+
+        // Exact horizontal and vertical alignment offset to dead center within canvas
+        const shiftX = Math.round((width / 2) - ((minX + maxX) / 2));
+        const shiftY = Math.round((height / 2) - ((minY + maxY) / 2));
+
+        for (let i = 0; i < next.length; i++) {
+          next[i].hx += shiftX;
+          next[i].x += shiftX;
+          next[i].hy += shiftY;
+          next[i].y += shiftY;
+        }
+      }
+
+      // Pre-render the static blue extrusion once with precision centered coordinates.
+      ectx.clearRect(0, 0, width, height);
       for (let i = layers; i >= 1; i--) {
         const f = i / layers;
         const t = 1 - f;
@@ -237,5 +277,5 @@ export default function ParticleText({
     };
   }, [text]);
 
-  return <canvas ref={canvasRef} className={`font-display ${className}`} />;
+  return <canvas ref={canvasRef} className={`font-display block mx-auto ${className}`} style={{ margin: "0 auto" }} />;
 }

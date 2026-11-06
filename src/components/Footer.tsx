@@ -7,7 +7,7 @@ import { navigateTo } from "../utils/navigation";
 export default function Footer() {
   return (
     <footer
-      className="relative bg-ink text-bone pt-8 pb-14 sm:pb-32 overflow-hidden"
+      className="relative bg-ink text-bone pt-12 sm:pt-20 pb-14 sm:pb-32 overflow-hidden"
       style={{ background: "#0a0a0a", color: "#f5f1ea" }}
     >
       {/* Background Animated Gradient Bars */}
@@ -24,14 +24,14 @@ export default function Footer() {
         className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 -mt-4 sm:-mt-10">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between gap-6 sm:gap-10">
           {/* Left Column: Brand & Promise */}
           <div className="relative w-full md:max-w-[360px] flex-shrink-0">
-            <div className="flex items-center gap-2.5 mb-3">
+            <div className="flex items-center gap-2.5 mb-3.5">
               <img
                 src={logoWordmark}
-                className="h-[22px] w-auto object-contain brightness-110"
+                className="h-6 sm:h-7 w-auto object-contain brightness-110"
                 alt="ADWEH"
               />
             </div>
@@ -42,7 +42,7 @@ export default function Footer() {
               SEO, AI Engine Optimization, Generative Engine Optimization, and security-focused website development for businesses that want to be easier to discover and easier to choose.
             </p>
 
-            <div className="mt-6 flex items-center gap-2">
+            <div className="mt-6 flex items-center gap-2.5">
               {[
                 {
                   l: "LinkedIn",
@@ -52,7 +52,7 @@ export default function Footer() {
                 {
                   l: "Instagram",
                   s: "IG",
-                  href: "https://www.instagram.com/adweh/",
+                  href: "https://www.instagram.com/byadweh?utm_source=ig_web_button_share_sheet&rpxt=ZDNlZDc0MzIxNw==",
                 },
               ].map((s) => (
                 <a
@@ -245,9 +245,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 3D Particle Text in natural flow below content columns */}
-        <div className="relative z-10 mx-auto max-w-[1400px] w-full h-[clamp(110px,22vw,270px)] px-4 sm:px-6 mt-3 sm:mt-4 mb-2">
-          <ParticleText text="ADWEH" className="h-full w-full" />
+        {/* 3D Particle Text in natural flow below content columns - Precision Centered */}
+        <div className="relative z-10 w-full flex items-center justify-center h-[clamp(110px,22vw,270px)] mt-4 sm:mt-6 mb-2 overflow-hidden">
+          <ParticleText text="ADWEH" className="mx-auto block" />
         </div>
 
         {/* Office Contact Info Strip */}
@@ -270,10 +270,10 @@ export default function Footer() {
             </div>
             <div className="mt-2.5 sm:mt-3">
               <a
-                href="mailto:admin@adweh.com"
+                href="mailto:info@adweh.com"
                 className="text-base sm:text-lg font-display font-semibold text-white hover:text-[#5c85ff] transition"
               >
-                admin@adweh.com
+                info@adweh.com
               </a>
               <div className="mt-1 text-[11px] text-white/50 font-mono">Enquiries &amp; Consultations</div>
             </div>

@@ -30,5 +30,5 @@ CREATE TABLE IF NOT EXISTS `adweh_leads` (
 INSERT INTO `adweh_leads` 
   (`name`, `email`, `company`, `website`, `industry`, `priority`, `phone`, `notes`, `status`) 
 VALUES 
-  ('System Verification', 'admin@adweh.com', 'ADWEH Systems', 'https://adweh.com', 'Healthcare & Clinics', 'AIEO', '+91 86670 31931', 'Initial verification seed lead generated on schema import.', 'new');
+  ('System Verification', 'info@adweh.com', 'ADWEH Systems', 'https://adweh.com', 'Healthcare & Clinics', 'AIEO', '+91 86670 31931', 'Initial verification seed lead generated on schema import.', 'new');
 

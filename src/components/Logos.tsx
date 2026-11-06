@@ -1,7 +1,7 @@
 const verifiedPartners = [
   "Soul Skin Clinic",
-  "Virtue Clinic & Academy",
-  "Dr. Swathi's Cosmetic Clinic",
+  "Virtue Clinic & Aesthetic Academy",
+  "Dr. Swathi’s Skin & Cosmetic Clinic",
   "Subam Skin Clinic",
   "Mithran Fertility Center",
   "Healthcare & Clinics",

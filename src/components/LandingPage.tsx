@@ -85,7 +85,7 @@ const VERIFIED_PROOFS: CaseProof[] = [
   },
   {
     id: "swathi-chatgpt",
-    name: "Dr. Swathi’s Cosmetic Clinic",
+    name: "Dr. Swathi’s Skin & Cosmetic Clinic",
     location: "Tambaram, Chennai",
     category: "ChatGPT & AI Search",
     headline: "#1 Medifacial and skin rejuvenation recommendation on ChatGPT",
@@ -616,7 +616,7 @@ export default function LandingPage() {
             <span className="opacity-40">•</span>
             <span>Virtue Aesthetic Clinic &amp; Academy</span>
             <span className="opacity-40">•</span>
-            <span>Dr. Swathi’s Cosmetic Clinic</span>
+            <span>Dr. Swathi’s Skin &amp; Cosmetic Clinic</span>
             <span className="opacity-40">•</span>
             <span>Subam Skin Clinic</span>
             <span className="opacity-40">•</span>
@@ -1125,8 +1125,8 @@ export default function LandingPage() {
                 Phone: +91 86670 31931
               </a>
               <span>•</span>
-              <a href="mailto:admin@adweh.com" className="hover:text-white transition-colors">
-                Email: admin@adweh.com
+              <a href="mailto:info@adweh.com" className="hover:text-white transition-colors">
+                Email: info@adweh.com
               </a>
               <span>•</span>
               <span>Chennai, Tamil Nadu 600016, IN</span>
@@ -1265,7 +1265,7 @@ export default function LandingPage() {
             </p>
             <h4 className="font-bold text-white text-[14px]">Data Protection &amp; Contact</h4>
             <p>
-              All submissions are transmitted over encrypted TLS connections. If you wish to review, update, or delete your contact information, please email admin@adweh.com or contact +91 86670 31931.
+              All submissions are transmitted over encrypted TLS connections. If you wish to review, update, or delete your contact information, please email info@adweh.com or contact +91 86670 31931.
             </p>
             <div className="pt-2">
               <button

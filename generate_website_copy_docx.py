@@ -658,7 +658,7 @@ def create_document():
 
     add_sub_header("13.1 Direct Contact Bento Directory")
     add_bullet("Head Office:", "2/17B Palyathan Street, Alandur, Chennai – 600 016, Tamil Nadu, India")
-    add_bullet("Direct Email:", "admin@adweh.com (Response SLA: < 24 Hours)")
+    add_bullet("Direct Email:", "info@adweh.com (Response SLA: < 24 Hours)")
     add_bullet("Direct Phone / WhatsApp:", "+91 86670 31931 (Hours: Monday – Friday, 07:00 AM – 09:00 PM IST)")
     add_bullet("Enterprise Specialization:", "100% Growth Focused  •  130+ Brands Scaled Nationwide")
 

@@ -165,14 +165,35 @@ export default function ContactPage() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
                 <div className="text-[10px] uppercase tracking-[0.2em] opacity-50">Direct Contact</div>
                 <div className="mt-2 text-[13px] font-sans font-medium leading-relaxed">
-                  <a href="mailto:admin@adweh.com" className="text-white hover:text-[#5c85ff] transition block">
-                    admin@adweh.com
+                  <a href="mailto:info@adweh.com" className="text-white hover:text-[#5c85ff] transition block">
+                    info@adweh.com
                   </a>
-                  <a href="tel:+918667031931" className="text-white hover:text-[#5c85ff] transition block mt-1">
+                  <a href="tel:+918667031931" className="text-white hover:text-green-400 transition block mt-1">
                     +91 86670 31931
                   </a>
                 </div>
               </div>
+            </div>
+
+            {/* Social channels: Instagram & LinkedIn */}
+            <div className="flex items-center gap-3 pt-2">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-bone/50">Follow ADWEH:</span>
+              <a
+                href="https://www.instagram.com/byadweh?utm_source=ig_web_button_share_sheet&rpxt=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/[0.03] text-[11px] font-mono text-white hover:border-[#e1306c] hover:text-[#e1306c] transition"
+              >
+                <span>Instagram ↗</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/adweh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/[0.03] text-[11px] font-mono text-white hover:border-[#0a66c2] hover:text-[#0a66c2] transition"
+              >
+                <span>LinkedIn ↗</span>
+              </a>
             </div>
 
             <div className="pt-2">

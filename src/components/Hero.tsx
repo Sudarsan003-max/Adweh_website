@@ -19,21 +19,21 @@ export default function Hero() {
   return (
     <section id="top" ref={ref} className="relative pt-28 xs:pt-32 sm:pt-40 pb-0 overflow-hidden bg-white">
       {/* Background 3D render — pre-decoded frame-cache scrubbing, full opacity for rich visibility */}
-      <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden bg-transparent opacity-90 sm:opacity-100 transition-opacity">
+      <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden bg-transparent opacity-95 sm:opacity-100 transition-opacity">
         <ScrubVideo src={HERO_VIDEO} videoClassName="object-right lg:object-right-bottom" />
       </div>
 
-      {/* Gentle mobile backdrop gradient to protect text legibility while keeping 3D visual vibrant */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-white/85 via-white/45 to-white sm:hidden" />
+      {/* Subtle gentle bottom gradient so 3D background remains completely visible & vibrant */}
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-white/70 sm:hidden" />
 
       {/* Vibrant decorative blobs behind 3D render */}
-      <div className="pointer-events-none absolute -top-20 -right-40 h-[560px] w-[560px] blob bg-[#1e2bc8] opacity-60 z-0" />
-      <div className="pointer-events-none absolute top-40 -left-32 h-[360px] w-[360px] rounded-full bg-[#ff5d3b]/15 blur-[80px] z-0" />
+      <div className="pointer-events-none absolute -top-20 -right-40 h-[560px] w-[560px] blob bg-[#1e2bc8] opacity-65 z-0" />
+      <div className="pointer-events-none absolute top-40 -left-32 h-[360px] w-[360px] rounded-full bg-[#ff5d3b]/20 blur-[80px] z-0" />
 
       <div className="relative z-20 mx-auto max-w-[1400px] px-4 sm:px-6">
         {/* Eyebrow Kicker Pill */}
         <div className="flex justify-center sm:justify-start">
-          <div className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/90 backdrop-blur-md px-3.5 py-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-[#1e2bc8] shadow-xs mb-3 sm:mb-5">
+          <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 backdrop-blur-md px-3.5 py-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-[#1e2bc8] shadow-xs mb-3 sm:mb-5">
             <span className="h-1.5 w-1.5 rounded-full bg-[#1e2bc8] animate-pulse shrink-0" />
             <span className="font-semibold">Search &amp; AI Visibility Architecture</span>
           </div>
@@ -41,7 +41,7 @@ export default function Hero() {
 
         {/* Master Display Headline */}
         <div className="relative max-w-4xl pt-1 sm:pt-2 text-center sm:text-left mx-auto sm:mx-0">
-          <h1 className="font-display font-medium leading-[1.04] sm:leading-[0.88] tracking-[-0.03em] sm:tracking-[-0.035em] text-ink text-[32px] xs:text-[42px] sm:text-[76px] lg:text-[104px]">
+          <h1 className="font-display font-medium leading-[1.04] sm:leading-[0.88] tracking-[-0.03em] sm:tracking-[-0.035em] text-[#0a0a0a] text-[34px] xs:text-[44px] sm:text-[76px] lg:text-[104px] [text-shadow:0_1px_3px_rgba(255,255,255,0.7)]">
             Your next customer is{" "}
             <span className="font-serif-i italic text-[#1e2bc8] font-normal tracking-normal inline-block">
               searching.
@@ -54,10 +54,10 @@ export default function Hero() {
         {/* Sub row - Executive Manifesto Copy */}
         <div className="mt-4 sm:mt-8 grid lg:grid-cols-12 gap-5 sm:gap-10 items-start">
           <div className="lg:col-span-8 max-w-2xl space-y-3 sm:space-y-4 text-center sm:text-left mx-auto sm:mx-0">
-            <p className="text-[15.5px] xs:text-[17px] sm:text-[23px] leading-[1.4] text-ink font-normal tracking-[-0.015em] mx-auto sm:mx-0 max-w-xl sm:max-w-2xl">
+            <p className="text-[16px] xs:text-[17.5px] sm:text-[23px] leading-[1.4] text-[#0a0a0a] font-normal tracking-[-0.015em] mx-auto sm:mx-0 max-w-xl sm:max-w-2xl [text-shadow:0_1px_2px_rgba(255,255,255,0.6)]">
               When high-intent clients search Google and prompt AI assistants, they choose the business with the clearest authority.
             </p>
-            <p className="text-[13px] xs:text-[14px] sm:text-[16.5px] leading-[1.6] text-ink/75 font-sans mx-auto sm:mx-0 max-w-xl sm:max-w-2xl">
+            <p className="text-[13.5px] xs:text-[14.5px] sm:text-[16.5px] leading-[1.6] text-[#0a0a0a]/80 font-sans mx-auto sm:mx-0 max-w-xl sm:max-w-2xl [text-shadow:0_1px_2px_rgba(255,255,255,0.5)]">
               ADWEH integrates SEO, AI Engine Optimization (AIEO), GEO, and security-conscious web development to ensure ambitious businesses get found, get trusted, and get chosen.
             </p>
 
@@ -92,7 +92,7 @@ export default function Hero() {
 
             {/* Understated Seal of Integrity */}
             <div className="pt-1.5 sm:pt-2 flex items-center justify-center sm:justify-start">
-              <div className="inline-flex items-center gap-2 text-[11px] sm:text-[12px] font-mono text-ink/65 text-center sm:text-left">
+              <div className="inline-flex items-center gap-2 text-[11px] sm:text-[12px] font-mono text-[#0a0a0a]/80 font-medium text-center sm:text-left">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#1e2bc8] shrink-0" />
                 <span>Objective diagnostic review. No inflated promises or speculative rankings.</span>
               </div>
